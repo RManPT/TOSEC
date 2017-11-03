@@ -13,6 +13,15 @@ How to enter develpment mode:
 	ser colocaddo, por exemplo, em %userprofile% (mantido e actualizado)
 	deve ser corrido o comando na pasta do repositorio local:
 	git config --global core.excludefile "%userprofile%\.gitignore"
+	//espero que funcione :P
+	
+	A quem usar o kraken como eu, pode e deve de ir a https://pt.gravatar.com/ e criar um gravatar associado ao email do git
+	desta forma os branches do kraken ficam identificados com a imagem de cada um ao inves de simples icons que podem ser 
+	repetidos
+	
+	Tanto podem fazer um fork para cada como criar branches, não se esqueçam que isto ainda é para "brincar"
+	Vamos testar e aprender as manhozices para depois correr tudo bem no sprint 1
+	
 	
 * Configuration
 
