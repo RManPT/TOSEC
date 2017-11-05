@@ -1,0 +1,29 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>
+                <%= @system.name %>
+            </h1>
+        </div>
+    </div>
+
+
+    <p>
+        <strong>Name:</strong>
+        <%= @system.name %>
+    </p>
+    <p>
+        <strong>Abbreviation:</strong>
+        <%= @system.abbreviation %>
+    </p>
+    <p>
+        <strong>Company:</strong>
+        <%= @system.company %>
+    </p>
+    <p>
+        <strong>Type:</strong>
+        <%= @system.typeSys %>
+    </p>
+
+    <%= link_to 'Back', systems_path %>
+</div>
