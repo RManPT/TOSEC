@@ -1,0 +1,11 @@
+<h1>Release types</h1>
+<p>
+    <strong>Name:</strong>
+    <%= @release_type.name %>
+  </p>
+   
+  <p>
+    <strong>Description:</strong>
+    <%= @release_type.desc %>
+  </p>
+  <%= link_to 'Edit', edit_release_type_path(@release_type) %> | <%= link_to 'Back', release_types_path %>
