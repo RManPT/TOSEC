@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+10.times do |n|
+    System.create(name: "Sistema #{n}")
+end
+Releasetypes.create(name: 'TOSEC-main', desc:"General purpose release")
+Releasetypes.create(name: 'TOSEC-ISO', desc:"DVD/CD releases")
+Releasetypes.create(name: 'TOSEC-PIX', desc:"Images release")

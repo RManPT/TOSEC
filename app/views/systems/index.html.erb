@@ -1,0 +1,95 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Listing Systems</h1>
+            <hr>
+            <br>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="glyphicon glyphicon-search"></i>
+                        </span>
+                        <input class="form-control" id="myInput" type="text" placeholder="Search...">
+                    </div>
+                    <br>
+                    <br>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <%= link_to 'New System', new_system_path, class: 'btn btn-primary col-md-12' %>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel-group" id="accordion">
+                        <% @systems.each do |s| %>
+                            <div id="info">
+                                <div class="panel panel-default" id="myInfo">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse<%= s.abbreviation %>">
+                                                <%= s.abbreviation %> -
+                                                    <%= s.name %>
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapse<%= s.abbreviation %>" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <% if s.company? %>
+                                                        <p>
+                                                            <strong>Company: </strong>
+                                                            <%= s.company %>
+                                                        </p>
+                                                        <% end %>
+                                                            <% if s.typeSys? %>
+                                                                <p>
+                                                                    <strong>Type: </strong>
+                                                                    <%= s.typeSys %>
+                                                                </p>
+                                                                <% end %>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <p>
+                                                        <%= link_to 'Show', system_path(s) %>
+                                                    </p>
+                                                    <p>
+                                                        <%= link_to 'Edit', edit_system_path(s) %>
+                                                    </p>
+                                                    <p>
+                                                        <%= link_to 'Destroy', system_path(s),
+                                                        method: :delete,
+                                                        data: { confirm: 'Are you sure?' } %>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                            </div>
+                            <% end %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $("#myInput").on("keyup", function () {
+                var value = $(this).val().toLowerCase();
+                $("#info #myInfo").filter(function () {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
+    </script>

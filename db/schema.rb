@@ -29,4 +29,13 @@ ActiveRecord::Schema.define(version: 20171106174445) do
     t.index ["release_type_id"], name: "index_releases_on_release_type_id"
   end
 
+  create_table "systems", force: :cascade do |t|
+    t.string "name"
+    t.string "abbreviation"
+    t.string "company"
+    t.string "typeSys"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
 end
