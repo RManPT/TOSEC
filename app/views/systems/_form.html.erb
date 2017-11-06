@@ -1,0 +1,65 @@
+<%= form_with scope: :system, url: systems_path ,local: true do |f| %>
+    <div class="row">
+        <div class="col-md-12">
+            <% if @system.errors.any? %>
+                <div id="error_explanation">
+                    <h2>
+                        <%= pluralize(@system.errors.count, "error") %> prohibited this system from being saved:
+                    </h2>
+                    <ul>
+                        <% @system.errors.full_messages.each do |msg| %>
+                            <li>
+                                <%= msg %>
+                            </li>
+                        <% end %>
+                    </ul>
+                </div>
+            <% end %>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <%= f.label :name %>
+                    <%= f.text_field :name , class: 'form-control'%>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <%= f.label :abbreviation %>
+                    <%= f.text_field :abbreviation , class: 'form-control'%>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <%= f.label :company , "Company:", for:'company'  %>
+                    <%= f.text_field :company, list: 'company', class: 'form-control' %>
+                        <datalist id="company">
+                            <option data-value=1 value="Sony"></option>
+                            <option data-value=2 value="Microsoft"></option>
+                        </datalist>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+
+                <%= f.label :typeSys, "System Type:", for:'typeSys' %>
+                    <%= f.text_field :typeSys, list: 'systemType', class: 'form-control' %>
+                        <datalist id="systemType">
+                            <option data-value=1 value="PC"></option>
+                            <option data-value=2 value="Console"></option>
+                        </datalist>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <%= f.submit "Save", class:'btn btn-success' %>
+        </div>
+        <div class="col-md-4">
+            <%= link_to 'Back to list', systems_path, class:'btn btn-danger' %>
+        </div>
+    </div>
+<% end %>
