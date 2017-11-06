@@ -1,0 +1,24 @@
+<h2>Listing Release types</h2>
+<table>
+ <tr>
+   <th>Name</th>
+   <th>Description</th>
+   <th colspan="3"></th>
+ </tr>
+
+ <% @release_type.each do |release_type| %>
+   <tr>
+     <td><%= release_type.name %></td>
+     <td><%= release_type.desc %></td>
+     <td><%= link_to 'Show', release_type_path(release_type) %> |&nbsp;</td>
+     <td><%= link_to 'Edit', edit_release_type_path(release_type) %> |&nbsp;</td>
+     <td><%= link_to 'Destroy', release_type_path(release_type),
+      method: :delete,
+      data: { confirm: 'Are you sure?' } %></td>
+   </tr>
+ <% end %>
+ 
+</table>
+<p>&nbsp</p>
+<p><%= link_to 'New release type', new_release_type_path %></p>
+<%= render '/welcome/bottom' %>

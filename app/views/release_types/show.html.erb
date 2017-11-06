@@ -1,0 +1,17 @@
+
+<h2>Release types</h2>
+<p>
+    <strong>Name:</strong>
+    <%= @release_type.name %>
+  </p>
+   
+  <p>
+    <strong>Description:</strong>
+    <%= @release_type.desc %>
+  </p>
+  <%= link_to 'Edit', edit_release_type_path(@release_type) %> | 
+  <%= link_to 'Destroy', release_type_path(@release_type),
+  method: :delete,
+  data: { confirm: 'Are you sure?' } %></td>
+   | <%= link_to 'Back', release_types_path %>
+  <%= render '/welcome/bottom' %>
