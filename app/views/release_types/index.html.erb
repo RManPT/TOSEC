@@ -1,5 +1,4 @@
-<h1>Listing Release types</h1>
-
+<h2>Listing Release types</h2>
 <table>
  <tr>
    <th>Name</th>
@@ -11,8 +10,8 @@
    <tr>
      <td><%= release_type.name %></td>
      <td><%= release_type.desc %></td>
-     <td><%= link_to 'Show', release_type_path(release_type) %></td>
-     <td><%= link_to 'Edit', edit_release_type_path(release_type) %></td>
+     <td><%= link_to 'Show', release_type_path(release_type) %> |&nbsp;</td>
+     <td><%= link_to 'Edit', edit_release_type_path(release_type) %> |&nbsp;</td>
      <td><%= link_to 'Destroy', release_type_path(release_type),
       method: :delete,
       data: { confirm: 'Are you sure?' } %></td>
@@ -22,4 +21,4 @@
 </table>
 <p>&nbsp</p>
 <p><%= link_to 'New release type', new_release_type_path %></p>
-<p><%= link_to 'Back to TOSEC', welcome_index_url %></p>
+<%= render '/welcome/bottom' %>
