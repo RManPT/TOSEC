@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
-  get 'welcome/index'
-
-  
   
 
+  
+  namespace :systems do
+    resources :types
+  end
   resources :systems
-  
   
   
   
