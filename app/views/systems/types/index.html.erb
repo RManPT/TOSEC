@@ -1,37 +1,27 @@
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-12">
-            <h1>Listing Systems Type</h1>
-            <hr>
+        <div class="col-md-3">
+            <h2>Listing Systems Type</h2>
+        </div>
+        <div class="col-md-3">
+            <%= render 'navbarSType' %>
+        </div>
+        <div class="col-md-3">
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <i class="glyphicon glyphicon-search"></i>
+                </span>
+                <input class="form-control" id="myInput" type="text" placeholder="Search...">
+            </div>
+        </div>
+        <div class="col-md-3">
         </div>
     </div>
+    <hr>
     <div class="row">
         <div class="col-md-3">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="input-group">
-                        <span class="input-group-addon">
-                            <i class="glyphicon glyphicon-search"></i>
-                        </span>
-                        <input class="form-control" id="myInput" type="text" placeholder="Search...">
-                    </div>
-                    <br>
-                    <br>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <%= link_to 'New System Type', new_systems_type_path, class: 'btn btn-primary col-md-12' %>
-                </div>
-            </div>
-            <br>
-            <div class="row">
-                <div class="col-md-12">
-                    <%= link_to 'List System', systems_path, class: 'btn btn-primary col-md-12' %>
-                </div>
-            </div>
         </div>
-        <div class="col-md-9">
+        <div class="col-md-6">
             <div class="row">
                 <div class="col-md-12">
                     <div class="panel-group" id="accordion">
@@ -74,6 +64,8 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="col-md-3">
         </div>
     </div>
     <script>

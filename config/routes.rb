@@ -9,9 +9,6 @@ Rails.application.routes.draw do
   
   
   
-  
-  
-  
 
   resources :release_types do
     resources :releases

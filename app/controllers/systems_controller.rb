@@ -1,6 +1,7 @@
 class SystemsController < ApplicationController
     def new
         @system = System.new
+        @types = SystemsType.all
     end
     def index
         @systems = System.all
@@ -22,6 +23,7 @@ class SystemsController < ApplicationController
     end
     def edit
         @system = System.find(params[:id])
+        @types = SystemsType.all
         rescue ActiveRecord::RecordNotFound
             redirect_to(systems_path, :notice => 'Record not found')
       end
