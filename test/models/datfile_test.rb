@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class ReleasesControllerTest < ActionDispatch::IntegrationTest
+class DatfileTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

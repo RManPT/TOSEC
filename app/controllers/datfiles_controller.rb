@@ -1,0 +1,2 @@
+class DatfilesController < ApplicationController
+end
