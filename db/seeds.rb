@@ -13,7 +13,7 @@ end
     SystemsType.create([{ name: "SistemaT#{n}"}])
 end
 
-ReleaseType.create([
+CollectionType.create([
     {name: 'TOSEC-main', desc:"General purpose release"},
     {name: 'TOSEC-ISO', desc:"DVD/CD releases"},
     {name: 'TOSEC-PIX', desc:"Images release"}
