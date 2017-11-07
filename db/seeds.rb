@@ -8,9 +8,11 @@
 10.times do |n|
     System.create([{ name: "Sistema #{n}" ,abbreviation:"S#{n}", dateRelease:"1993-#{n+1}-#{n+1}"}])
 end
+
 10.times do |n|
     SystemsType.create([{ name: "SistemaT#{n}"}])
 end
+
 ReleaseType.create([
     {name: 'TOSEC-main', desc:"General purpose release"},
     {name: 'TOSEC-ISO', desc:"DVD/CD releases"},
