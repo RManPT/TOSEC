@@ -1,10 +1,10 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-3">
-            <h2>Listing Systems</h2>
+            <h2>Listing Systems Type</h2>
         </div>
         <div class="col-md-3">
-            <%= render 'navbarSystems' %>
+            <%= render 'navbarSType' %>
         </div>
         <div class="col-md-3">
             <div class="input-group">
@@ -25,52 +25,34 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="panel-group" id="accordion">
-                        <% @systems.each do |s| %>
+                        <% @types.each do |s| %>
                             <div id="info">
                                 <div class="panel panel-default" id="myInfo">
                                     <div class="panel-heading">
                                         <h4 class="panel-title">
-                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse<%= s.abbreviation %>">
-                                                <%= s.abbreviation %> -
-                                                    <%= s.name %>
+                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse<%= s.name %>">
+                                                <%= s.name %>
                                             </a>
                                         </h4>
                                     </div>
-                                    <div id="collapse<%= s.abbreviation %>" class="panel-collapse collapse">
+                                    <div id="collapse<%= s.name %>" class="panel-collapse collapse">
                                         <div class="panel-body">
                                             <div class="row">
                                                 <div class="col-md-6">
-                                                    <% if s.company? %>
-                                                        <p>
-                                                            <strong>Company: </strong>
-                                                            <%= s.company %>
-                                                        </p>
-                                                        <% end %>
-                                                            <% if s.typeSys? %>
-                                                                <p>
-                                                                    <strong>Type: </strong>
-                                                                    <%= s.typeSys %>
-                                                                </p>
-                                                                <% end %>
-
-                                                                    <p>
-                                                                        <strong>Release: </strong>
-                                                                        <%= s.dateRelease %>
-                                                                    </p>
-
-                                                </div>
-                                                <div class="col-md-6">
                                                     <p>
-                                                        <%= link_to 'Show', system_path(s) %>
+                                                        <%= link_to 'Show', systems_type_path(s) %>
                                                     </p>
                                                     <p>
-                                                        <%= link_to 'Edit', edit_system_path(s) %>
+                                                        <%= link_to 'Edit', edit_systems_type_path(s) %>
                                                     </p>
                                                     <p>
-                                                        <%= link_to 'Destroy', system_path(s),
+                                                        <%= link_to 'Destroy', systems_type_path(s),
                                                         method: :delete,
                                                         data: { confirm: 'Are you sure?' } %>
                                                     </p>
+                                                </div>
+                                                <div class="col-md-6">
+
                                                 </div>
                                             </div>
                                         </div>

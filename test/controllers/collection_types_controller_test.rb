@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class ReleaseTypesControllerTest < ActionDispatch::IntegrationTest
+class CollectionTypesControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end

@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class ReleaseTest < ActiveSupport::TestCase
+class SystemTypeTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

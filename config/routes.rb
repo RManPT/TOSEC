@@ -1,20 +1,13 @@
 Rails.application.routes.draw do
-  get 'welcome/index'
-
-  
   
 
+  namespace :systems do
+    resources :types
+  end
   resources :systems
-  
-  
-  
-  
-  
-  
-  
 
-  resources :release_types do
-    resources :releases
+  resources :collection_types do
+    resources :datfiles
   end
 
   root 'welcome#index'

@@ -1,49 +1,62 @@
 <div class="container-fluid">
-    <div class="row">
-        <div class="col-md-12">
-            <h1>
-                System
-                <hr>
-            </h1>
-        </div>
-    </div>
-    <div class="jumbotron">
-        <div class="row">
-            
-            <div class="col-md-8 col-xs-12 col-sm-6 col-lg-8">
 
-                <ul class="container details">
-                    <li>
-                        <p>
-                            <strong>Name:</strong>
-                            <%= @system.name %>
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            <strong>Abbreviation:</strong>
-                            <%= @system.abbreviation %>
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            <strong>Company:</strong>
-                            <%= @system.company %>
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            <strong>Type:</strong>
-                            <%= @system.typeSys %>
-                        </p>
-                    </li>
-                    <li>
-                        <%= link_to 'Back', systems_path %>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-md-4 col-xs-12 col-sm-6 col-lg-4">
-                <img src="https://www.svgimages.com/svg-image/s5/man-passportsize-silhouette-icon-256x256.png" alt="stack photo" class="img">
-            </div>
+    <div class="row">
+        <div class="col-md-3">
+            <h2>System
+                <%= @system.name %>
+            </h2>
+        </div>
+        <div class="col-md-3">
+            <%= render 'navbarSystems' %>
+        </div>
+        <div class="col-md-3">
+        </div>
+        <div class="col-md-3">
         </div>
     </div>
+    <hr>
+    <div class="row">
+
+        <div class="col-md-8 col-xs-12 col-sm-6 col-lg-8">
+
+            <ul class="container details">
+                <li>
+                    <p>
+                        <strong>Name:</strong>
+                        <%= @system.name %>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <strong>Abbreviation:</strong>
+                        <%= @system.abbreviation %>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <strong>Company:</strong>
+                        <%= @system.company %>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <strong>Type:</strong>
+                        <%= @system.typeSys %>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <strong>Release:</strong>
+                        <%= @system.dateRelease %>
+                    </p>
+                </li>
+                <li>
+                    <%= link_to 'Back', systems_path %>
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-4 col-xs-12 col-sm-6 col-lg-4">
+            <img src="https://www.svgimages.com/svg-image/s5/man-passportsize-silhouette-icon-256x256.png" alt="stack photo" class="img">
+        </div>
+    </div>
+</div>

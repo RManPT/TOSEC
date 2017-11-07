@@ -1,4 +1,4 @@
-<%= form_with scope: :system, url: systems_path ,local: true do |f| %>
+<%= form_with model: @system, local: true do |f| %>
     <div class="row">
         <div class="col-md-12">
             <% if @system.errors.any? %>
@@ -11,10 +11,10 @@
                             <li>
                                 <%= msg %>
                             </li>
-                        <% end %>
+                            <% end %>
                     </ul>
                 </div>
-            <% end %>
+                <% end %>
         </div>
     </div>
     <div class="row">
@@ -48,18 +48,48 @@
                 <%= f.label :typeSys, "System Type:", for:'typeSys' %>
                     <%= f.text_field :typeSys, list: 'systemType', class: 'form-control' %>
                         <datalist id="systemType">
-                            <option data-value=1 value="PC"></option>
-                            <option data-value=2 value="Console"></option>
+                            <% @types.each do |s| %>
+                                <option data-value="<%= s.id %>" value="<%= s.name %>" ></option>
+                                <% end %>
                         </datalist>
             </div>
         </div>
     </div>
     <div class="row">
+        <div class='col-sm-6'>
+            <div class="form-group">
+                <%= f.label :dateRelease , "Release:", for:'Release' %>
+                    <div class='input-group date' id='datetimepicker1'>
+                        <%= f.text_field :dateRelease, class: 'form-control', readonly:'readonly' %>
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-calendar"></span>
+                            </span>
+                    </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            var d = new Date();
+            var n = d.getDate();
+            var m = d.getMonth() + 1;
+            var y = d.getFullYear();
+            $(function () {
+                $('#datetimepicker1').datetimepicker({
+                    format: 'YYYY-MM-DD',
+                    maxDate: new Date(y + "-" + m + "-" + n),
+                    ignoreReadonly: true
+                });
+            });
+                
+        </script>
+        
+    </div>
+
+    <div class="row">
         <div class="col-md-4">
-            <%= f.submit "Save", class:'btn btn-success' %>
+            <%= f.submit "Save", id:'submit', class:'btn btn-success' %>
         </div>
         <div class="col-md-4">
             <%= link_to 'Back to list', systems_path, class:'btn btn-danger' %>
         </div>
     </div>
-<% end %>
+    <% end %>
