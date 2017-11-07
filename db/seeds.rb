@@ -6,8 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 10.times do |n|
-    System.create(name: "Sistema #{n}")
+    System.create([{ name: "Sistema #{n}" ,abbreviation:"S#{n}", dateRelease:"1993-#{n+1}-#{n+1}"}])
 end
-Releasetypes.create(name: 'TOSEC-main', desc:"General purpose release")
-Releasetypes.create(name: 'TOSEC-ISO', desc:"DVD/CD releases")
-Releasetypes.create(name: 'TOSEC-PIX', desc:"Images release")
+ReleaseType.create([
+    {name: 'TOSEC-main', desc:"General purpose release"},
+    {name: 'TOSEC-ISO', desc:"DVD/CD releases"},
+    {name: 'TOSEC-PIX', desc:"Images release"}
+])
