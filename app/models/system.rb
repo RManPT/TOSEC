@@ -1,4 +1,4 @@
 class System < ApplicationRecord
-    validates :name, presence: true,
-    length: { minimum: 3 }
+    has_many :types
+    validates :name, presence: true, length: { minimum: 3 }
 end

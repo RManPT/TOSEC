@@ -1,0 +1,2 @@
+module Systems::TypeHelper
+end
