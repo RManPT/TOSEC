@@ -39,7 +39,7 @@
                                     <div id="collapse<%= s.abbreviation %>" class="panel-collapse collapse">
                                         <div class="panel-body">
                                             <div class="row">
-                                                <div class="col-md-6">
+                                                <div class="col-md-3">
                                                     <% if s.company? %>
                                                         <p>
                                                             <strong>Company: </strong>
@@ -60,6 +60,11 @@
 
                                                 </div>
                                                 <div class="col-md-6">
+                                                    <% if s.image? %>
+                                                        <%= image_tag s.image.url ,height: '100'%>
+                                                    <% end %>
+                                                </div>
+                                                <div class="col-md-3">
                                                     <p>
                                                         <%= link_to 'Show', system_path(s) %>
                                                     </p>
