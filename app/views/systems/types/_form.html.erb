@@ -1,0 +1,39 @@
+<%= form_with model: @type, local: true do |f| %>
+<div class="row">
+    <div class="col-md-12">
+        <% if @type.errors.any? %>
+            <div id="error_explanation">
+                <h2>
+                    <%= pluralize(@type.errors.count, "error") %> prohibited this system type from being saved:
+                </h2>
+                <ul>
+                    <% @type.errors.full_messages.each do |msg| %>
+                        <li>
+                            <%= msg %>
+                        </li>
+                        <% end %>
+                </ul>
+            </div>
+            <% end %>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+            <%= f.label :name %>
+                <%= f.text_field :name , class: 'form-control'%>
+        </div>
+    </div>
+    <div class="col-md-6">
+        
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <%= f.submit "Save", class:'btn btn-success' %>
+    </div>
+    <div class="col-md-4">
+        <%= link_to 'Back to list', systems_types_path, class:'btn btn-danger' %>
+    </div>
+</div>
+<% end %>
