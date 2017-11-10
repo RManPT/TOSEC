@@ -8,6 +8,7 @@ class SystemsController < ApplicationController
       end
     def show
         @system = System.find(params[:id])
+        @types = SystemsType.all
     rescue ActiveRecord::RecordNotFound
         redirect_to(systems_path, :notice => 'Record not found')
     end
