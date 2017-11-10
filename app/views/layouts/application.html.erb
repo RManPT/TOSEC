@@ -12,13 +12,21 @@
           <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+      <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
 
 <body>
-  <%= render '/layouts/header' %>
-  <%= yield %>
-  <%= render '/layouts/footer' %>
+  <div class="container">
+    <%= render '/layouts/header' %>
+      <div class="panel panel-default">
+        <div class="panel-body">
+
+          <%= yield %>
+
+        </div>
+      </div>
+      <%= render '/layouts/footer' %>
+  </div>
 </body>
 
 </html>
