@@ -1,2 +1,0 @@
-class ReleasesController < ApplicationController
-end

@@ -1,5 +1,5 @@
-class ReleaseType < ApplicationRecord
-    has_many :releases
+class CollectionType < ApplicationRecord
+    has_many :datfiles
     validates :name, presence: true,length: { minimum: 5 }
     validates :desc, presence: true,length: { minimum: 5 }    
 end
