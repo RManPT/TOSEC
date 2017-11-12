@@ -1,3 +1,4 @@
+
 <%= form_with model: @system, local: true do |f| %>
     <div class="row">
         <div class="col-md-12">
@@ -59,29 +60,14 @@
         <div class='col-sm-6'>
             <div class="form-group">
                 <%= f.label :dateRelease , "Release:", for:'Release' %>
-                    <div class='input-group date' id='datetimepicker1'>
+                    <div class='input-group form_datetime' id='1'>
                         <%= f.text_field :dateRelease, class: 'form-control', readonly:'readonly' %>
                             <span class="input-group-addon">
                                 <span class="glyphicon glyphicon-calendar"></span>
                             </span>
                     </div>
             </div>
-        </div>
-        <script type="text/javascript">
-            var d = new Date();
-            var n = d.getDate();
-            var m = d.getMonth() + 1;
-            var y = d.getFullYear();
-            $(function () {
-                $('#datetimepicker1').datetimepicker({
-                    format: 'YYYY-MM-DD',
-                    maxDate: new Date(y + "-" + m + "-" + n),
-                    ignoreReadonly: true
-                });
-            });
-                
-        </script>
-        
+        </div>       
     </div>
 
     <div class="row">

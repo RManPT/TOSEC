@@ -1,23 +1,26 @@
 <div class="form-group">
-<%= form_with model: @datfile, local: true do |form| %>
+  <%= form_with model: @datfile, local: true do |form| %>
 
-<% if @datfile.errors.any? %>
-<div id="error_explanation class="form-group"">
-  <h2>
-    <%= pluralize(@datfile.errors.count, "error") %> prohibited
-    this file from being saved:
-  </h2>
-  <ul>
-    <% @datfile.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-  </ul>
-</div>
-<% end %>
+    <% if @datfile.errors.any? %>
+      <div id="error_explanation class=" form-group "">
+        <h2>
+          <%= pluralize(@datfile.errors.count, "error") %> prohibited this file from being saved:
+        </h2>
+        <ul>
+          <% @datfile.errors.full_messages.each do |msg| %>
+            <li>
+              <%= msg %>
+            </li>
+            <% end %>
+        </ul>
+      </div>
+      <% end %>
 
-<div class="form-group""></div>
-<% form.label :collection_type_id %>
-<%= form.collection_select(:collection_type_id, @collection_type, 'id', 'name', :include_blank => "Select a collection...")%>
+        <div class="form-group">
+        <p>  
+        <% form.label :collection_type_id, class: 'form-label' %>
+<%= form.collection_select(:collection_type_id, @collection_type.order(:id), 'id', 'name',  {:include_blank => "Select a collection"}, {:class=>'form-control'}) %>
+</p>
 <p>
   <%= form.label :name %><br>
   <%= form.text_field :name, class: 'form-control' %>
@@ -26,10 +29,9 @@
 <p>
   <%= form.label :readme%><br>
   <%= form.text_area :readme, class: 'form-control' %>
-</p>
 
-<p>
   <%= form.submit 'Save DAT', :class => 'btn btn-success'%>
 </p>
 <% end %>
+</div>
 </div>
