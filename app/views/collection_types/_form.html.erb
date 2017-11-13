@@ -2,7 +2,7 @@
 <%= form_with model: @collection_type, local: true do |form| %>
 
 <% if @collection_type.errors.any? %>
-<div id="error_explanation">
+<div id="error_explanation" class="form-group">
   <h2>
     <%= pluralize(@collection_type.errors.count, "error") %> prohibited
     this article from being saved:
@@ -15,17 +15,19 @@
 </div>
 <% end %>
 
+<div class="form-group">
 <p>
   <%= form.label :name %><br>
-  <%= form.text_field :name %>
+  <%= form.text_field :name, class: 'form-control' %>
 </p>
 
 <p>
   <%= form.label :description %><br>
-  <%= form.text_area :desc %>
+  <%= form.text_area :desc, class: 'form-control' %>
 </p>
 
 <p>
-  <%= form.submit %>
+  <%= form.submit 'Save collection', :class => 'btn btn-success' %>
 </p>
 <% end %>
+</div>

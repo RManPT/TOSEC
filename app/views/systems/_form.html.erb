@@ -1,3 +1,17 @@
+<script type="text/javascript">
+    var d = new Date();
+    var n = d.getDate();
+    var m = d.getMonth() + 1;
+    var y = d.getFullYear();
+    $(function () {
+        $('#datetimepicker1').datetimepicker({
+            format: 'YYYY-MM-DD',
+            maxDate: new Date(y + "-" + m + "-" + n),
+            ignoreReadonly: true
+        });
+    });
+</script>
+
 <%= form_with model: @system, local: true do |f| %>
     <div class="row">
         <div class="col-md-12">
@@ -49,7 +63,7 @@
                     <%= f.text_field :typeSys, list: 'systemType', class: 'form-control' %>
                         <datalist id="systemType">
                             <% @types.each do |s| %>
-                                <option data-value="<%= s.id %>" value="<%= s.name %>" ></option>
+                                <option data-value="<%= s.id %>" value="<%= s.name %>"></option>
                                 <% end %>
                         </datalist>
             </div>
@@ -59,7 +73,7 @@
         <div class='col-sm-6'>
             <div class="form-group">
                 <%= f.label :dateRelease , "Release:", for:'Release' %>
-                    <div class='input-group date' id='datetimepicker1'>
+                    <div class='input-group' id='datetimepicker1'>
                         <%= f.text_field :dateRelease, class: 'form-control', readonly:'readonly' %>
                             <span class="input-group-addon">
                                 <span class="glyphicon glyphicon-calendar"></span>
@@ -67,29 +81,12 @@
                     </div>
             </div>
         </div>
-        <script type="text/javascript">
-            var d = new Date();
-            var n = d.getDate();
-            var m = d.getMonth() + 1;
-            var y = d.getFullYear();
-            $(function () {
-                $('#datetimepicker1').datetimepicker({
-                    format: 'YYYY-MM-DD',
-                    maxDate: new Date(y + "-" + m + "-" + n),
-                    ignoreReadonly: true
-                });
-            });
-                
-        </script>
-        
-    </div>
-
-    <div class="row">
-        <div class="col-md-4">
-            <%= f.submit "Save", id:'submit', class:'btn btn-success' %>
+        <div class="row">
+            <div class="col-md-4">
+                <%= f.submit "Save", id:'submit', class:'btn btn-success' %>
+            </div>
+            <div class="col-md-4">
+                <%= link_to 'Back to list', systems_path, class:'btn btn-danger' %>
+            </div>
         </div>
-        <div class="col-md-4">
-            <%= link_to 'Back to list', systems_path, class:'btn btn-danger' %>
-        </div>
-    </div>
-    <% end %>
+        <% end %>

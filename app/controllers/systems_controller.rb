@@ -1,5 +1,7 @@
 class SystemsController < ApplicationController
-    def new
+
+  
+  def new
         @system = System.new
         @types = SystemsType.all
     end

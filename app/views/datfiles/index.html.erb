@@ -1,0 +1,26 @@
+<h2>Listing dat files</h2>
+<table>
+ <tr>
+   <th colspan="2">Name</th>
+   <th colspan="2">Description</th>
+   <th colspan="3"></th>
+ </tr>
+
+ <% @datfile.each do |datfile| %>
+   <tr>
+     <td><%= datfile.name %></td>
+     <td>&nbsp;</td>
+     <td><%= datfile.desc %></td>
+     <td>&nbsp;</td>
+     <td><%= link_to 'Show', datfile_path(datfile) %> |&nbsp;</td>
+     <td><%= link_to 'Edit', edit_datfile_path(datfile) %> |&nbsp;</td>
+     <td><%= link_to 'Destroy', datfile_path(datfile),
+      method: :delete,
+      data: { confirm: 'Are you sure?' } %></td>
+   </tr>
+ <% end %>
+ 
+</table>
+<p>&nbsp</p>
+<p><%= link_to 'New dat file', new_datfile_path, class: 'btn btn-primary' %></p>
+<%= render '/welcome/bottom' %>
