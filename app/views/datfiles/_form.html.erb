@@ -19,8 +19,9 @@
         <div class="form-group">
         <p>  
         <% form.label :collection_type_id, class: 'form-label' %>
-<%= form.collection_select(:collection_type_id, @collection_type.order(:id), 'id', 'name',  {:include_blank => "Select a collection"}, {:class=>'form-control'}) %>
-</p>
+<%= form.collection_select(:collection_type_id, @collection_type.order(:name), 'id', 'name',  {:include_blank => "Select a collection"}, {:class=>'form-control'}) %>
+<p><%= @collection_type.all%></p>
+
 <p>
   <%= form.label :name %><br>
   <%= form.text_field :name, class: 'form-control' %>
