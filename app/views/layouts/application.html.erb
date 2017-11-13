@@ -20,6 +20,8 @@
 <body>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
   <%= render '/layouts/header' %>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
   <%= yield %>
   <%= render '/layouts/footer' %>
 </body>

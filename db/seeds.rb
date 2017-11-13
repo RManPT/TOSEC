@@ -8,6 +8,6 @@
 10.times do |n|
     System.create(name: "Sistema #{n}")
 end
-Releasetypes.create(name: 'TOSEC-main', desc:"General purpose release")
-Releasetypes.create(name: 'TOSEC-ISO', desc:"DVD/CD releases")
-Releasetypes.create(name: 'TOSEC-PIX', desc:"Images release")
+ReleaseType.create(name: 'TOSEC-main', desc:"General purpose release")
+ReleaseType.create(name: 'TOSEC-ISO', desc:"DVD/CD releases")
+ReleaseType.create(name: 'TOSEC-PIX', desc:"Images release")
