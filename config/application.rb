@@ -15,18 +15,17 @@ module Vagrant
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
 
-ActionMailer::Base.smtp_settings = {
-
-    :address         => 'smtp.gmail.com',
-    :         => '',
-    :         => '',
-    :         => '',
-    :         => '',
-    :         => '',
-    :         => '',
-    :         => '',
-
-}
+    ActionMailer::Base.smtp_settings = {
+      
+              :address                     => 'smtp.gmail.com',
+              :domain                      => 'mail.google.com',
+              :port                        => 587,
+              :user_name                   => 'kirmitpt@gmail.com',
+              :password                    => '19921123',
+              :authentication              => 'login',
+              :enable_starttls_auto        => true
+          }
 
   end
 end
+

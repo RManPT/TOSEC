@@ -1,0 +1,17 @@
+
+<h2>Collection types</h2>
+<p>
+    <strong>Name:</strong>
+    <%= @collection_type.name %>
+  </p>
+   
+  <p>
+    <strong>Description:</strong>
+    <%= @collection_type.desc %>
+  </p>
+  <%= link_to 'Edit', edit_collection_type_path(@collection_type) %> | 
+  <%= link_to 'Destroy', collection_type_path(@collection_type),
+  method: :delete,
+  data: { confirm: 'Are you sure?' } %></td>
+   | <%= link_to 'Back', collection_types_path %>
+  <%= render '/welcome/bottom' %>
