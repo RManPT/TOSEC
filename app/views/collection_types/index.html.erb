@@ -1,0 +1,26 @@
+<h2>Listing collection types</h2>
+<table>
+ <tr>
+   <th colspan="2">Name</th>
+   <th colspan="2">Description</th>
+   <th colspan="3"></th>
+ </tr>
+
+ <% @collection_type.each do |collection_type| %>
+   <tr>
+     <td><%= collection_type.name %></td>
+     <td>&nbsp;</td>
+     <td><%= collection_type.desc %></td>
+     <td>&nbsp;</td>
+     <td><%= link_to 'Show', collection_type_path(collection_type) %> |&nbsp;</td>
+     <td><%= link_to 'Edit', edit_collection_type_path(collection_type) %> |&nbsp;</td>
+     <td><%= link_to 'Destroy', collection_type_path(collection_type),
+      method: :delete,
+      data: { confirm: 'Are you sure?' } %></td>
+   </tr>
+ <% end %>
+ 
+</table>
+<p>&nbsp</p>
+<p><%= link_to 'New collection type', new_collection_type_path, class: 'btn btn-primary' %></p>
+<%= render '/welcome/bottom' %>
