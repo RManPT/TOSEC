@@ -12,33 +12,16 @@
 //
 //= require rails-ujs
 //= require turbolinks
-//= require_tree .
 
 //= require jquery
+//= require jquery_ujs
 //= require bootstrap-sprockets
 
 //= require moment
 //= require bootstrap-datetimepicker
+//= require common_scripts
 
-//start - Back top top jquery
-$(document).ready(function(){
-    $(window).scroll(function () {
-           if ($(this).scrollTop() > 50) {
-               $('#back-to-top').fadeIn();
-           } else {
-               $('#back-to-top').fadeOut();
-           }
-       });
-       // scroll body to 0px on click
-       $('#back-to-top').click(function () {
-           $('#back-to-top').tooltip('hide');
-           $('body,html').animate({
-               scrollTop: 0
-           }, 800);
-           return false;
-       });
-       
-       $('#back-to-top').tooltip('show');
 
-});
-//end - Back top top jquery
+
+
+

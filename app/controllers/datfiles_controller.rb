@@ -17,6 +17,7 @@ class DatfilesController < ApplicationController
     end
 
     def create
+        /raise params.inspect/
         @datfile = Datfile.new(datfile_params)
         
         if @datfile.save
