@@ -44,8 +44,8 @@
         </div>
         <div class="col-md-6">
             <div class="form-group">
-                    <%= f.label :typeSys , "System Type:", for:'systemType'  %> 
-                    <%= f.collection_select :typeSys, @types , :id, :name,  {}, {:class=>'form-control'} %>
+                    <%= f.label :typeSys_id , "System Type:", for:'systemType'  %> 
+                    <%= f.collection_select :typeSys_id, SystemsType.all , :id, :name,  {}, {:class=>'form-control'} %>
             </div>
         </div>
     </div>

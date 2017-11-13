@@ -1,2 +1,3 @@
 class SystemsType < ApplicationRecord
+    
 end

@@ -44,10 +44,10 @@
                                                             <%= s.company %>
                                                         </p>
                                                         <% end %>
-                                                            <% if s.typeSys? %>
+                                                            <% if s.typeSys_id? %>
                                                                 <p>
                                                                     <strong>Type: </strong>
-                                                                    <%= SystemsType.find(s.typeSys).name  %> 
+                                                                    <%= SystemsType.find(s.typeSys_id).name  %> 
                                                                 </p>
                                                                 <% end %>
 
