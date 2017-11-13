@@ -6,8 +6,12 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 10.times do |n|
-    System.create([{ name: "Sistema #{n}" ,abbreviation:"S#{n}", dateRelease:"1993-#{n+1}-#{n+1}"}])
-end
+    System.create([{ name: "PlayStation #{n}" ,abbreviation:"PS#{n}", dateRelease:"1993-#{n+1}-#{n+1}"}]) 
+end 
+10.times do |n| 
+    SystemsType.create([{ name: "Consola #{n}"}]) 
+end 
+
 CollectionType.create(name: 'TOSEC-PIX', desc:"Images files")
 CollectionType.create(name: 'TOSEC-ISO', desc:"DVD/CD files")
 CollectionType.create(name: 'TOSEC-main', desc:"General purpose files")

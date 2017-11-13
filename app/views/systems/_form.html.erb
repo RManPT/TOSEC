@@ -44,14 +44,8 @@
         </div>
         <div class="col-md-6">
             <div class="form-group">
-
-                <%= f.label :typeSys, "System Type:", for:'typeSys' %>
-                    <%= f.text_field :typeSys, list: 'systemType', class: 'form-control' %>
-                        <datalist id="systemType">
-                            <% @types.each do |s| %>
-                                <option data-value="<%= s.id %>" value="<%= s.name %>" ></option>
-                                <% end %>
-                        </datalist>
+                    <%= f.label :typeSys , "System Type:", for:'systemType'  %> 
+                    <%= f.collection_select :typeSys, @types , :id, :name,  {}, {:class=>'form-control'} %>
             </div>
         </div>
     </div>
