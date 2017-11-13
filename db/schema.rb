@@ -36,8 +36,8 @@ ActiveRecord::Schema.define(version: 20171113190208) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.date "dateRelease"
-    t.integer "typeSys_id"
-    t.index ["typeSys_id"], name: "index_systems_on_typeSys_id"
+    t.integer "systemsType_id"
+    t.index ["systemsType_id"], name: "index_systems_on_systemsType_id"
   end
 
   create_table "systems_types", force: :cascade do |t|

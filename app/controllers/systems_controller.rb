@@ -1,13 +1,14 @@
 class SystemsController < ApplicationController
     def new
         @system = System.new
-        @types = SystemsType.all
+        @types = SystemsType.all.map{|u| [ u.name, u.id ] }
     end
     def index
         @systems = System.all
       end
     def show
         @system = System.find(params[:id])
+        
         @types = SystemsType.all
     rescue ActiveRecord::RecordNotFound
         redirect_to(systems_path, :notice => 'Record not found')
@@ -24,7 +25,7 @@ class SystemsController < ApplicationController
     end
     def edit
         @system = System.find(params[:id])
-        @types = SystemsType.all
+        @types = SystemsType.all.map{|u| [ u.name, u.id ] }
         rescue ActiveRecord::RecordNotFound
             redirect_to(systems_path, :notice => 'Record not found')
       end

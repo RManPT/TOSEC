@@ -44,8 +44,8 @@
         </div>
         <div class="col-md-6">
             <div class="form-group">
-                    <%= f.label :typeSys_id , "System Type:", for:'systemType'  %> 
-                    <%= f.collection_select :typeSys_id, SystemsType.all , :id, :name,  {}, {:class=>'form-control'} %>
+                <%= f.label :systemsType_id , "System Type:", for:'systemType'  %>
+                <%= f.collection_select :systemsType_id, SystemsType.all , :id, :name,  {}, {:class=>'form-control'} %>
             </div>
         </div>
     </div>
@@ -61,23 +61,20 @@
                     </div>
             </div>
         </div>
-        <script type="text/javascript">
-            var d = new Date();
-            var n = d.getDate();
-            var m = d.getMonth() + 1;
-            var y = d.getFullYear();
-            $(function () {
-                $('#datetimepicker1').datetimepicker({
-                    format: 'YYYY-MM-DD',
-                    maxDate: new Date(y + "-" + m + "-" + n),
-                    ignoreReadonly: true
-                });
-            });
-                
-        </script>
-        
     </div>
-
+    <script type="text/javascript">
+        var d = new Date();
+        var n = d.getDate();
+        var m = d.getMonth() + 1;
+        var y = d.getFullYear();
+        $(function () {
+            $('#datetimepicker1').datetimepicker({
+                format: 'YYYY-MM-DD',
+                maxDate: new Date(y + "-" + m + "-" + n),
+                ignoreReadonly: true
+            });
+        }); 
+    </script>
     <div class="row">
         <div class="col-md-4">
             <%= f.submit "Save", id:'submit', class:'btn btn-success' %>

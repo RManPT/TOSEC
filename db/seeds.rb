@@ -9,7 +9,7 @@
     SystemsType.create([{ name: "Consola #{n}"}]) 
 end 
 10.times do |n|
-    System.create([{ name: "PlayStation #{n}" ,abbreviation:"PS#{n}", dateRelease:"1993-#{n+1}-#{n+1}", typeSys_id:"#{n+1}"}]) 
+    System.create([{ name: "PlayStation #{n}" ,abbreviation:"PS#{n}",company:"Teste122" ,dateRelease:"1993-#{n+1}-#{n+1}", systemsType_id:"1"}]) 
 end 
 
 
