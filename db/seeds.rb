@@ -16,3 +16,6 @@ end
 CollectionType.create(name: 'TOSEC-PIX', desc:"Images files")
 CollectionType.create(name: 'TOSEC-ISO', desc:"DVD/CD files")
 CollectionType.create(name: 'TOSEC-main', desc:"General purpose files")
+10.times do |n|
+    Datfile.create([{ name: "dat #{n}" , readme: "dat #{n}", date:"1993-#{n+1}-#{n+1}"}])
+end

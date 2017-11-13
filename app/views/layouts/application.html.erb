@@ -12,7 +12,10 @@
           <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-      <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <!-- verifico, com a ajuda de um helper que criei, se existe um asset com o nome do controler invocado para o carregar -->
+    
+
 </head>
 
 <body>
@@ -22,7 +25,7 @@
         <div class="panel-body">
 
           <%= yield %>
-
+          <a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top" role="button" title="Click to return on the top page" data-toggle="tooltip" data-placement="left"><span class="glyphicon glyphicon-chevron-up"></span></a>
         </div>
       </div>
       <%= render '/layouts/footer' %>
