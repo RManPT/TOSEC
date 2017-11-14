@@ -39,10 +39,12 @@
                     </p>
                 </li>
                 <li>
+                    <% if @system.systemsType_id? %>
                     <p>
                         <strong>Type:</strong>
-                        <%= @system.typeSys %>
+                        <%= SystemsType.find(@system.systemsType_id).name %> 
                     </p>
+                    <% end %>
                 </li>
                 <li>
                     <p>
