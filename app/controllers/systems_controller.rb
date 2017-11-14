@@ -48,6 +48,6 @@ class SystemsController < ApplicationController
    
   private
     def system_params
-      params.require(:system).permit(:name, :abbreviation, :company, :typeSys, :dateRelease)
+      params.require(:system).permit(:name, :abbreviation, :company, :systemsType_id, :dateRelease)
     end
 end
