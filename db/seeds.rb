@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 10.times do |n| 
-    SystemsType.create([{ name: "Consola #{n}"}]) 
+    SystemsType.create([{ name: [*('A'..'Z')].sample(8).join}]) 
 end 
 
 require 'nokogiri'
@@ -15,7 +15,7 @@ xml_file = File.read("app/assets/TOSEC Systems XML.xml")
 doc = Nokogiri::XML.parse(xml_file)
 doc.xpath("/companies/company").each do |company|
     company.xpath("systems/system/name").each do | system |
-        System.create([{ name: "#{system.text}" ,abbreviation:('a'..'z').to_a.sample(rand(3)+2).join.upcase,company:"Teste122" ,dateRelease:"1993-02-01", systemsType_id:"1"}]) 
+        System.create([{ name: "#{system.text}" ,abbreviation:('a'..'z').to_a.sample(rand(3)+2).join.upcase,company:[*('A'..'Z')].sample(8).join ,dateRelease:rand(Date.civil(1980, 1, 1)..Date.civil(2017, 12, 31)), systemsType_id:rand(1...10)}]) 
     end
  end
 CollectionType.create(name: 'TOSEC-PIX', desc:"Images files")
