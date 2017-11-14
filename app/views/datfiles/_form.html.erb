@@ -1,6 +1,5 @@
 <div class="form-group">
   <%= form_with model: @datfile, local: true do |form| %>
-
     <% if @datfile.errors.any? %>
       <div id="error_explanation class=" form-group "">
         <h2>
@@ -14,25 +13,28 @@
             <% end %>
         </ul>
       </div>
-      <% end %>
-
-        <div class="form-group">
-        <p>  
-        <% form.label :collection_type_id, class: 'form-label' %>
-<%= form.collection_select(:collection_type_id, @collection_type.order(:name), 'id', 'name',  {:include_blank => "Select a collection"}, {:class=>'form-control'}) %>
-<p><%= @collection_type.all%></p>
-
-<p>
-  <%= form.label :name %><br>
-  <%= form.text_field :name, class: 'form-control' %>
-</p>
-
-<p>
-  <%= form.label :readme%><br>
-  <%= form.text_area :readme, class: 'form-control' %>
-
-  <%= form.submit 'Save DAT', :class => 'btn btn-success'%>
-</p>
-<% end %>
-</div>
+    <% end %>
+      <div class="form-group">
+        <p>
+          <% form.label :collection, class: 'form-label' %>
+          <br>
+          <%= form.collection_select(:collection_type_id, @collection_type, 'id', 'name',  {:include_blank => "Select a collection"}, {:class=>'form-control'}) %>
+          <!-- <%= params.inspect %>-->
+        </p>
+        <p>
+          <%= form.label :name %>
+          <br>
+          <%= form.text_field :name, class: 'form-control' %>
+        </p>
+        <p>
+          <%= form.label :readme %>
+          <br>
+          <%= form.text_area :readme, class: 'form-control' %>
+        </p>
+          <p class="text-right">
+          <%= link_to 'Cancel', datfiles_path, class: 'btn btn-default' %>
+          <%= form.submit 'Save', :class => 'btn btn-success'%>
+        </p>
+      </div>
+  <% end %>
 </div>

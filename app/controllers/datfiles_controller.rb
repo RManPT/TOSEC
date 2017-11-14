@@ -29,7 +29,6 @@ class DatfilesController < ApplicationController
 
     def update
         @datfile = Datfile.find(params[:id])
-       
         if @datfile.update(datfile_params)
           redirect_to @datfile
         else
@@ -40,15 +39,15 @@ class DatfilesController < ApplicationController
     def destroy
         @datfile = Datfile.find(params[:id])
         @datfile.destroy    
-        redirect_to datfile_path
+        redirect_to datfiles_path
     end
     
     private
     def datfile_params
-      params.require(:datfile).permit(:name, :desc)
+      params.require(:datfile).permit(:name, :readme, :collection_type_id)
     end
 
     def prepare_collections
         @collection_type=CollectionType.all
-      end
+    end
 end

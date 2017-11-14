@@ -14,9 +14,9 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <!-- verifico, com a ajuda de um helper que criei, se existe um asset com o nome do controler invocado para o carregar -->
+    <%=  javascript_include_tag "#{@controller}.js" if asset_available?("#{@controller}.js")%>
     
-
-</head>
+    </head>
 
 <body>
   <div class="container">

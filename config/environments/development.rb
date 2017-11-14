@@ -53,6 +53,7 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
   # Don't fallback to assets pipeline if a precompiled asset is missed
+  # tem de estar em false senao nao carrega os assets personalizados
 config.assets.compile = false
 
 

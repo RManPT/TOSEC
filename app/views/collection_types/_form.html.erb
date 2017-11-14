@@ -26,8 +26,9 @@
   <%= form.text_area :desc, class: 'form-control' %>
 </p>
 
-<p>
-  <%= form.submit 'Save collection', :class => 'btn btn-success' %>
-</p>
+<p class="text-right">
+    <%= link_to 'Cancel', datfiles_path, class: 'btn btn-default' %>
+    <%= form.submit 'Save', :class => 'btn btn-success'%>
+  </p>
 <% end %>
 </div>
