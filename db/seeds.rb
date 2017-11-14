@@ -15,7 +15,7 @@ xml_file = File.read("app/assets/TOSEC Systems XML.xml")
 doc = Nokogiri::XML.parse(xml_file)
 doc.xpath("/companies/company").each do |company|
     company.xpath("systems/system/name").each do | system |
-        System.create([{ name: "#{system.text}" ,abbreviation:('a'..'z').to_a.sample(rand(3)+2).join.upcase,company: "#{company.xpath("name").text}",dateRelease:rand(Date.civil(1980, 1, 1)..Date.civil(2017, 12, 31)), systemsType_id:rand(1...10)}]) 
+        System.create([{ name: "#{system.text}" ,abbreviation:('a'..'z').to_a.sample(rand(3)+2).join.upcase,company: "#{company.xpath("name").text}",dateRelease:rand(35.years).seconds.ago, systemsType_id:rand(1...10)}]) 
     end
  end
 CollectionType.create(name: 'TOSEC-PIX', desc:"Images files")
