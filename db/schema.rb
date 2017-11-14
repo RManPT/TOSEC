@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171113190208) do
+ActiveRecord::Schema.define(version: 20171114030226) do
 
   create_table "collection_types", force: :cascade do |t|
     t.string "name"
@@ -21,12 +21,17 @@ ActiveRecord::Schema.define(version: 20171113190208) do
 
   create_table "datfiles", force: :cascade do |t|
     t.string "name"
-    t.date "date"
     t.text "readme"
     t.integer "collection_type_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["collection_type_id"], name: "index_datfiles_on_collection_type_id"
+  end
+
+  create_table "system_types", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "systems", force: :cascade do |t|
@@ -38,12 +43,6 @@ ActiveRecord::Schema.define(version: 20171113190208) do
     t.date "dateRelease"
     t.integer "systemsType_id"
     t.index ["systemsType_id"], name: "index_systems_on_systemsType_id"
-  end
-
-  create_table "systems_types", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "systems_types", force: :cascade do |t|

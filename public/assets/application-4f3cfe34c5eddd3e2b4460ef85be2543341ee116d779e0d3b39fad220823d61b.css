@@ -9291,3 +9291,14 @@ button.close {
 .form_datetime {
   background-color: yellow;
 }
+
+/* line 31, /vagrant/app/assets/stylesheets/application.scss */
+td.shrink {
+  width: 1px;
+  white-space: nowrap;
+}
+
+/* line 35, /vagrant/app/assets/stylesheets/application.scss */
+td.expand {
+  width: 99%;
+}

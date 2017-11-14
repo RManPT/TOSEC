@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
-    before_action :your_function
+    before_action :init
     
-    def your_function
+    def init
       @controller = controller_name
       @action = action_name
     end
