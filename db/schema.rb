@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171107192435) do
+ActiveRecord::Schema.define(version: 20171114030226) do
 
   create_table "collection_types", force: :cascade do |t|
     t.string "name"
@@ -21,7 +21,6 @@ ActiveRecord::Schema.define(version: 20171107192435) do
 
   create_table "datfiles", force: :cascade do |t|
     t.string "name"
-    t.date "date"
     t.text "readme"
     t.integer "collection_type_id"
     t.datetime "created_at", null: false

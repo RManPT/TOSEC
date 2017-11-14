@@ -26,3 +26,11 @@
 .form_datetime {
     background-color: yellow;
 }
+
+td.shrink {
+    width: 1px;
+    white-space:nowrap;
+}
+td.expand {
+    width: 99%;
+}

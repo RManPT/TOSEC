@@ -60,11 +60,9 @@
         <div class='col-sm-6'>
             <div class="form-group">
                 <%= f.label :dateRelease , "Release:", for:'Release' %>
-                    <div class='input-group form_datetime' id='1'>
-                        <%= f.text_field :dateRelease, class: 'form-control', readonly:'readonly' %>
-                            <span class="input-group-addon">
-                                <span class="glyphicon glyphicon-calendar"></span>
-                            </span>
+                    <div class='input-group form-datetime' id='teste'>
+                            <%= f.text_field :dateRelease, class: 'form-control' %>
+                            <span class="input-group-addon glyphicon glyphicon-calendar" ></span>
                     </div>
             </div>
         </div>       
