@@ -9,12 +9,12 @@
 */
 
 
-$(document).ready(function () {
+$ready(function () {
     var d = new Date();
     var n = d.getDate();
     var m = d.getMonth() + 1;
     var y = d.getFullYear();
-    $('.form_datetime').datetimepicker({
+    $('.form-datetime').datetimepicker({
         format: 'YYYY-MM-DD',
         maxDate: new Date(y + "-" + m + "-" + n),
         ignoreReadonly: true

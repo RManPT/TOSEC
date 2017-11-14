@@ -19,9 +19,7 @@
     </div>
     <hr>
     <div class="row">
-        <div class="col-md-3">
-        </div>
-        <div class="col-md-6">
+        <div class="col-md-12">
             <div class="row">
                 <div class="col-md-12">
                     <div class="panel-group" id="accordion">
@@ -30,12 +28,12 @@
                                 <div class="panel panel-default" id="myInfo">
                                     <div class="panel-heading">
                                         <h4 class="panel-title">
-                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse<%= s.name %>">
+                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse<%= s.id %>">
                                                 <%= s.name %>
                                             </a>
                                         </h4>
                                     </div>
-                                    <div id="collapse<%= s.name %>" class="panel-collapse collapse">
+                                    <div id="collapse<%= s.id  %>" class="panel-collapse collapse">
                                         <div class="panel-body">
                                             <div class="row">
                                                 <div class="col-md-6">
@@ -64,8 +62,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="col-md-3">
         </div>
     </div>
     <script>

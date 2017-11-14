@@ -38,10 +38,11 @@ ActiveRecord::Schema.define(version: 20171114030226) do
     t.string "name"
     t.string "abbreviation"
     t.string "company"
-    t.string "typeSys"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.date "dateRelease"
+    t.integer "systemsType_id"
+    t.index ["systemsType_id"], name: "index_systems_on_systemsType_id"
   end
 
   create_table "systems_types", force: :cascade do |t|

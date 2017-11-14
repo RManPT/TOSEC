@@ -55,6 +55,6 @@ Rails.application.configure do
   # Don't fallback to assets pipeline if a precompiled asset is missed
   # tem de estar em false senao nao carrega os assets personalizados
 config.assets.compile = false
-config.assets.enabled = true
+
 
 end
