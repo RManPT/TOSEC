@@ -9,6 +9,7 @@ class SystemsController < ApplicationController
         @systems = System.all
       end
     def show
+        @company = Company.all
         @system = System.find(params[:id])
         
         @types = SystemsType.all
