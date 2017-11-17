@@ -10,22 +10,39 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171117190205) do
+ActiveRecord::Schema.define(version: 20171117191958) do
 
-  create_table "release_types", force: :cascade do |t|
+  create_table "admins", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer "sign_in_count", default: 0, null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string "current_sign_in_ip"
+    t.string "last_sign_in_ip"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_admins_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
+  end
+
+  create_table "collection_types", force: :cascade do |t|
     t.string "name"
     t.text "desc"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "releases", force: :cascade do |t|
+  create_table "datfiles", force: :cascade do |t|
     t.string "name"
     t.text "readme"
-    t.integer "release_type_id"
+    t.integer "collection_type_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["release_type_id"], name: "index_releases_on_release_type_id"
+    t.index ["collection_type_id"], name: "index_datfiles_on_collection_type_id"
   end
 
   create_table "systems", force: :cascade do |t|
@@ -37,6 +54,12 @@ ActiveRecord::Schema.define(version: 20171117190205) do
     t.date "dateRelease"
     t.integer "systemsType_id"
     t.index ["systemsType_id"], name: "index_systems_on_systemsType_id"
+  end
+
+  create_table "systems_types", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -52,7 +75,6 @@ ActiveRecord::Schema.define(version: 20171117190205) do
     t.string "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "admin"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
