@@ -35,14 +35,14 @@
                 <li>
                     <p>
                         <strong>Company:</strong>
-                        <%= Company.find(@system.company_id).title %>
+                        <%= @system.company.title %>
                     </p>
                 </li>
                 <li>
                     <% if @system.systemsType_id? %>
                     <p>
                         <strong>Type:</strong>
-                        <%= SystemsType.find(@system.systemsType_id).name %> 
+                        <%= @system.systemsType.name %> 
                     </p>
                     <% end %>
                 </li>
