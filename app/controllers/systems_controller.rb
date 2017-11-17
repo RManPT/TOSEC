@@ -6,6 +6,7 @@ class SystemsController < ApplicationController
         @systems = System.all
       end
     def show
+        @company = Company.all
         @system = System.find(params[:id])
     rescue ActiveRecord::RecordNotFound
         redirect_to(systems_path, :notice => 'Record not found')

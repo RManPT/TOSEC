@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :systems
   
   
-  
+  resources :companies
   
   
   

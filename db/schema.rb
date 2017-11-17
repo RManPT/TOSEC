@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171106174445) do
+ActiveRecord::Schema.define(version: 20171113193352) do
+
+  create_table "companies", force: :cascade do |t|
+    t.string "title"
+    t.text "text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "system_id"
+    t.index ["system_id"], name: "index_companies_on_system_id"
+  end
 
   create_table "release_types", force: :cascade do |t|
     t.string "name"
@@ -36,6 +45,8 @@ ActiveRecord::Schema.define(version: 20171106174445) do
     t.string "typeSys"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "company_id"
+    t.index ["company_id"], name: "index_systems_on_company_id"
   end
 
 end
