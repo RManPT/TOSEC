@@ -10,13 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171117200315) do
+ActiveRecord::Schema.define(version: 20171117195853) do
 
   create_table "collection_types", force: :cascade do |t|
     t.string "name"
     t.text "desc"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "companies", force: :cascade do |t|
+    t.string "title"
+    t.text "text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "system_id"
+    t.index ["system_id"], name: "index_companies_on_system_id"
   end
 
   create_table "datfiles", force: :cascade do |t|
@@ -35,8 +44,8 @@ ActiveRecord::Schema.define(version: 20171117200315) do
     t.datetime "updated_at", null: false
     t.date "dateRelease"
     t.integer "systemsType_id"
-    t.integer "companies_id"
-    t.index ["companies_id"], name: "index_systems_on_companies_id"
+    t.integer "company_id"
+    t.index ["company_id"], name: "index_systems_on_company_id"
     t.index ["systemsType_id"], name: "index_systems_on_systemsType_id"
   end
 
