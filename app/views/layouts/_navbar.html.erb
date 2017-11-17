@@ -80,9 +80,18 @@
               <span class="glyphicon glyphicon-cog"></span>
             </a>
             <ul class="dropdown-menu">
-              <li>
-                <a href="#">Login</a>
-              </li>
+              <% if user_signed_in? %>
+                <li>
+                    <%= link_to('Logout', destroy_user_session_path, method: :delete) %>        
+                </li>
+              <% else %>
+                <li>
+                    <%= link_to('Login', new_user_session_path)  %>    
+                </li>
+                <li>
+                    <%= link_to('Register new user', new_user_registration_path)  %>  
+                </li>
+              <% end %>
             </ul>
           </li>
         </ul>
