@@ -1,32 +1,25 @@
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-12">
-            <h1>Listing Systems</h1>
-            <hr>
-            <br>
+        <div class="col-md-3">
+            <h2>Listing Systems</h2>
+        </div>
+        <div class="col-md-3">
+            <%= render 'navbarSystems' %>
+        </div>
+        <div class="col-md-3">
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <i class="glyphicon glyphicon-search"></i>
+                </span>
+                <input class="form-control" id="myInput" type="text" placeholder="Search...">
+            </div>
+        </div>
+        <div class="col-md-3">
         </div>
     </div>
+    <hr>
     <div class="row">
-        <div class="col-md-3">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="input-group">
-                        <span class="input-group-addon">
-                            <i class="glyphicon glyphicon-search"></i>
-                        </span>
-                        <input class="form-control" id="myInput" type="text" placeholder="Search...">
-                    </div>
-                    <br>
-                    <br>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <%= link_to 'New System', new_system_path, class: 'btn btn-primary col-md-12' %>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-9">
+        <div class="col-md-12">
             <div class="row">
                 <div class="col-md-12">
                     <div class="panel-group" id="accordion">
@@ -35,13 +28,13 @@
                                 <div class="panel panel-default" id="myInfo">
                                     <div class="panel-heading">
                                         <h4 class="panel-title">
-                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse<%= s.abbreviation %>">
+                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse<%= s.id %>"> 
                                                 <%= s.abbreviation %> -
                                                     <%= s.name %>
                                             </a>
                                         </h4>
                                     </div>
-                                    <div id="collapse<%= s.abbreviation %>" class="panel-collapse collapse">
+                                    <div id="collapse<%= s.id  %>" class="panel-collapse collapse"> 
                                         <div class="panel-body">
                                             <div class="row">
                                                 <div class="col-md-6">
@@ -51,12 +44,18 @@
                                                             <%= s.company %>
                                                         </p>
                                                         <% end %>
-                                                            <% if s.typeSys? %>
+                                                            <% if s.systemsType_id? %>
                                                                 <p>
                                                                     <strong>Type: </strong>
-                                                                    <%= s.typeSys %>
+                                                                    <%= SystemsType.find(s.systemsType_id).name  %> 
                                                                 </p>
                                                                 <% end %>
+
+                                                                    <p>
+                                                                        <strong>Release: </strong>
+                                                                        <%= s.dateRelease %>
+                                                                    </p>
+
                                                 </div>
                                                 <div class="col-md-6">
                                                     <p>

@@ -5,9 +5,22 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+10.times do |n| 
+    SystemsType.create([{ name: [*('A'..'Z')].sample(8).join}]) 
+end 
+
+require 'nokogiri'
+
+xml_file = File.read("app/assets/TOSEC Systems XML.xml")
+doc = Nokogiri::XML.parse(xml_file)
+doc.xpath("/companies/company").each do |company|
+    company.xpath("systems/system/name").each do | system |
+        System.create([{ name: "#{system.text}" ,abbreviation:('a'..'z').to_a.sample(rand(3)+2).join.upcase,company: "#{company.xpath("name").text}",dateRelease:rand(35.years).seconds.ago, systemsType_id:rand(1...10)}]) 
+    end
+ end
+CollectionType.create(name: 'TOSEC-PIX', desc:"Images files")
+CollectionType.create(name: 'TOSEC-ISO', desc:"DVD/CD files")
+CollectionType.create(name: 'TOSEC-main', desc:"General purpose files")
 10.times do |n|
-    System.create(name: "Sistema #{n}")
+    Datfile.create([{ name: "dat #{n}" , readme: "dat #{n}", collection_type_id: "1"}])
 end
-ReleaseType.create(name: 'TOSEC-main', desc:"General purpose release")
-ReleaseType.create(name: 'TOSEC-ISO', desc:"DVD/CD releases")
-ReleaseType.create(name: 'TOSEC-PIX', desc:"Images release")

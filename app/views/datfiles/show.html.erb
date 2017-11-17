@@ -1,0 +1,23 @@
+
+<h2>DAT File</h2>
+<p>
+    <strong>Name:</strong>
+    <%= @datfile.name %>
+  </p>
+  <p>
+    <strong>Collection:</strong>
+    <%= @collection_type.find(@datfile.collection_type_id).name %>
+  </p>
+  <p>
+    <strong>Description:</strong>
+    <%= @datfile.readme %>
+  </p>
+  <p>
+      <strong>Uploaded on:</strong>
+      <%= @datfile.created_at %>
+    </p>
+  <%= link_to 'Edit', edit_datfile_path(@datfile) %> | 
+  <%= link_to 'Destroy', datfile_path(@datfile),
+  method: :delete,
+  data: { confirm: 'Are you sure?' } %></td>
+  <%= render '/welcome/bottom' %>

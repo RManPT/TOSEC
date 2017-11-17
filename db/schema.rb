@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171113193352) do
+ActiveRecord::Schema.define(version: 20171113192721) do
 
   create_table "companies", force: :cascade do |t|
     t.string "title"
@@ -42,11 +42,17 @@ ActiveRecord::Schema.define(version: 20171113193352) do
     t.string "name"
     t.string "abbreviation"
     t.string "company"
-    t.string "typeSys"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "company_id"
-    t.index ["company_id"], name: "index_systems_on_company_id"
+    t.date "dateRelease"
+    t.integer "systemsType_id"
+    t.index ["systemsType_id"], name: "index_systems_on_systemsType_id"
+  end
+
+  create_table "systems_types", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

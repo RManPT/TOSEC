@@ -1,0 +1,34 @@
+
+<%= form_with model: @collection_type, local: true do |form| %>
+
+<% if @collection_type.errors.any? %>
+<div id="error_explanation" class="form-group">
+  <h2>
+    <%= pluralize(@collection_type.errors.count, "error") %> prohibited
+    this article from being saved:
+  </h2>
+  <ul>
+    <% @collection_type.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+<div class="form-group">
+<p>
+  <%= form.label :name %><br>
+  <%= form.text_field :name, class: 'form-control' %>
+</p>
+
+<p>
+  <%= form.label :description %><br>
+  <%= form.text_area :desc, class: 'form-control' %>
+</p>
+
+<p class="text-right">
+    <%= link_to 'Cancel', datfiles_path, class: 'btn btn-default' %>
+    <%= form.submit 'Save', :class => 'btn btn-success'%>
+  </p>
+<% end %>
+</div>

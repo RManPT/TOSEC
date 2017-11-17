@@ -1,3 +1,8 @@
 class ApplicationController < ActionController::Base
-  protect_from_forgery with: :exception
-end
+    before_action :init
+    
+    def init
+      @controller = controller_name
+      @action = action_name
+    end
+end 

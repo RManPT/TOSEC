@@ -1,4 +1,18 @@
-<%= form_with scope: :system, url: systems_path ,local: true do |f| %>
+<script type="text/javascript">
+    var d = new Date();
+    var n = d.getDate();
+    var m = d.getMonth() + 1;
+    var y = d.getFullYear();
+    $(function () {
+        $('#datetimepicker1').datetimepicker({
+            format: 'YYYY-MM-DD',
+            maxDate: new Date(y + "-" + m + "-" + n),
+            ignoreReadonly: true
+        });
+    });
+</script>
+
+<%= form_with model: @system, local: true do |f| %>
     <div class="row">
         <div class="col-md-12">
             <% if @system.errors.any? %>
@@ -11,10 +25,10 @@
                             <li>
                                 <%= msg %>
                             </li>
-                        <% end %>
+                            <% end %>
                     </ul>
                 </div>
-            <% end %>
+                <% end %>
         </div>
     </div>
     <div class="row">
@@ -44,22 +58,47 @@
         </div>
         <div class="col-md-6">
             <div class="form-group">
-
-                <%= f.label :typeSys, "System Type:", for:'typeSys' %>
-                    <%= f.text_field :typeSys, list: 'systemType', class: 'form-control' %>
-                        <datalist id="systemType">
-                            <option data-value=1 value="PC"></option>
-                            <option data-value=2 value="Console"></option>
-                        </datalist>
+                <%= f.label :systemsType_id , "System Type:", for:'systemType'  %>
+                <%= f.collection_select :systemsType_id, SystemsType.all , :id, :name,  {}, {:class=>'form-control'} %>
             </div>
         </div>
     </div>
     <div class="row">
-        <div class="col-md-4">
-            <%= f.submit "Save", class:'btn btn-success' %>
+        <div class='col-sm-6'>
+            <div class="form-group">
+                <%= f.label :dateRelease , "Release:", for:'Release' %>
+                    <div class='input-group form-datetime' id='teste'>
+                            <%= f.text_field :dateRelease, class: 'form-control' %>
+                            <span class="input-group-addon glyphicon glyphicon-calendar" ></span>
+                    </div>
+            </div>
         </div>
-        <div class="col-md-4">
-            <%= link_to 'Back to list', systems_path, class:'btn btn-danger' %>
-        </div>
+<<<<<<<
     </div>
-<% end %>
+    <script type="text/javascript">
+        var d = new Date();
+        var n = d.getDate();
+        var m = d.getMonth() + 1;
+        var y = d.getFullYear();
+        $(function () {
+            $('#datetimepicker1').datetimepicker({
+                format: 'YYYY-MM-DD',
+                maxDate: new Date(y + "-" + m + "-" + n),
+                ignoreReadonly: true
+            });
+        }); 
+    </script>
+    <div class="row">
+        <div class="col-md-4">
+            <%= f.submit "Save", id:'submit', class:'btn btn-success' %>
+=======
+        <div class="row">
+            <div class="col-md-4">
+                <%= f.submit "Save", id:'submit', class:'btn btn-success' %>
+            </div>
+            <div class="col-md-4">
+                <%= link_to 'Back to list', systems_path, class:'btn btn-danger' %>
+            </div>
+>>>>>>>
+        </div>
+        <% end %>

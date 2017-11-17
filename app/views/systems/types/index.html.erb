@@ -1,0 +1,76 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3">
+            <h2>Listing Systems Type</h2>
+        </div>
+        <div class="col-md-3">
+            <%= render 'navbarSType' %>
+        </div>
+        <div class="col-md-3">
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <i class="glyphicon glyphicon-search"></i>
+                </span>
+                <input class="form-control" id="myInput" type="text" placeholder="Search...">
+            </div>
+        </div>
+        <div class="col-md-3">
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel-group" id="accordion">
+                        <% @types.each do |s| %>
+                            <div id="info">
+                                <div class="panel panel-default" id="myInfo">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse<%= s.id %>">
+                                                <%= s.name %>
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapse<%= s.id  %>" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <p>
+                                                        <%= link_to 'Show', systems_type_path(s) %>
+                                                    </p>
+                                                    <p>
+                                                        <%= link_to 'Edit', edit_systems_type_path(s) %>
+                                                    </p>
+                                                    <p>
+                                                        <%= link_to 'Destroy', systems_type_path(s),
+                                                        method: :delete,
+                                                        data: { confirm: 'Are you sure?' } %>
+                                                    </p>
+                                                </div>
+                                                <div class="col-md-6">
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                            </div>
+                            <% end %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $("#myInput").on("keyup", function () {
+                var value = $(this).val().toLowerCase();
+                $("#info #myInfo").filter(function () {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
+    </script>
