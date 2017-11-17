@@ -35,7 +35,7 @@
                 <li>
                     <p>
                         <strong>Company:</strong>
-                        <%= @system.company %>
+                        <%= Company.find(@system.company_id).title %>
                     </p>
                 </li>
                 <li>

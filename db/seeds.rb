@@ -10,12 +10,12 @@
 end 
 
 require 'nokogiri'
-
 xml_file = File.read("app/assets/TOSEC Systems XML.xml")
 doc = Nokogiri::XML.parse(xml_file)
 doc.xpath("/companies/company").each do |company|
+    i = Company.create({title:"#{company.xpath("name").text}", text:('A'..'Z').to_a.sample(8).join})
     company.xpath("systems/system/name").each do | system |
-        System.create([{ name: "#{system.text}" ,abbreviation:('a'..'z').to_a.sample(rand(3)+2).join.upcase,dateRelease:rand(35.years).seconds.ago, systemsType_id:rand(1...10)}]) 
+        System.create({ name: "#{system.text}" ,abbreviation:('a'..'z').to_a.sample(rand(3)+2).join.upcase,dateRelease:rand(35.years).seconds.ago, systemsType_id:rand(1...10), company_id:i.id}) 
     end
  end
 CollectionType.create(name: 'TOSEC-PIX', desc:"Images files")

@@ -10,29 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20171117195853) do
-=======
-ActiveRecord::Schema.define(version: 20171113192721) do
->>>>>>> CompanySystem
 
-  create_table "companies", force: :cascade do |t|
-    t.string "title"
-    t.text "text"
+  create_table "collection_types", force: :cascade do |t|
+    t.string "name"
+    t.text "desc"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "system_id"
-    t.index ["system_id"], name: "index_companies_on_system_id"
   end
 
-<<<<<<< HEAD
   create_table "companies", force: :cascade do |t|
     t.string "title"
     t.text "text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "system_id"
-    t.index ["system_id"], name: "index_companies_on_system_id"
   end
 
   create_table "datfiles", force: :cascade do |t|
@@ -42,23 +33,6 @@ ActiveRecord::Schema.define(version: 20171113192721) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["collection_type_id"], name: "index_datfiles_on_collection_type_id"
-=======
-  create_table "release_types", force: :cascade do |t|
-    t.string "name"
-    t.text "desc"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "releases", force: :cascade do |t|
-    t.string "name"
-    t.date "date"
-    t.text "readme"
-    t.integer "release_type_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["release_type_id"], name: "index_releases_on_release_type_id"
->>>>>>> CompanySystem
   end
 
   create_table "systems", force: :cascade do |t|

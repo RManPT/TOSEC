@@ -38,10 +38,10 @@
                                         <div class="panel-body">
                                             <div class="row">
                                                 <div class="col-md-6">
-                                                    <% if s.company? %>
+                                                    <% if s.company_id? %>
                                                         <p>
                                                             <strong>Company: </strong>
-                                                            <%= s.company %>
+                                                            <%= Company.find(s.company_id).title %>
                                                         </p>
                                                         <% end %>
                                                             <% if s.systemsType_id? %>
