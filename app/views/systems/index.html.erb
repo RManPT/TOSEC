@@ -38,16 +38,16 @@
                                         <div class="panel-body">
                                             <div class="row">
                                                 <div class="col-md-6">
-                                                    <% if s.company? %>
+                                                    <% if s.company_id? %>
                                                         <p>
                                                             <strong>Company: </strong>
-                                                            <%= s.company %>
+                                                            <%= s.company.title %>
                                                         </p>
                                                         <% end %>
                                                             <% if s.systemsType_id? %>
                                                                 <p>
                                                                     <strong>Type: </strong>
-                                                                    <%= SystemsType.find(s.systemsType_id).name  %> 
+                                                                    <%= s.systemsType.name  %> 
                                                                 </p>
                                                                 <% end %>
 
