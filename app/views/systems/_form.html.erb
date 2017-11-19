@@ -1,9 +1,8 @@
-
 <%= form_with model: @system, local: true do |f| %>
     <div class="row">
         <div class="col-md-12">
             <% if @system.errors.any? %>
-                <div id="error_explanation">
+                <div id="error_explanation class=" form-group "">
                     <h2>
                         <%= pluralize(@system.errors.count, "error") %> prohibited this system from being saved:
                     </h2>
@@ -35,33 +34,39 @@
     <div class="row">
         <div class="col-md-6">
             <div class="form-group">
-                <%= f.label :company , "Company:", for:'company'  %>
-                <%= f.collection_select :company_id, @companies , :id, :title,  {}, {:class=>'form-control'} %>
+                <%= f.label :company_id , "Company:", for:'company'  %>
+                    <%= f.collection_select :company_id, @companies , :id, :title,  {}, {:class=>'form-control'} %>
             </div>
         </div>
         <div class="col-md-6">
             <div class="form-group">
                 <%= f.label :systemsType_id , "System Type:", for:'systemType'  %>
-                <%= f.collection_select :systemsType_id, @types , :id, :name,  {}, {:class=>'form-control'} %>
+                    <%= f.collection_select :systemsType_id, @types , :id, :name,  {}, {:class=>'form-control'} %>
             </div>
         </div>
     </div>
     <div class="row">
-        <div class='col-sm-6'>
+        <div class='col-md-6'>
             <div class="form-group">
                 <%= f.label :dateRelease , "Release:", for:'Release' %>
                     <div class='input-group form-datetime' id='teste'>
-                            <%= f.text_field :dateRelease, class: 'form-control' %>
-                            <span class="input-group-addon glyphicon glyphicon-calendar" ></span>
+                        <%= f.text_field :dateRelease, class: 'form-control' %>
+                            <span class="input-group-addon glyphicon glyphicon-calendar"></span>
                     </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-4">
-                <%= f.submit "Save", id:'submit', class:'btn btn-success' %>
-            </div>
-            <div class="col-md-4">
-                <%= link_to 'Back to list', systems_path, class:'btn btn-danger' %>
-            </div>
+        <div class='col-md-6'></div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-2">
+            <%= f.submit "Save", id:'submit', class:'btn btn-success' %>
         </div>
-        <% end %>
+    <div class="col-md-8">
+        
+    </div>
+        <div class="col-md-2">
+            <%= link_to 'Back to list', systems_path, class:'btn btn-danger' %>
+        </div>
+    </div>
+    <% end %>

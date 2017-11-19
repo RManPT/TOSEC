@@ -1,19 +1,14 @@
 class SystemsController < ApplicationController
 
-  
   def new
         @system = System.new
-        @types = SystemsType.all
-        @companies = Company.all
+        prepare_form_data
     end
     def index
         @systems = System.all
       end
     def show
-        @company = Company.all
         @system = System.find(params[:id])
-        
-        @types = SystemsType.all
     rescue ActiveRecord::RecordNotFound
         redirect_to(systems_path, :notice => 'Record not found')
     end
@@ -24,13 +19,13 @@ class SystemsController < ApplicationController
         if @system.save
             redirect_to @system
           else
+            prepare_form_data
             render 'new'
           end
     end
     def edit
         @system = System.find(params[:id])
-        @types = SystemsType.all
-        @companies = Company.all
+        prepare_form_data
         rescue ActiveRecord::RecordNotFound
             redirect_to(systems_path, :notice => 'Record not found')
       end
@@ -40,6 +35,7 @@ class SystemsController < ApplicationController
         if @system.update(system_params)
           redirect_to @system
         else
+          prepare_form_data
           render 'edit'
         end
       end
@@ -47,11 +43,14 @@ class SystemsController < ApplicationController
     def destroy
         @system = System.find(params[:id])
         @system.destroy
-    
         redirect_to systems_path
     end
-   
+    
   private
+    def prepare_form_data
+      @types = SystemsType.all
+      @companies = Company.all
+    end
     def system_params
       params.require(:system).permit(:name, :abbreviation, :company_id, :systemsType_id, :dateRelease)
     end
