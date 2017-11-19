@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     resources :types
   end
   resources :systems
+  resources :releases
   resources :companies
 
   resources :datfiles

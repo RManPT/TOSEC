@@ -1,5 +1,4 @@
 class SystemsController < ApplicationController
-
   def new
         @system = System.new
         prepare_form_data
