@@ -1,12 +1,14 @@
-//START - jquery Datepicker
+//START - jquery link to top 
 /*HOWTO:
-<div class='input-group form-datetime' id='teste'>
-    <%= f.text_field :dateRelease, class: 'form-control' %>
-    <span class="input-group-addon glyphicon glyphicon-calendar" ></span>
+<div class='input-group date form_datetime'>
+    <%= f.text_field :dateRelease, class: 'form-control', readonly:'readonly' %>
+    <span class="input-group-addon">
+       <span class="glyphicon glyphicon-calendar"></span>
+    </span>
 </div>
 */
 
-$(document).on('turbolinks:load', function () {
+$(document).on('pageinit', function() {
     var d = new Date();
     var n = d.getDate();
     var m = d.getMonth() + 1;
@@ -19,3 +21,4 @@ $(document).on('turbolinks:load', function () {
 });
 //END - jquery link to top 
 
+;

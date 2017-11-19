@@ -6,6 +6,9 @@ class DatfilesController < ApplicationController
 
     def show
         @datfile = Datfile.find(params[:id])
+    rescue ActiveRecord::RecordNotFound
+        redirect_to(datfiles_path, :notice => 'Record not found')
+ 
     end
 
     def new

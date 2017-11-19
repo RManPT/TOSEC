@@ -9,7 +9,7 @@
 */
 
 
-$(document).ready(function () {
+$(document).on('turbolinks:load', function() {
     var d = new Date();
     var n = d.getDate();
     var m = d.getMonth() + 1;
