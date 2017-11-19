@@ -36,17 +36,13 @@
         <div class="col-md-6">
             <div class="form-group">
                 <%= f.label :company , "Company:", for:'company'  %>
-                    <%= f.text_field :company, list: 'company', class: 'form-control' %>
-                        <datalist id="company">
-                            <option data-value=1 value="Sony"></option>
-                            <option data-value=2 value="Microsoft"></option>
-                        </datalist>
+                <%= f.collection_select :company_id, @companies , :id, :title,  {}, {:class=>'form-control'} %>
             </div>
         </div>
         <div class="col-md-6">
             <div class="form-group">
                 <%= f.label :systemsType_id , "System Type:", for:'systemType'  %>
-                <%= f.collection_select :systemsType_id, SystemsType.all , :id, :name,  {}, {:class=>'form-control'} %>
+                <%= f.collection_select :systemsType_id, @types , :id, :name,  {}, {:class=>'form-control'} %>
             </div>
         </div>
     </div>

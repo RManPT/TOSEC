@@ -3,7 +3,8 @@ class SystemsController < ApplicationController
   
   def new
         @system = System.new
-        @types = SystemsType.all.map{|u| [ u.name, u.id ] }
+        @types = SystemsType.all
+        @companies = Company.all
     end
     def index
         @systems = System.all
@@ -28,7 +29,8 @@ class SystemsController < ApplicationController
     end
     def edit
         @system = System.find(params[:id])
-        @types = SystemsType.all.map{|u| [ u.name, u.id ] }
+        @types = SystemsType.all
+        @companies = Company.all
         rescue ActiveRecord::RecordNotFound
             redirect_to(systems_path, :notice => 'Record not found')
       end
@@ -51,6 +53,6 @@ class SystemsController < ApplicationController
    
   private
     def system_params
-      params.require(:system).permit(:name, :abbreviation, :company, :systemsType_id, :dateRelease)
+      params.require(:system).permit(:name, :abbreviation, :company_id, :systemsType_id, :dateRelease)
     end
 end
