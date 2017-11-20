@@ -2,6 +2,19 @@
     Welcome to TOSEC on Rails!</h2>
 <h3>Available features</h3>
 
+<% if user_signed_in? %>
+    <div class="p-3 mb-2 bg-primary text-white" style="padding:5px;">
+        <p>You are Registred User :)</p>
+        <%= current_user.email %>
+    </div>    
+<% end %>
+<% if admin_signed_in? %>
+    <div class="p-3 mb-2 bg-primary text-white" style="padding:5px;">
+        <p>You are an Admin :)</p>
+        <%= current_admin.email %>
+    </div>    
+<% end %>
+
 <ul>
         <% if user_signed_in? %>
         <li>
@@ -10,7 +23,7 @@
         <li>
             <%= link_to('Edit User', edit_user_registration_path) %>
         </li>
-        <% else %>
+        <% elsif admin_signed_in? %>
         <li>
             <%= link_to('Login', new_user_session_path)  %>    
         </li>
@@ -31,3 +44,14 @@
         <%= link_to 'Systems', controller: 'systems' %>
     </li>
 </ul>
+
+<% if admin_signed_in? %>
+    <div class="p-3 mb-2 bg-info text-white" style="padding:5px;">
+        <p>Super secret zone that only the Admin can see!</p>
+        <ul>
+            <li>
+                <%= link_to('Logout', destroy_user_session_path, method: :delete) %>        
+            </li>
+        </ul>   
+    </div>
+<% end %>

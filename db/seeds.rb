@@ -14,3 +14,11 @@ CollectionType.create(name: 'TOSEC-main', desc:"General purpose files")
 10.times do |n|
     Datfile.create([{ name: "dat #{n}" , readme: "dat #{n}", date:"1993-#{n+1}-#{n+1}"}])
 end
+
+
+Admin.create(email: 'root@tosec.com', password: '123456789')
+User.create(email: 'user@tosec.com', password: '123456789')
+#User.create(email: 'user@tosec.com', encrypted_password: '123456789')
+
+#user=User.create!(:email=>'test@test.com',:password=>'password')
+

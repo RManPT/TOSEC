@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
-  devise_for :admins
-  devise_for :users
+  #devise_for :admins, path: 'admins'
+  devise_for :admins, path: 'admins', controllers: { sessions: "admins/sessions" }
+  #devise_for :users
+  #devise_for :users, path: 'users'
+  devise_for :users, path: 'users', controllers: { sessions: "users/sessions" }
   get 'welcome/index'
 
   namespace :systems do
