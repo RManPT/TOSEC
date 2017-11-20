@@ -2,62 +2,44 @@
     <div class="row">
         <div class="col-md-3">
             <h2>System
-                <%= @system.name %>
             </h2>
-        </div>
-        <div class="col-md-3">
-            <%= render 'navbarSystems' %>
-        </div>
-        <div class="col-md-3">
-        </div>
-        <div class="col-md-3">
         </div>
     </div>
     <hr>
     <div class="row">
 
         <div class="col-md-8 col-xs-12 col-sm-6 col-lg-8">
-
-            <ul class="container details">
-                <li>
-                    <p>
-                        <strong>Name:</strong>
-                        <%= @system.name %>
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        <strong>Abbreviation:</strong>
-                        <%= @system.abbreviation %>
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        <strong>Company:</strong>
-                        <%= @system.company.title %>
-                    </p>
-                </li>
-                <li>
-                    <% if @system.systemsType_id? %>
-                    <p>
-                        <strong>Type:</strong>
-                        <%= @system.systemsType.name %> 
-                    </p>
-                    <% end %>
-                </li>
-                <li>
+            <p>
+                <strong>Name:</strong>
+                <%= @system.name %>
+            </p>
+            <p>
+                <strong>Abbreviation:</strong>
+                <%= @system.abbreviation %>
+            </p>
+            <p>
+                <strong>Company:</strong>
+                <%= @system.company.title %>
+            </p>
+            <% if @system.systemsType_id? %>
+                <p>
+                    <strong>Type:</strong>
+                    <%= @system.systemsType.name %>
+                </p>
+                <% end %>
                     <p>
                         <strong>Release:</strong>
                         <%= @system.dateRelease %>
                     </p>
-                </li>
-                <li>
-                    <%= link_to 'Back', systems_path %>
-                </li>
-            </ul>
-        </div>
-        <div class="col-md-4 col-xs-12 col-sm-6 col-lg-4">
-            <img src="https://www.svgimages.com/svg-image/s5/man-passportsize-silhouette-icon-256x256.png" alt="stack photo" class="img">
         </div>
     </div>
+    <hr>
+    <div class="text-right">
+        <%= link_to 'Back', systems_path, class: 'btn btn-default' %>
+            <%= link_to 'Edit', edit_system_path(@system), class: 'btn btn-primary' %>
+                <%= link_to 'Destroy', system_path(@system), class: 'btn btn-danger',
+          method: :delete,
+          data: { confirm: 'Are you sure?' } %>
+    </div>
 </div>
+<%= render '/welcome/bottom' %>

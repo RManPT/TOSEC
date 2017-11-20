@@ -1,13 +1,16 @@
 
-<h1>Listing Releases</h1>
-<%= link_to 'Home', releases_path %> | <%= link_to 'New Release', new_release_path %>
-<hr>
-<table>
+<h2>Listing Releases</h2>
+<div class="text-right">
+    <%= link_to 'New system', new_release_path, class: 'btn btn-primary' %>
+    <p>&nbsp;</p>
+    
+</div>
+
+<div class="table-responsive text-nowrap">
+    <table class="table table-hover">
  <tr>
    <th>Date</th>
-   <th>Description Release</th>
-   <th></th>
-   <th></th>
+   <th>Description</th>
    <th></th>
  </tr>
 
@@ -15,11 +18,21 @@
    <tr>
      <td> <%= r.created_at.strftime('%Y-%m-%d') %> </td>
      <td> <%= r.descRelease %></td>
-     <td> <%= link_to 'Show', release_path(r) %> |</td>
-     <td> <%= link_to 'Edit', edit_release_path(r) %> | </td>
-     <td> <%= link_to 'Destroy', release_path(r),
-             method: :delete,
-             data: { confirm: 'Are you sure?' } %></td>
-   </tr>
- <% end %>
+     <td class="text-right">
+        <%= link_to '<i class="glyphicon glyphicon-eye-open"></i>'.html_safe, release_path(r), class: 'btn btn-default' %>
+          <%= link_to '<i class="glyphicon glyphicon-pencil"></i>'.html_safe, edit_release_path(r), class: 'btn btn-default' %>
+            <%= link_to '<i class="glyphicon glyphicon-remove"></i>'.html_safe, release_path(r),
+        method: :delete,
+        data: { confirm: 'Are you sure?' }, class: 'btn btn-default' %>
+      </td>
+    </tr>
+    <% end %>
 </table>
+<div class="text-right">
+    <%= link_to 'New release', new_release_path, class: 'btn btn-primary' %>
+</div>
+<div class="text-center">
+    <img src="<%= asset_path('DB_releases.PNG') %>">
+    </div>
+</div>
+<%= render '/welcome/bottom' %>

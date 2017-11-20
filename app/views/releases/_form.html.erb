@@ -12,12 +12,15 @@
   </ul>
 </div>
 <% end %>   
-<p>
-    <%= form.label :descRelease %><br>
-    <%= form.text_area :descRelease %>
+<div class="form-group">
+    <p>
+    <%= form.label :descRelease, class: 'form-label' %><br>
+    <%= form.text_area :descRelease, class: 'form-control' %>
   </p>
  
-  <p>
-    <%= form.submit class:'btn btn-success' %>
+  <p class="text-right">
+      <%= link_to 'Cancel', releases_path, class: 'btn btn-default' %>
+      <%= form.submit 'Save', class:'btn btn-success' %>
   </p>
 <% end %>
+</div>

@@ -1,8 +1,15 @@
 Rails.application.routes.draw do
   devise_for :admins
   devise_for :users
-  get 'welcome/index'
-
+  
+  get 'welcome/start'
+  get 'welcome/whatisit'
+  get 'welcome/history'
+  get 'welcome/goals'
+  get 'welcome/structure'
+  get 'welcome/faq'
+ 
+  
   namespace :systems do
     resources :types
   end

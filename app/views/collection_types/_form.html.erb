@@ -5,7 +5,7 @@
 <div id="error_explanation" class="form-group">
   <h2>
     <%= pluralize(@collection_type.errors.count, "error") %> prohibited
-    this article from being saved:
+    this collection from being saved:
   </h2>
   <ul>
     <% @collection_type.errors.full_messages.each do |msg| %>
@@ -17,17 +17,17 @@
 
 <div class="form-group">
 <p>
-  <%= form.label :name %><br>
+  <%= form.label :name, class: 'form-label' %><br>
   <%= form.text_field :name, class: 'form-control' %>
 </p>
 
 <p>
-  <%= form.label :description %><br>
+  <%= form.label :description, class: 'form-label' %><br>
   <%= form.text_area :desc, class: 'form-control' %>
 </p>
 
 <p class="text-right">
-    <%= link_to 'Cancel', datfiles_path, class: 'btn btn-default' %>
+    <%= link_to 'Cancel', collection_types_path, class: 'btn btn-default' %>
     <%= form.submit 'Save', :class => 'btn btn-success'%>
   </p>
 <% end %>

@@ -3,19 +3,18 @@
         <div class="col-md-3">
             <h2>Listing Systems</h2>
         </div>
-        <div class="col-md-3">
-            <%= render 'navbarSystems' %>
-        </div>
-        <div class="col-md-3">
+        <!-- <div class="col-md-3">
             <div class="input-group">
                 <span class="input-group-addon">
                     <i class="glyphicon glyphicon-search"></i>
                 </span>
                 <input class="form-control" id="myInput" type="text" placeholder="Search...">
             </div>
-        </div>
-        <div class="col-md-3">
-        </div>
+        </div> -->
+        <div class="text-right">
+                <%= link_to 'New system', new_system_path, class: 'btn btn-primary' %>
+            </div>
+    
     </div>
     <hr>
     <div class="row">
@@ -57,19 +56,12 @@
                                                                     </p>
 
                                                 </div>
-                                                <div class="col-md-6">
-                                                    <p>
-                                                        <%= link_to 'Show', system_path(s) %>
-                                                    </p>
-                                                    <p>
-                                                        <%= link_to 'Edit', edit_system_path(s) %>
-                                                    </p>
-                                                    <p>
-                                                        <%= link_to 'Destroy', system_path(s),
-                                                        method: :delete,
-                                                        data: { confirm: 'Are you sure?' } %>
-                                                    </p>
-                                                </div>
+                                                <div class="col-md-6 text-right">
+                                                        <%= link_to '<i class="glyphicon glyphicon-eye-open"></i>'.html_safe, system_path(s), class: 'btn btn-default' %>
+                                                        <%= link_to '<i class="glyphicon glyphicon-pencil"></i>'.html_safe, edit_system_path(s), class: 'btn btn-default' %>
+                                                          <%= link_to '<i class="glyphicon glyphicon-remove"></i>'.html_safe, system_path(s),
+                                                      method: :delete,
+                                                      data: { confirm: 'Are you sure?' }, class: 'btn btn-default' %>                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -82,6 +74,11 @@
             </div>
         </div>
     </div>
+    <div class="text-right">
+            <%= link_to 'New system', new_system_path, class: 'btn btn-primary' %>
+        </div>
+        </div>
+        <%= render '/welcome/bottom' %>
     <script>
         $(document).ready(function () {
             $("#myInput").on("keyup", function () {
