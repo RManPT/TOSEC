@@ -11,9 +11,11 @@ $(document).on('turbolinks:load', function () {
     var n = d.getDate();
     var m = d.getMonth() + 1;
     var y = d.getFullYear();
+    var today = new Date(y + "-" + m + "-" + n);
     $('.form-datetime').datetimepicker({
+        defaultDate: today,
         format: 'YYYY-MM-DD',
-        maxDate: new Date(y + "-" + m + "-" + n),
+        maxDate: today,
         ignoreReadonly: true
     });
 });

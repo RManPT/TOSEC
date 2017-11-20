@@ -1,0 +1,26 @@
+<%= form_with model: @release, local: true do |form| %>
+<% if @release.errors.any? %>
+<div id="error_explanation">
+  <h2>
+    <%= pluralize(@release.errors.count, "error") %> prohibited
+    this article from being saved:
+  </h2>
+  <ul>
+    <% @release.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>   
+<div class="form-group">
+    <p>
+    <%= form.label :descRelease, class: 'form-label' %><br>
+    <%= form.text_area :descRelease, class: 'form-control' %>
+  </p>
+ 
+  <p class="text-right">
+      <%= link_to 'Cancel', releases_path, class: 'btn btn-default' %>
+      <%= form.submit 'Save', class:'btn btn-success' %>
+  </p>
+<% end %>
+</div>

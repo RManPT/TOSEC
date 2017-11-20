@@ -1,7 +1,7 @@
 <div class="form-group">
   <%= form_with model: @datfile, local: true do |form| %>
     <% if @datfile.errors.any? %>
-      <div id="error_explanation class=" form-group "">
+      <div id="error_explanation" class=" form-group">
         <h2>
           <%= pluralize(@datfile.errors.count, "error") %> prohibited this file from being saved:
         </h2>

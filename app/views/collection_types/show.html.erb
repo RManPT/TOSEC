@@ -1,17 +1,23 @@
-
-<h2>Collection types</h2>
-<p>
+<h2>
+  Collection</h2>
+<hr>
+<div class="table-responsive text-nowrap">
+  <p>
     <strong>Name:</strong>
     <%= @collection_type.name %>
   </p>
-   
+
   <p>
     <strong>Description:</strong>
     <%= @collection_type.desc %>
   </p>
-  <%= link_to 'Edit', edit_collection_type_path(@collection_type) %> | 
-  <%= link_to 'Destroy', collection_type_path(@collection_type),
+  <hr>
+  <div class="text-right">
+    <%= link_to 'Back', datfiles_path, class: 'btn btn-default' %>
+      <%= link_to 'Edit', edit_collection_type_path(@collection_type), class: 'btn btn-primary' %>
+        <%= link_to 'Destroy', collection_type_path(@collection_type), class: 'btn btn-danger',
   method: :delete,
-  data: { confirm: 'Are you sure?' } %></td>
-   | <%= link_to 'Back', collection_types_path %>
-  <%= render '/welcome/bottom' %>
+  data: { confirm: 'Are you sure?' }  %>
+  </div>
+</div>
+<%= render '/welcome/bottom' %>

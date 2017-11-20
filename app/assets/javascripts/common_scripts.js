@@ -22,3 +22,9 @@ $(document).ready(function () {
 });
 //END - jquery Back to top snippet 
 
+//START - jquery Enables tooltips 
+$(document).on('turbolinks:load', function(){
+    $('[data-toggle="tooltip"]').tooltip();
+});
+//END - jquery Enables tooltips 
+

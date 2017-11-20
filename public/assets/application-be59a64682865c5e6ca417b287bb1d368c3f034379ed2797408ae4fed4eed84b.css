@@ -4251,34 +4251,39 @@ select[multiple].input-lg,
 }
 
 /* line 8, /home/vagrant/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_forms.scss */
-.has-error .help-block,
+.has-error .help-block, .field_with_errors .help-block,
 .has-error .control-label,
+.field_with_errors .control-label,
 .has-error .radio,
+.field_with_errors .radio,
 .has-error .checkbox,
+.field_with_errors .checkbox,
 .has-error .radio-inline,
-.has-error .checkbox-inline, .has-error.radio label, .has-error.checkbox label, .has-error.radio-inline label, .has-error.checkbox-inline label {
+.field_with_errors .radio-inline,
+.has-error .checkbox-inline,
+.field_with_errors .checkbox-inline, .has-error.radio label, .radio.field_with_errors label, .has-error.checkbox label, .checkbox.field_with_errors label, .has-error.radio-inline label, .radio-inline.field_with_errors label, .has-error.checkbox-inline label, .checkbox-inline.field_with_errors label {
   color: #a94442;
 }
 /* line 21, /home/vagrant/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_forms.scss */
-.has-error .form-control {
+.has-error .form-control, .field_with_errors .form-control {
   border-color: #a94442;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
 }
 /* line 24, /home/vagrant/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_forms.scss */
-.has-error .form-control:focus {
+.has-error .form-control:focus, .field_with_errors .form-control:focus {
   border-color: #843534;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ce8483;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ce8483;
 }
 /* line 31, /home/vagrant/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_forms.scss */
-.has-error .input-group-addon {
+.has-error .input-group-addon, .field_with_errors .input-group-addon {
   color: #a94442;
   border-color: #a94442;
   background-color: #f2dede;
 }
 /* line 37, /home/vagrant/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/mixins/_forms.scss */
-.has-error .form-control-feedback {
+.has-error .form-control-feedback, .field_with_errors .form-control-feedback {
   color: #a94442;
 }
 
@@ -9296,4 +9301,76 @@ td.shrink {
 /* line 32, /vagrant/app/assets/stylesheets/application.scss */
 td.expand {
   width: 99%;
+}
+
+/* Tooltip */
+/* line 37, /vagrant/app/assets/stylesheets/application.scss */
+.tips + .tooltip > .tooltip-inner {
+  background-color: #73AD21;
+  color: #FFFFFF;
+  border: 1px solid green;
+  padding: 15px;
+  font-size: 20px;
+}
+
+/* Tooltip on top */
+/* line 46, /vagrant/app/assets/stylesheets/application.scss */
+.tips + .tooltip.top > .tooltip-arrow {
+  border-top: 5px solid green;
+}
+
+/* Tooltip on bottom */
+/* line 51, /vagrant/app/assets/stylesheets/application.scss */
+.tips + .tooltip.bottom > .tooltip-arrow {
+  border-bottom: 5px solid blue;
+}
+
+/* Tooltip on left */
+/* line 56, /vagrant/app/assets/stylesheets/application.scss */
+.tips + .tooltip.left > .tooltip-arrow {
+  border-left: 5px solid red;
+}
+
+/* Tooltip on right */
+/* line 61, /vagrant/app/assets/stylesheets/application.scss */
+.tips + .tooltip.right > .tooltip-arrow {
+  border-right: 5px solid black;
+}
+
+/* line 65, /vagrant/app/assets/stylesheets/application.scss */
+.login {
+  position: relative;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 100px;
+  width: 300px;
+  height: 300px;
+}
+
+/* line 74, /vagrant/app/assets/stylesheets/application.scss */
+.errors {
+  position: relative;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  width: 80%;
+  text-align: center;
+}
+
+/* line 82, /vagrant/app/assets/stylesheets/application.scss */
+#error_explanation {
+  color: red;
+}
+/* line 84, /vagrant/app/assets/stylesheets/application.scss */
+#error_explanation ul {
+  color: red;
+  margin: 50px 0px 50px 0;
+  list-style-type: none;
+}
+
+/* line 93, /vagrant/app/assets/stylesheets/application.scss */
+.field_with_errors .form-control {
+  border: 4px;
+  color: #a94442;
 }
