@@ -1,0 +1,23 @@
+<%= form_with model: @release, local: true do |form| %>
+<% if @release.errors.any? %>
+<div id="error_explanation">
+  <h2>
+    <%= pluralize(@release.errors.count, "error") %> prohibited
+    this article from being saved:
+  </h2>
+  <ul>
+    <% @release.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>   
+<p>
+    <%= form.label :descRelease %><br>
+    <%= form.text_area :descRelease %>
+  </p>
+ 
+  <p>
+    <%= form.submit class:'btn btn-success' %>
+  </p>
+<% end %>

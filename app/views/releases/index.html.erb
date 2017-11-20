@@ -1,0 +1,25 @@
+
+<h1>Listing Releases</h1>
+<%= link_to 'Home', releases_path %> | <%= link_to 'New Release', new_release_path %>
+<hr>
+<table>
+ <tr>
+   <th>Date</th>
+   <th>Description Release</th>
+   <th></th>
+   <th></th>
+   <th></th>
+ </tr>
+
+ <% @releases.each do |r| %>
+   <tr>
+     <td> <%= r.created_at.strftime('%Y-%m-%d') %> </td>
+     <td> <%= r.descRelease %></td>
+     <td> <%= link_to 'Show', release_path(r) %> |</td>
+     <td> <%= link_to 'Edit', edit_release_path(r) %> | </td>
+     <td> <%= link_to 'Destroy', release_path(r),
+             method: :delete,
+             data: { confirm: 'Are you sure?' } %></td>
+   </tr>
+ <% end %>
+</table>

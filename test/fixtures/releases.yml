@@ -1,13 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  date: 2017-11-06
-  readme: MyText
-  collection_type one
+  descRelease: MyText
 
 two:
-  name: MyString
-  date: 2017-11-06
-  readme: MyText
-  collection_type two
+  descRelease: MyText
