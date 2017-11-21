@@ -18,6 +18,12 @@ doc.xpath("/companies/company").each do |company|
         System.create({ name: "#{system.text}" ,abbreviation:('a'..'z').to_a.sample(rand(3)+2).join.upcase,dateRelease:rand(35.years).seconds.ago, systemsType_id:rand(1...10), company_id:i.id}) 
     end
  end
+ Datstatus.create([
+     { name: 'Active', abbreviation: 'ACTV',descStatus: 'State Active' },
+     { name: 'Desactive', abbreviation: 'DCTV',descStatus: 'State Desactive' },
+     { name: 'Pending', abbreviation: 'PEND',descStatus: 'State Pending' }
+])
+  
 CollectionType.create(name: 'TOSEC-PIX', desc:"Images files")
 CollectionType.create(name: 'TOSEC-ISO', desc:"DVD/CD files")
 CollectionType.create(name: 'TOSEC-main', desc:"General purpose files")
