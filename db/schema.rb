@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171121214140) do
+ActiveRecord::Schema.define(version: 20171127185334) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -49,7 +49,16 @@ ActiveRecord::Schema.define(version: 20171121214140) do
     t.integer "collection_type_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.integer "system_id"
     t.index ["collection_type_id"], name: "index_datfiles_on_collection_type_id"
+    t.index ["system_id"], name: "index_datfiles_on_system_id"
+    t.index ["user_id"], name: "index_datfiles_on_user_id"
+  end
+
+  create_table "datfiles_releases", id: false, force: :cascade do |t|
+    t.integer "datfile_id", null: false
+    t.integer "release_id", null: false
   end
 
   create_table "datstatuses", force: :cascade do |t|
@@ -58,6 +67,8 @@ ActiveRecord::Schema.define(version: 20171121214140) do
     t.text "descStatus"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "datfile_id"
+    t.index ["datfile_id"], name: "index_datstatuses_on_datfile_id"
   end
 
   create_table "releases", force: :cascade do |t|
