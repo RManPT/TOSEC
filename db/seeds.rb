@@ -30,3 +30,8 @@ CollectionType.create(name: 'TOSEC-main', desc:"General purpose files")
 10.times do |n|
     Datfile.create([{ name: "dat #{n}" , readme: "dat #{n}", collection_type_id: "1"}])
 end
+
+10.times do |n|
+    Release.create([{ descRelease: "Release #{n}" }])
+end
+

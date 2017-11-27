@@ -59,6 +59,7 @@ ActiveRecord::Schema.define(version: 20171127185334) do
   create_table "datfiles_releases", id: false, force: :cascade do |t|
     t.integer "datfile_id", null: false
     t.integer "release_id", null: false
+    t.index ["release_id", "datfile_id"], name: "index_datfiles_releases_on_release_id_and_datfile_id"
   end
 
   create_table "datstatuses", force: :cascade do |t|
