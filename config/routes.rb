@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   #devise_for :admins
   devise_for :users
+  resources :users
   
   get 'welcome/start'
   get 'welcome/whatisit'
