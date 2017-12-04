@@ -13,3 +13,4 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 # folder are already added.
  #tem de estar presente para scripts adicionados por controller
 Rails.application.config.assets.precompile += %w( systems.js )
+Rails.application.config.assets.precompile += %w( datfiles.js )

@@ -10,6 +10,8 @@
     <tr>
       <th>Date</th>
       <th>Name</th>
+      <th>System</th>
+      <th>Status</th>
       <th>&nbsp;</th>
     </tr>
 
@@ -21,7 +23,17 @@
         <td>
           <%= datfile.name %>
         </td>
-        <td class="text-right">
+        <td>
+            <% if datfile.system_id? %>
+          <%= datfile.system.abbreviation %>
+          <%end%>
+        </td>
+        <td>
+            <% if datfile.datstatus_id? %>
+            <%= datfile.datstatus.abbreviation %>
+            <%end%>
+        </td>
+          <td class="text-right">
           <%= link_to '<i class="glyphicon glyphicon-eye-open"></i>'.html_safe, datfile_path(datfile), class: 'btn btn-default' %>
             <%= link_to '<i class="glyphicon glyphicon-pencil"></i>'.html_safe, edit_datfile_path(datfile), class: 'btn btn-default' %>
               <%= link_to '<i class="glyphicon glyphicon-remove"></i>'.html_safe, datfile_path(datfile),

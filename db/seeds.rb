@@ -18,17 +18,27 @@ doc.xpath("/companies/company").each do |company|
         System.create({ name: "#{system.text}" ,abbreviation:('a'..'z').to_a.sample(rand(3)+2).join.upcase,dateRelease:rand(35.years).seconds.ago, systemsType_id:rand(1...10), company_id:i.id}) 
     end
  end
- Datstatus.create([
-     { name: 'Active', abbreviation: 'ACTV',descStatus: 'State Active' },
-     { name: 'Desactive', abbreviation: 'DCTV',descStatus: 'State Desactive' },
-     { name: 'Pending', abbreviation: 'PEND',descStatus: 'State Pending' }
-])
+
   
-CollectionType.create(name: 'TOSEC-PIX', desc:"Images files")
-CollectionType.create(name: 'TOSEC-ISO', desc:"DVD/CD files")
-CollectionType.create(name: 'TOSEC-main', desc:"General purpose files")
+ user = User.create! :email => 'xxx@xxx.xxx', :password => '123456', :password_confirmation => '123456'
+ user.save!
+
+CollectionType.create([
+    { name: 'TOSEC-PIX', desc:"Images files" },
+    { name: 'TOSEC-ISO', desc:"DVD/CD files" },
+    { name: 'TOSEC-main', desc:"General purpose files" }
+])
+
+Datstatus.create([
+    { name: 'INACTIVE', abbreviation: 'I', descStatus: 'Dat file is deprecated' },
+    { name: 'ACTIVE', abbreviation: 'A', descStatus: 'Dat file will be added to next release' },
+    { name: 'PENDING', abbreviation: 'P', descStatus: 'Dat file awaiting for moderation process to complete' },
+    { name: 'OBSOLETE', abbreviation: 'O', descStatus: 'Dat file was substituted by a new one' },
+    { name: 'UPLOADED', abbreviation: 'U', descStatus: 'Dat file awaiting for morderation process to begin' }
+])
+
 10.times do |n|
-    Datfile.create([{ name: "dat #{n}" , readme: "dat #{n}", collection_type_id: "1"}])
+    Datfile.create([{ name: "dat #{n}" , readme: "dat #{n}", user_id: "1", system_id: "#{1+rand(5)}", datstatus_id: "#{1+rand(5)}", collection_type_id: "#{1+rand(3)}" }])
 end
 
 10.times do |n|
