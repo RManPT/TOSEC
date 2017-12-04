@@ -1,4 +1,5 @@
 class SystemsController < ApplicationController
+  before_action :prepare_form_data
   def new
         @system = System.new
         prepare_form_data

@@ -20818,7 +20818,26 @@ return hooks;
         viewDate: false
     };
 }));
-
+$(document).on('turbolinks:load', function() {
+    var systems;
+    $('#datfile_system_id').parent().hide();
+    systems = $('#datfile_system_id').html();
+    console.log(systems);
+    return $('#datfile_company_id').change(function() {
+      var company, escaped_company, options;
+      company = $('#datfile_company_id :selected').text();
+      escaped_company = company.replace(/([ #;&,.+*~\':"!^$[\]()=>|\/@])/g, '\\$1');
+      options = $(systems).filter("optgroup[label=" + escaped_company + "]").html();
+      console.log(options);
+      if (options) {
+        $('#datfile_system_id').html(options);
+        return $('#datfile_system_id').parent().show();
+      } else {
+        $('#datfile_system_id').empty();
+        return $('#datfile_system_id').parent().hide();
+      }
+    });
+  });
 
 
 //START - jquery Back to top snippet 
@@ -20841,6 +20860,12 @@ $(document).ready(function () {
     $('#back-to-top').tooltip('show');
 });
 //END - jquery Back to top snippet 
+
+//START - jquery Enables tooltips 
+$(document).on('turbolinks:load', function(){
+    $('[data-toggle="tooltip"]').tooltip();
+});
+//END - jquery Enables tooltips 
 
 ;
 // This is a manifest file that'll be compiled into application.js, which will include all the files

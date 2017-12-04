@@ -1,24 +1,39 @@
 <h2>
   DAT File</h2>
   <hr>
-<div class="table-responsive text-nowrap ">
-  <p>
+<div class="table-responsive text-nowrap form-group">
+      <p>
     <strong>Name:</strong>
     <%= @datfile.name %>
   </p>
   <p>
     <strong>Collection:</strong>
-    <%= @collection_type.find(@datfile.collection_type_id).name %>
+    <%= @datfile.collection_type.name %>
   </p>
   <p>
-    <strong>Description:</strong>
-    <%= @datfile.readme %>
+  <strong>System:</strong>
+    <%= @datfile.system.name %>
   </p>
   <p>
+      <strong>Status:</strong>
+      <%= @datfile.datstatus.name %>
+    </p>
+<p>
     <strong>Uploaded on:</strong>
-    <%= @datfile.created_at %>
+    <%= @datfile.created_at %> by <%= @datfile.user.email %>
   </p>
-  <hr>
+  <% if @datfile.created_at != @datfile.updated_at %>
+  <p>
+      <strong>Edited on:</strong>
+      <%= @datfile.updated_at %> by <%= @datfile.user.email %>
+    </p>
+  <%end%>
+    <br>
+  <p>
+      <strong>Description:</strong>
+      <%= text_field_tag "dummy", @datfile.readme, :readonly => true, class: 'form-control'  %> 
+    </p>
+     <hr>
 
   <div class="text-right">
     <%= link_to 'Back', datfiles_path, class: 'btn btn-default' %>

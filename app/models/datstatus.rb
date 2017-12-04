@@ -1,3 +1,3 @@
 class Datstatus < ApplicationRecord
-    belongs_to :datfile
+    has_many :datfile
 end
