@@ -1,13 +1,13 @@
 class DatfilesController < ApplicationController
-    before_action :prepare_collections
+    before_action :prepare_dependencies
     def index
         @datfile = Datfile.all
     end
 
     def show
         @datfile = Datfile.find(params[:id])
-    rescue ActiveRecord::RecordNotFound
-        redirect_to(datfiles_path, :notice => 'Record not found')
+        rescue ActiveRecord::RecordNotFound
+            redirect_to(datfiles_path, :notice => 'Record not found')
  
     end
 
@@ -17,6 +17,8 @@ class DatfilesController < ApplicationController
 
     def edit
         @datfile = Datfile.find(params[:id])
+        rescue ActiveRecord::RecordNotFound
+            redirect_to(datfiles_path, :notice => 'Record not found')
     end
 
     def create
@@ -47,10 +49,15 @@ class DatfilesController < ApplicationController
     
     private
     def datfile_params
-      params.require(:datfile).permit(:name, :readme, :collection_type_id)
+      params.require(:datfile).permit(:name, :readme, :collection_type_id, :system_id, :datstatus_id, :user_id)
     end
 
-    def prepare_collections
+    def prepare_dependencies
         @collection_type=CollectionType.all
+        @datstatuses=Datstatus.all
+        @users=User.all
+        @systems=System.all
+        @companies=Company.all
+        @system_types=SystemsType.all
     end
 end

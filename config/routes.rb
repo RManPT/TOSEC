@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  resources :datstatuses
+
   devise_for :admins
   devise_for :users
   

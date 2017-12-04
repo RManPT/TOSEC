@@ -1,0 +1,2 @@
+module DatstatusesHelper
+end

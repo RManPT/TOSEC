@@ -1,6 +1,7 @@
 class System < ApplicationRecord
     belongs_to :company
     belongs_to :systemsType
+    has_many :datfiles
     validates :name, presence: true, length: { in: 3..255 }
     validates :abbreviation, presence: true, length: {  in: 1..10 }
     validates :company_id, presence: true
