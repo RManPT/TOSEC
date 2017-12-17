@@ -1,10 +1,23 @@
 <% if user_signed_in? %>
 <div class="col-md-2">
     <div class="list-group">
-        <%= link_to 'Companies', {controller: 'companies', action:'index'}, class: "list-group-item" %>
-        <%= link_to 'Dat files', {controller: 'datfiles', action:'index'}, class: "list-group-item" %>
-        <%= link_to 'Collection Types', {controller: 'collection_types', action:'index'}, class: "list-group-item" %>
-        <%= link_to 'Systems', {controller: 'systems', action:'index'}, class: "list-group-item" %>
+        <% #Quando as role existirem isto deixa de ser hard code %>
+        <% @role = "administrator" %>
+        <% case @role 
+            when "moderator"%>
+            <%= link_to 'Releases', {controller: 'releases' , action:'index'}, class: "list-group-item" %>
+            <%= link_to 'Dat files', {controller: 'datfiles', action:'index'}, class: "list-group-item" %>
+            <% when "publisher"%>
+            <%= link_to 'Dat files', {controller: 'datfiles', action:'index'}, class: "list-group-item" %>
+        <% when "administrator"%>
+            <%= link_to 'Collection Types', collection_types_path, class: "list-group-item" %>  
+            <%= link_to 'Releases',releases_path, class: "list-group-item" %>
+            <%= link_to 'Companies',companies_path , class: "list-group-item" %>
+            <%= link_to 'Dat files', datfiles_path, class: "list-group-item" %>
+            <%= link_to 'Dat file status',datstatuses_path, class: "list-group-item"%>
+            <%= link_to 'Systems', systems_path, class: "list-group-item" %>
+            <%= link_to 'Systems types', systems_types_path, class: "list-group-item"  %>
+        <% end %>
     </div>
 </div>
     <div class="col-md-10">
