@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get 'welcome/structure'
   get 'welcome/faq'
  
-  
+ 
   namespace :systems do
     resources :types
   end
