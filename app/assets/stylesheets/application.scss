@@ -14,15 +14,62 @@
  @import "bootstrap";
  @import 'bootstrap-datetimepicker';
 
- //back to top snippet
+
+body {
+    position: relative;
+    margin: 0;
+    padding-bottom: 6rem;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+  }
+
+   //back to top snippet
  .back-to-top {
     cursor: pointer;
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    bottom: 350px;
+    // right: 20px;
     display:none;
 }
 
+.back-to-back {
+    cursor: pointer;
+    position: fixed;
+    bottom: 295px;
+    // right: 75px;
+    display:none;
+}
+
+.back-to-home {
+    cursor: pointer;
+    position: fixed;
+    bottom: 240px;
+    // right: 130px;
+    display:none;
+}
+.sidebar-outer {
+    position: relative;
+}
+
+
+// * {
+//     box-sizing: border-box;
+//    }
+   
+//    *:before,
+//    *:after {
+//     box-sizing: border-box;
+//    }
+   
+//    html,
+//    body {
+//     height: 100%;
+//     position: relative;
+//    }
+   
+   
+   #footer {
+    position: fixed;
+   }
 
 td.shrink {
     width: 1px;
@@ -32,13 +79,20 @@ td.expand {
     width: 99%;
 }
 
+th {
+    /*...all th attributes like padding etc*/
+    background-color:#8d8d8d;
+    padding: 8px;
+}
+
  /* Tooltip */
  .tips + .tooltip > .tooltip-inner {
     background-color: #73AD21;
-    color: #FFFFFF;
+    color: rgb(255, 255, 255);
     border: 1px solid green;
     padding: 15px;
     font-size: 20px;
+    margin: auto;
 }
 
 /* Tooltip on top */
@@ -94,3 +148,5 @@ td.expand {
       background-color: #ffe6e6;
     }
   }
+
+ 

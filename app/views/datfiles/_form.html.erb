@@ -30,6 +30,7 @@
             <p>
                 <% form.label :system, class: 'form-label' %>
               <br>
+              <!-- para restringir as comapnhias bastará substitui @companies por algum array associado ao role -->
               <!-- form.grouped_collection_select(:system_id, @companies, :systems, :title, :id, :name, {:include_blank => "Select a system"}, {:class=>'form-control'}) %> -->
             <%= form.grouped_collection_select(:system_id, @companies, :systems, :title, :id, :name, {:include_blank => "Select a system"}, {:class=>'form-control'}) %>
           </p>

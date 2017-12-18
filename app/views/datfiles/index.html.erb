@@ -1,52 +1,63 @@
 <h2>Listing DAT files</h2>
-<div class="text-right">
-    <%= link_to 'New DAT file', new_datfile_path, class: 'btn btn-primary' %>
-    <p>&nbsp;</p>
-    
-</div>
-
-<div class="table-responsive text-nowrap">
-  <table class="table table-hover">
-    <tr>
-      <th>Date</th>
-      <th>Name</th>
-      <th>System</th>
-      <th>Status</th>
-      <th>&nbsp;</th>
-    </tr>
-
-    <% @datfile.each do |datfile| %>
-      <tr>
-        <td>
-          <%=  datfile.created_at.strftime("%F") %>
-        </td>
-        <td>
-          <%= datfile.name %>
-        </td>
-
-        <!-- Isto tem de ser corrigido para funcionar o upload -->
-        <td>
-          <% if datfile.system_id? %>
-          <%= datfile.system.abbreviation %>
-          <%end%>
-        </td>
-        <td>
-            <% if datfile.datstatus_id? %>
-            <%= datfile.datstatus.abbreviation %>
-            <%end%>
-        </td>
-          <td class="text-right">
-          <%= link_to '<i class="glyphicon glyphicon-eye-open"></i>'.html_safe, datfile_path(datfile), class: 'btn btn-default' %>
-            <%= link_to '<i class="glyphicon glyphicon-pencil"></i>'.html_safe, edit_datfile_path(datfile), class: 'btn btn-default' %>
-              <%= link_to '<i class="glyphicon glyphicon-remove"></i>'.html_safe, datfile_path(datfile),
-          method: :delete,
-          data: { confirm: 'Are you sure?' }, class: 'btn btn-default' %>
-        </td>
-      </tr>
-      <% end %>
-  </table>
+<div>
   <div class="text-right">
+    <div class="text-right">
       <%= link_to 'New DAT file', new_datfile_path, class: 'btn btn-primary' %>
+        <p>&nbsp;</p>
+    </div>
+    <div class="text-left">
+      <%= paginate @datfiles %>
+    </div>
   </div>
-</div>
-<%= render '/welcome/bottom' %>
+
+  <div class="table-responsive text-nowrap">
+    <table class="table table-hover">
+      <tr>
+        <th>Date</th>
+        <th>Name</th>
+        <th>System</th>
+        <th>Status</th>
+        <th>&nbsp;</th>
+      </tr>
+
+      <% @datfiles.each do |datfile| %>
+        <tr data-toggle="tooltip" title="Click for details">
+          <td data-link="<%= datfile_path(datfile) %>" >
+            <%=  datfile.created_at.strftime("%F") %>
+          </td>
+          <td width="100%" data-link="<%= datfile_path(datfile) %>" >
+            <%= datfile.name %>
+          </td>
+          <td class="text-center" data-link="<%= datfile_path(datfile) %>" data-toggle="tooltip" title="<%= datfile.system.name %>"
+            data-placement="top">
+            <% if datfile.system_id? %>
+              <%= datfile.system.abbreviation %>
+                <%end%>
+          </td>
+          <td class="text-center" data-link="<%= datfile_path(datfile) %>" data-toggle="tooltip" title="<%= datfile.datstatus.name %> - <%= datfile.datstatus.descStatus %> "
+            data-placement="top">
+            <% if datfile.datstatus_id? %>
+              <%= datfile.datstatus.abbreviation %>
+                <%end%>
+          </td>
+          <td>
+            <%= link_to '<i class="glyphicon glyphicon-eye-open"></i>'.html_safe, datfile_path(datfile), class: 'btn btn-default stop-prop' %>
+              <%= link_to '<i class="glyphicon glyphicon-pencil"></i>'.html_safe, edit_datfile_path(datfile), class: 'btn btn-default stop-prop' %>
+                <%= link_to '<i class="glyphicon glyphicon-remove"></i>'.html_safe, datfile_path(datfile), class: 'btn btn-default', method: :delete, data: { confirm: 'Are you sure?' } %>
+          </td>
+        </tr>
+        <% end %>
+    </table>
+  </div>
+    <div class="text-right">
+      <div class="text-left">
+        <%= paginate @datfiles %>
+      </div>
+      <div class="text-right">
+        <%= link_to 'New DAT file', new_datfile_path, class: 'btn btn-primary' %>
+          <p>&nbsp;</p>
+      </div>
+
+    </div>
+  </div>
+  <!-- <%= render '/welcome/bottom' %> -->
