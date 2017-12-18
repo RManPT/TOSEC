@@ -25,6 +25,11 @@
    <%= form.text_area :text, class: 'form-control' %>
  </p>
 
+ <p>
+  <%= form.label :image, class: 'form-label' %><br>
+  <%= form.file_field :image, class: 'form-control' %>
+</p>
+
  <p class="text-right">
     <%= link_to 'Cancel', companies_path, class: 'btn btn-default' %>    
     <%= form.submit 'Save', :class => 'btn btn-success' %>

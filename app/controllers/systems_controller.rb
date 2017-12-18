@@ -52,6 +52,6 @@ class SystemsController < ApplicationController
       @companies = Company.all
     end
     def system_params
-      params.require(:system).permit(:name, :abbreviation, :company_id, :systemsType_id, :dateRelease)
+      params.require(:system).permit(:name, :abbreviation, :company_id, :systemsType_id, :dateRelease, :image)
     end
 end

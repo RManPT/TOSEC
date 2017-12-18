@@ -36,7 +36,7 @@ class CompaniesController < ApplicationController
     end
        
     def destroy
-        company = Company.find(params[:id])
+        @company = Company.find(params[:id])
         @company.destroy
        
         redirect_to companies_path
@@ -44,6 +44,6 @@ class CompaniesController < ApplicationController
 
     private
     def company_params
-        params.require(:company).permit(:title, :text)
+        params.require(:company).permit(:title, :text, :image)
     end
 end

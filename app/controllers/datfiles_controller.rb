@@ -52,7 +52,7 @@ class DatfilesController < ApplicationController
     
     private
     def datfile_params
-          params.require(:datfile).permit(:name, :readme, :collection_type_id, :system_id, :datstatus_id, :user_id)
+      params.require(:datfile).permit(:name, :readme, :collection_type_id, :system_id, :datstatus_id, :user_id, :file)
     end
 
     def prepare_dependencies
