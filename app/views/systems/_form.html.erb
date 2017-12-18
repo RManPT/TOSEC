@@ -30,6 +30,12 @@
                     <%= f.text_field :abbreviation , class: 'form-control'%>
             </div>
         </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <%= f.label :image, class: 'form-label' %>
+                    <%= f.file_field :image , class: 'form-control'%>
+            </div>
+        </div>
     </div>
     <div class="row">
         <div class="col-md-6">
@@ -57,6 +63,8 @@
         </div>
         <div class='col-md-6'></div>
     </div>
+
+    
 
     <p class="text-right">
             <%= link_to 'Cancel', systems_path, class: 'btn btn-default' %>

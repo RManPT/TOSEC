@@ -56,5 +56,6 @@ Rails.application.configure do
   # tem de estar em false senao nao carrega os assets personalizados
 config.assets.compile = false
 
+#Paperclip.options[:command_path] = "/usr/bin/convert"
 
 end

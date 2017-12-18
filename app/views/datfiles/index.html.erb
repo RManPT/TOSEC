@@ -23,8 +23,10 @@
         <td>
           <%= datfile.name %>
         </td>
+
+        <!-- Isto tem de ser corrigido para funcionar o upload -->
         <td>
-            <% if datfile.system_id? %>
+          <% if datfile.system_id? %>
           <%= datfile.system.abbreviation %>
           <%end%>
         </td>

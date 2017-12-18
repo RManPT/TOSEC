@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171203191413) do
+ActiveRecord::Schema.define(version: 20171218165235) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -41,6 +41,10 @@ ActiveRecord::Schema.define(version: 20171203191413) do
     t.text "text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "image_file_name"
+    t.string "image_content_type"
+    t.integer "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   create_table "datfiles", force: :cascade do |t|
@@ -49,13 +53,13 @@ ActiveRecord::Schema.define(version: 20171203191413) do
     t.integer "collection_type_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id"
-    t.integer "system_id"
     t.integer "datstatus_id"
+    t.string "file_file_name"
+    t.string "file_content_type"
+    t.integer "file_file_size"
+    t.datetime "file_updated_at"
     t.index ["collection_type_id"], name: "index_datfiles_on_collection_type_id"
     t.index ["datstatus_id"], name: "index_datfiles_on_datstatus_id"
-    t.index ["system_id"], name: "index_datfiles_on_system_id"
-    t.index ["user_id"], name: "index_datfiles_on_user_id"
   end
 
   create_table "datfiles_releases", id: false, force: :cascade do |t|
@@ -86,6 +90,10 @@ ActiveRecord::Schema.define(version: 20171203191413) do
     t.date "dateRelease"
     t.integer "systemsType_id"
     t.integer "company_id"
+    t.string "image_file_name"
+    t.string "image_content_type"
+    t.integer "image_file_size"
+    t.datetime "image_updated_at"
     t.index ["company_id"], name: "index_systems_on_company_id"
     t.index ["systemsType_id"], name: "index_systems_on_systemsType_id"
   end
@@ -109,6 +117,12 @@ ActiveRecord::Schema.define(version: 20171203191413) do
     t.string "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "admin"
+    t.string "username"
+    t.string "avatar_file_name"
+    t.string "avatar_content_type"
+    t.integer "avatar_file_size"
+    t.datetime "avatar_updated_at"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
