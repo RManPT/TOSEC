@@ -15,7 +15,7 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <!-- verifico, com a ajuda de um helper que criei, se existe um asset com o nome do controler invocado para o carregar -->
     <%=  javascript_include_tag "#{@controller.downcase}.js" if asset_available?("#{@controller.downcase}.js")%>
-    </head>
+  </head>
 
 <body>
   <div class="container">
@@ -23,11 +23,16 @@
       <div class="panel panel-default">
         <div class="panel-body">
           <%= yield %>
-          <a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top" role="button" title="Click to return on the top page" data-toggle="tooltip" data-placement="left"><span class="glyphicon glyphicon-chevron-up"></span></a>
+          <a id="back-to-home" href="/" class="btn btn-default btn-lg back-to-home" role="button" title="Click to return home" data-toggle="tooltip" data-placement="top"><span class="glyphicon glyphicon-home" align="left"></span></a>          
+          <a id="back-to-back" href="javascript:history.back()" class="btn btn-default btn-lg back-to-back" role="button" title="Go back" data-toggle="tooltip" data-placement="top"><span class="glyphicon glyphicon-chevron-left" align="left"></span></a>                              
+          <a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top" role="button" title="Click to return on the top page" data-toggle="tooltip" data-placement="top"><span class="glyphicon glyphicon-chevron-up"></span></a>          
         </div>
       </div>
       <%= render '/layouts/footer' %>
   </div>
+  <%= content_tag("div", nil, :id => 'invisible1', data: {action: @action}) %>
+  <%= content_tag("div", nil, :id => 'invisible2', data: {controler: @controler}) %>
+  
 </body>
 
 </html>
