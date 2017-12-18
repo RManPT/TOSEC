@@ -21,13 +21,30 @@
   <div class="container">
 
     <%= render '/layouts/header' %>
-  
-    <div class="row">
-      <div class="panel panel-default col-xs-11">
-        <div class="panel-body">
-          <%= yield %>
-        </div>
+      <div class="row">
+        <%= render 'welcome/menu' %>
+          <!--MOSTRA O MENU CASO ESTEJA AUTENTICADO-->
+          <!--
+          CASO esteja Autenticado
+          <div class="col-md-2">
+            MENU
+          </div>
+          <div class="col-md-10">
+          Se não tiver
+          <div class="col-md-12">
+         -->
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <%= yield %>
+                <a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top" role="button" title="Click to return on the top page"
+                  data-toggle="tooltip" data-placement="left">
+                  <span class="glyphicon glyphicon-chevron-up"></span>
+                </a>
+            </div>
+          </div>
       </div>
+      </div>
+    <%= render '/layouts/footer' %>
 
 
 
