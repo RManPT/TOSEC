@@ -3,24 +3,24 @@
 <div class="table-responsive text-nowrap ">
     <p>
         <strong>Name:</strong>
-        <%= @status.name %>
+        <%= @datstatus.name %>
     </p>
     <p>
         <strong>Description:</strong>
-        <%= @status.descStatus %>
+        <%= @datstatus.descStatus %>
     </p>
     <p>
         <strong>Abbreviation:</strong>
-        <%= @status.abbreviation %>
+        <%= @datstatus.abbreviation %>
     </p>
     <hr>
 
     <div class="text-right">
         <%= link_to 'Back', datstatuses_path, class: 'btn btn-default' %>
-            <%= link_to 'Edit', edit_datstatus_path(@status), class: 'btn btn-primary' %>
-                <%= link_to 'Destroy', datstatus_path(@status), class: 'btn btn-danger',
+            <%= link_to 'Edit', edit_datstatus_path(@datstatus), class: 'btn btn-primary' %>
+                <%= link_to 'Destroy', datstatus_path(@datstatus), class: 'btn btn-danger',
     method: :delete,
     data: { confirm: 'Are you sure?' } %>
     </div>
 </div>
-<%= render '/welcome/bottom' %>
+<!-- <%= render '/welcome/bottom' %> -->

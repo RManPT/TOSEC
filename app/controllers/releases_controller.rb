@@ -20,7 +20,7 @@ class ReleasesController < ApplicationController
         redirect_to(releases_path, :notice => 'Record not found')
     end
     def index
-        @releases = Release.all
+        @releases = Release.order("descRelease").page(params[:page]).per(20)
     end
     def new
         @release = Release.new
