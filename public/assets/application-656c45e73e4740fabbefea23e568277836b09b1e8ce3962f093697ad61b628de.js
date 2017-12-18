@@ -21377,7 +21377,7 @@ return hooks;
 
 
 //START - jquery Back to top snippet 
-$(document).ready(function () {
+$(document).on('turbolinks:load', function () {
     $(window).scroll(function () {
         if ($(this).scrollTop() > 50) {
             $('#back-to-top').fadeIn();   
@@ -21418,10 +21418,8 @@ $(document).ready(function () {
         } else {
             $('#back-to-home').fadeOut(); 
         }
-    });
-    $('#back-to-top').tooltip('show');
-    $('#back-to-back').tooltip('show');
-    
+    });  
+    $('#back-div').fadeIn();    
 });
 //END - jquery Back to top snippet 
 
@@ -21436,8 +21434,47 @@ $(document).on('turbolinks:load', function () {
 });
 //END - jquery Enables tooltips 
 
+//START - jfloating div
+// $(document).on('turbolinks:load', function() {
+//     var $scrollingDiv = $("#footer");
 
+//     $(window).scroll(function(){			
+//         $scrollingDiv
+//             .stop()
+//             .animate({"marginTop": ($(window).scrollTop() - 100) + "px"}, "slow" );			
+//     });
+// });
+//ENd - jfloating div
 
+// Window load event used just in case window height is dependant upon images
+
+    $(document).on('turbolinks:load', function() { 
+    
+    var footerHeight = 0,
+        footerTop = 0,
+        $footer = $("#footer");        
+    positionFooter();    
+    function positionFooter() {   
+             footerHeight = $footer.height();
+             footerTop = ($(window).scrollTop()+$(window).height()-footerHeight)+"px";
+    
+            if ( ($(document.body).height()+footerHeight) < $(window).height()) {
+                $footer.css({
+                     position: "absolute"
+                 })
+                //  .animate({
+                //      top: footerTop
+                // })
+            } else {
+                $footer.css({
+                     position: "static"
+                })
+            }           
+    }
+    $(window)
+            .scroll(positionFooter)
+            .resize(positionFooter)          
+});
 
 
 $(document).on('turbolinks:load', function () {

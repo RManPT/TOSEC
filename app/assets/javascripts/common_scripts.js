@@ -43,7 +43,8 @@ $(document).on('turbolinks:load', function () {
         } else {
             $('#back-to-home').fadeOut(); 
         }
-    });    
+    });  
+    $('#back-div').fadeIn();    
 });
 //END - jquery Back to top snippet 
 
@@ -58,9 +59,65 @@ $(document).on('turbolinks:load', function () {
 });
 //END - jquery Enables tooltips 
 
+//START - jfloating div
+// $(document).on('turbolinks:load', function() {
+//     var $scrollingDiv = $("#footer");
+
+//     $(window).scroll(function(){			
+//         $scrollingDiv
+//             .stop()
+//             .animate({"marginTop": ($(window).scrollTop() - 100) + "px"}, "slow" );			
+//     });
+// });
+//ENd - jfloating div
+
+// Window load event used just in case window height is dependant upon images
+
+//     $(document).on('turbolinks:load', function() { 
+    
+//     var footerHeight = 0,
+//         footerTop = 0,
+//         $footer = $("#footer");        
+//     positionFooter();    
+//     function positionFooter() {   
+//              footerHeight = $footer.height();
+//              footerTop = ($(window).scrollTop()+$(window).height()-footerHeight)+"px";
+    
+//             if ( ($(document.body).height()+footerHeight) < $(window).height()) {
+//                 $footer.css({
+//                      position: "absolute"
+//                  })
+//                 //  .animate({
+//                 //      top: footerTop
+//                 // })
+//             } else {
+//                 $footer.css({
+//                      position: "static"
+//                 })
+//             }           
+//     }
+//     $(window)
+//             .scroll(positionFooter)
+//             .resize(positionFooter)          
+// });
 
 
-
+// $(document).on('turbolinks:load',function($){
+//     function stickyFooter(){
+//     var footer = $("#footer");
+//     var position = footer.position();
+//     var height = $(window).height();
+//     height = height - position.top;
+//     height = height - footer.outerHeight();
+//     if (height > 0) {
+//     footer.css({'margin-top' : height+'px'});
+//     }
+//     }
+//     stickyFooter();
+//     $(window).resize(function(){
+//     stickyFooter();
+//     });
+//     });
 
 $(document).on('turbolinks:load', function () {
     $('td[data-toggle="tooltip"]').tooltip({
