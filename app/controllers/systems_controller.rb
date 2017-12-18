@@ -5,7 +5,7 @@ class SystemsController < ApplicationController
         prepare_form_data
     end
     def index
-        @systems = System.all
+        @systems = System.order("name").page(params[:page]).per(20)
       end
     def show
         @system = System.find(params[:id])
@@ -52,6 +52,6 @@ class SystemsController < ApplicationController
       @companies = Company.all
     end
     def system_params
-      params.require(:system).permit(:name, :abbreviation, :company_id, :systemsType_id, :dateRelease)
+      params.require(:system).permit(:name, :abbreviation, :company_id, :systemsType_id, :dateRelease, :image)
     end
 end

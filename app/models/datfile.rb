@@ -1,4 +1,5 @@
 class Datfile < ApplicationRecord
+  has_attached_file :file
   belongs_to :collection_type, required: true
   belongs_to :user, required: true
   belongs_to :system, required: true

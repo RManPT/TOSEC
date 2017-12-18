@@ -13,6 +13,7 @@
                 <strong>Name:</strong>
                 <%= @system.name %>
             </p>
+            <%= image_tag @system.image.url(:medium) %>
             <p>
                 <strong>Abbreviation:</strong>
                 <%= @system.abbreviation %>
@@ -42,4 +43,4 @@
           data: { confirm: 'Are you sure?' } %>
     </div>
 </div>
-<%= render '/welcome/bottom' %>
+<!-- <%= render '/welcome/bottom' %> -->

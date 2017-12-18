@@ -1,6 +1,7 @@
 <h2>
     Company</h2>
     <hr>
+    <%= image_tag @company.image.url(:medium) %>
     <p>
         <div class="table-responsive text-nowrap">
     <strong>Title:</strong>
@@ -20,4 +21,4 @@
     data: { confirm: 'Are you sure?' } %>
     </div>
   </div>
-  <%= render '/welcome/bottom' %>
+  <!-- <%= render '/welcome/bottom' %> -->

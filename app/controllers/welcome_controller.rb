@@ -1,7 +1,19 @@
 class WelcomeController < ApplicationController
+  
   def index
     if user_signed_in?
-      redirect_to '/welcome/start'
+      @role = "administrator"
+      #Quando as role existirem isto deixa de ser hard code
+      case @role # a_variable is the variable we want to compare
+      when "administrator"    #compare to 1
+        redirect_to collection_types_path
+      when "moderator"    #compare to 2
+        redirect_to releases_path
+      when "publisher"  
+        redirect_to datfiles_path
+      else
+        redirect_to '/welcome/whatisit'
+      end
     else 
       redirect_to '/welcome/whatisit'
     end 

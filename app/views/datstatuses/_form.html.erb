@@ -1,12 +1,12 @@
 <div class="form-group">
-  <%= form_with model: @status, local: true do |form| %>
-    <% if @status.errors.any? %>
+  <%= form_with model: @datstatus, local: true do |form| %>
+    <% if @datstatus.errors.any? %>
       <div id="error_explanation" class=" form-group">
         <h2>
-          <%= pluralize(@status.errors.count, "error") %> prohibited this file from being saved:
+          <%= pluralize(@datstatus.errors.count, "error") %> prohibited this file from being saved:
         </h2>
         <ul>
-          <% @status.errors.full_messages.each do |msg| %>
+          <% @datstatus.errors.full_messages.each do |msg| %>
             <li>
               <%= msg %>
             </li>

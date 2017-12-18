@@ -9284,60 +9284,106 @@ button.close {
 }
 
 /* line 19, /vagrant/app/assets/stylesheets/application.scss */
+body {
+  position: relative;
+  margin: 0;
+  padding-bottom: 6rem;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+/* line 27, /vagrant/app/assets/stylesheets/application.scss */
 .back-to-top {
   cursor: pointer;
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  bottom: 350px;
   display: none;
 }
 
-/* line 28, /vagrant/app/assets/stylesheets/application.scss */
+/* line 35, /vagrant/app/assets/stylesheets/application.scss */
+.back-to-back {
+  cursor: pointer;
+  position: fixed;
+  bottom: 295px;
+  display: none;
+}
+
+/* line 43, /vagrant/app/assets/stylesheets/application.scss */
+.back-to-home {
+  cursor: pointer;
+  position: fixed;
+  bottom: 240px;
+  display: none;
+}
+
+/* line 50, /vagrant/app/assets/stylesheets/application.scss */
+.sidebar-outer {
+  position: relative;
+}
+
+/* line 54, /vagrant/app/assets/stylesheets/application.scss */
+.header, footer, container {
+  padding: 0px;
+}
+
+/* line 73, /vagrant/app/assets/stylesheets/application.scss */
+#footer {
+  position: fixed;
+}
+
+/* line 77, /vagrant/app/assets/stylesheets/application.scss */
 td.shrink {
   width: 1px;
   white-space: nowrap;
 }
 
-/* line 32, /vagrant/app/assets/stylesheets/application.scss */
+/* line 81, /vagrant/app/assets/stylesheets/application.scss */
 td.expand {
   width: 99%;
 }
 
+/* line 85, /vagrant/app/assets/stylesheets/application.scss */
+th {
+  /*...all th attributes like padding etc*/
+  background-color: #8d8d8d;
+  padding: 8px;
+}
+
 /* Tooltip */
-/* line 37, /vagrant/app/assets/stylesheets/application.scss */
+/* line 92, /vagrant/app/assets/stylesheets/application.scss */
 .tips + .tooltip > .tooltip-inner {
   background-color: #73AD21;
-  color: #FFFFFF;
+  color: white;
   border: 1px solid green;
   padding: 15px;
   font-size: 20px;
+  margin: auto;
 }
 
 /* Tooltip on top */
-/* line 46, /vagrant/app/assets/stylesheets/application.scss */
+/* line 102, /vagrant/app/assets/stylesheets/application.scss */
 .tips + .tooltip.top > .tooltip-arrow {
   border-top: 5px solid green;
 }
 
 /* Tooltip on bottom */
-/* line 51, /vagrant/app/assets/stylesheets/application.scss */
+/* line 107, /vagrant/app/assets/stylesheets/application.scss */
 .tips + .tooltip.bottom > .tooltip-arrow {
   border-bottom: 5px solid blue;
 }
 
 /* Tooltip on left */
-/* line 56, /vagrant/app/assets/stylesheets/application.scss */
+/* line 112, /vagrant/app/assets/stylesheets/application.scss */
 .tips + .tooltip.left > .tooltip-arrow {
   border-left: 5px solid red;
 }
 
 /* Tooltip on right */
-/* line 61, /vagrant/app/assets/stylesheets/application.scss */
+/* line 117, /vagrant/app/assets/stylesheets/application.scss */
 .tips + .tooltip.right > .tooltip-arrow {
   border-right: 5px solid black;
 }
 
-/* line 65, /vagrant/app/assets/stylesheets/application.scss */
+/* line 121, /vagrant/app/assets/stylesheets/application.scss */
 .login {
   position: relative;
   margin-right: auto;
@@ -9347,7 +9393,7 @@ td.expand {
   height: 300px;
 }
 
-/* line 74, /vagrant/app/assets/stylesheets/application.scss */
+/* line 130, /vagrant/app/assets/stylesheets/application.scss */
 .errors {
   position: relative;
   margin-right: auto;
@@ -9358,19 +9404,19 @@ td.expand {
   text-align: center;
 }
 
-/* line 82, /vagrant/app/assets/stylesheets/application.scss */
+/* line 138, /vagrant/app/assets/stylesheets/application.scss */
 #error_explanation {
   color: red;
 }
-/* line 84, /vagrant/app/assets/stylesheets/application.scss */
+/* line 140, /vagrant/app/assets/stylesheets/application.scss */
 #error_explanation ul {
   color: red;
   margin: 50px 0px 50px 0;
   list-style-type: none;
 }
 
-/* line 93, /vagrant/app/assets/stylesheets/application.scss */
+/* line 149, /vagrant/app/assets/stylesheets/application.scss */
 .field_with_errors .form-control {
   color: #a94442;
-  border: 8px solid red;
+  background-color: #ffe6e6;
 }

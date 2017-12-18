@@ -1,7 +1,7 @@
 class DatfilesController < ApplicationController
     before_action :prepare_dependencies
     def index
-        @datfile = Datfile.all
+        @datfiles = Datfile.order("name").page(params[:page]).per(20)
     end
 
     def show
@@ -44,12 +44,15 @@ class DatfilesController < ApplicationController
     def destroy
         @datfile = Datfile.find(params[:id])
         @datfile.destroy    
-        redirect_to datfiles_path
+        respond_to do |format|
+            format.html { redirect_to datfiles_path }
+            format.js { head :no_content }
+           end
     end
     
     private
     def datfile_params
-      params.require(:datfile).permit(:name, :readme, :collection_type_id, :system_id, :datstatus_id, :user_id)
+      params.require(:datfile).permit(:name, :readme, :collection_type_id, :system_id, :datstatus_id, :user_id, :file)
     end
 
     def prepare_dependencies

@@ -1,29 +1,29 @@
 class DatstatusesController < ApplicationController
 
   def index
-      @statuses = Datstatus.all
+      @datstatuses = Datstatus.order("name").page(params[:page]).per(20)
   end
 
   def show
-      @status = Datstatus.find(params[:id])
+      @datstatus = Datstatus.find(params[:id])
   rescue ActiveRecord::RecordNotFound
       redirect_to(datstatuses_path, :notice => 'Record not found')
 
   end
 
   def new
-      @status = Datstatus.new
+      @datstatus = Datstatus.new
   end
 
   def edit
-      @status = Datstatus.find(params[:id])
+      @datstatus = Datstatus.find(params[:id])
   end
 
   def create
       /raise params.inspect/
-      @status = Datstatus.new(status_params)
+      @datstatus = Datstatus.new(datstatus_params)
       
-      if @status.save
+      if @datstatus.save
           redirect_to @status
       else
           render 'new'
@@ -31,22 +31,22 @@ class DatstatusesController < ApplicationController
   end
 
   def update
-      @status = Datstatus.find(params[:id])
-      if @status.update(status_params)
-        redirect_to @status
+      @datstatus = Datstatus.find(params[:id])
+      if @datstatus.update(datstatus_params)
+        redirect_to @datstatus
       else
         render 'edit'
       end
   end
 
   def destroy
-      @status = Datstatus.find(params[:id])
-      @status.destroy    
+      @datstatus = Datstatus.find(params[:id])
+      @datstatus.destroy    
       redirect_to datstatuses_path
   end
   
   private
-  def status_params
+  def datstatus_params
     params.require(:datstatus).permit(:name, :abbreviation, :descStatus)
   end
 end
