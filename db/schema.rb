@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171203191413) do
+ActiveRecord::Schema.define(version: 20171218165235) do
 
   create_table "collection_types", force: :cascade do |t|
     t.string "name"
@@ -24,6 +24,10 @@ ActiveRecord::Schema.define(version: 20171203191413) do
     t.text "text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "image_file_name"
+    t.string "image_content_type"
+    t.integer "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   create_table "datfiles", force: :cascade do |t|
@@ -35,6 +39,10 @@ ActiveRecord::Schema.define(version: 20171203191413) do
     t.integer "user_id"
     t.integer "system_id"
     t.integer "datstatus_id"
+    t.string "file_file_name"
+    t.string "file_content_type"
+    t.integer "file_file_size"
+    t.datetime "file_updated_at"
     t.index ["collection_type_id"], name: "index_datfiles_on_collection_type_id"
     t.index ["datstatus_id"], name: "index_datfiles_on_datstatus_id"
     t.index ["system_id"], name: "index_datfiles_on_system_id"
@@ -69,6 +77,10 @@ ActiveRecord::Schema.define(version: 20171203191413) do
     t.date "dateRelease"
     t.integer "systemsType_id"
     t.integer "company_id"
+    t.string "image_file_name"
+    t.string "image_content_type"
+    t.integer "image_file_size"
+    t.datetime "image_updated_at"
     t.index ["company_id"], name: "index_systems_on_company_id"
     t.index ["systemsType_id"], name: "index_systems_on_systemsType_id"
   end
