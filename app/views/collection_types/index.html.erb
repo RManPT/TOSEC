@@ -1,24 +1,27 @@
 <h2>Listing collections</h2>
 <div class="text-right">
-    <%= link_to 'New collection type', new_collection_type_path, class: 'btn btn-primary' %>
+  <%= link_to 'New collection type', new_collection_type_path, class: 'btn btn-primary' %>
     <p>&nbsp;</p>
-  </div>
+    <div class="text-left">
+      <%= paginate @collection_type %>
+    </div>
+</div>
 
 <div class="table-responsive text-nowrap">
   <table class="table table-hover">
     <tr>
       <th>Name</th>
       <th>Description</th>
-      <td>&nbsp;</td>
+      <th>&nbsp;</td>
     </tr>
 
     <% @collection_type.each do |collection_type| %>
-      <tr>
-        <td>
-          <%= collection_type.name %>
+      <tr data-toggle="tooltip" title="Click for details">
+          <td data-link="<%= collection_type_path(collection_type) %>">
+              <%= collection_type.name %>
         </td>
-        <td>
-          <%= collection_type.desc %>
+        <td width="100%" data-link="<%= collection_type_path(collection_type) %>" >
+            <%= collection_type.desc %>
         </td>
         <td class="text-right">
           <%= link_to '<i class="glyphicon glyphicon-eye-open"></i>'.html_safe, collection_type_path(collection_type), class: 'btn btn-default' %>
@@ -30,9 +33,13 @@
       </tr>
       <% end %>
   </table>
- 
-  <div class="text-right">
-    <%= link_to 'New collection type', new_collection_type_path, class: 'btn btn-primary' %>
-  </div>
 </div>
-<%= render '/welcome/bottom' %>
+<div class="text-right">
+  <div class="text-left">
+    <%= paginate @collection_type %>
+  </div>
+  <%= link_to 'New collection type', new_collection_type_path, class: 'btn btn-primary' %>
+    <p>&nbsp;</p>
+
+</div>
+<!-- <%= render '/welcome/bottom' %> -->

@@ -1,7 +1,7 @@
 class DatfilesController < ApplicationController
     before_action :prepare_dependencies
     def index
-        @datfile = Datfile.all
+        @datfiles = Datfile.order("name").page(params[:page]).per(20)
     end
 
     def show

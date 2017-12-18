@@ -1,6 +1,6 @@
 class CompaniesController < ApplicationController
     def index
-        @companies = Company.all
+        @companies = Company.order("title").page(params[:page]).per(20)
     end 
     
     def show

@@ -1,6 +1,6 @@
 class CollectionTypesController < ApplicationController
     def index
-        @collection_type = CollectionType.all
+        @collection_type = CollectionType.order("name").page(params[:page]).per(20)
     end
 
     def show
