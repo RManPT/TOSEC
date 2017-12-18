@@ -17,28 +17,26 @@
 
     <% @datfile.each do |datfile| %>
       <tr>
-        <td>
+        <td data-link="<%= datfile_path(datfile) %>" title="Click for details">
           <%=  datfile.created_at.strftime("%F") %>
         </td>
-        <td>
+        <td  width="100%" data-link="<%= datfile_path(datfile) %>" data-toggle="tooltip" title="Click for details" >
           <%= datfile.name %>
         </td>
-        <td>
+        <td class="text-center" data-link="<%= datfile_path(datfile) %>" data-toggle="tooltip" title="<%= datfile.system.name %>" data-placement="top">
             <% if datfile.system_id? %>
           <%= datfile.system.abbreviation %>
           <%end%>
         </td>
-        <td>
+        <td class="text-center" data-link="<%= datfile_path(datfile) %>" data-toggle="tooltip" title="<%= datfile.datstatus.name %> - <%= datfile.datstatus.descStatus %> " data-placement="top">
             <% if datfile.datstatus_id? %>
             <%= datfile.datstatus.abbreviation %>
             <%end%>
         </td>
-          <td class="text-right">
-          <%= link_to '<i class="glyphicon glyphicon-eye-open"></i>'.html_safe, datfile_path(datfile), class: 'btn btn-default' %>
-            <%= link_to '<i class="glyphicon glyphicon-pencil"></i>'.html_safe, edit_datfile_path(datfile), class: 'btn btn-default' %>
-              <%= link_to '<i class="glyphicon glyphicon-remove"></i>'.html_safe, datfile_path(datfile),
-          method: :delete,
-          data: { confirm: 'Are you sure?' }, class: 'btn btn-default' %>
+        <td>
+          <%= link_to '<i class="glyphicon glyphicon-eye-open"></i>'.html_safe, datfile_path(datfile), class: 'btn btn-default stop-prop' %>
+          <%= link_to '<i class="glyphicon glyphicon-pencil"></i>'.html_safe, edit_datfile_path(datfile), class: 'btn btn-default stop-prop' %>
+          <%= link_to '<i class="glyphicon glyphicon-remove"></i>'.html_safe, datfile_path(datfile), class: 'btn btn-default', method: :delete, data: { confirm: 'Are you sure?' } %>
         </td>
       </tr>
       <% end %>
@@ -47,4 +45,4 @@
       <%= link_to 'New DAT file', new_datfile_path, class: 'btn btn-primary' %>
   </div>
 </div>
-<%= render '/welcome/bottom' %>
+<!-- <%= render '/welcome/bottom' %> -->

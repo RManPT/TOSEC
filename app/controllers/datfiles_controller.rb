@@ -44,7 +44,10 @@ class DatfilesController < ApplicationController
     def destroy
         @datfile = Datfile.find(params[:id])
         @datfile.destroy    
-        redirect_to datfiles_path
+        respond_to do |format|
+            format.html { redirect_to datfiles_path }
+            format.js { head :no_content }
+           end
     end
     
     private

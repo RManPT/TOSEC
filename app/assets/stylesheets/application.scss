@@ -23,6 +23,21 @@
     display:none;
 }
 
+.back-to-back {
+    cursor: pointer;
+    position: fixed;
+    bottom: 20px;
+    right: 75px;
+    display:none;
+}
+
+.back-to-home {
+    cursor: pointer;
+    position: fixed;
+    bottom: 20px;
+    right: 130px;
+    display:none;
+}
 
 td.shrink {
     width: 1px;
@@ -32,13 +47,20 @@ td.expand {
     width: 99%;
 }
 
+th {
+    /*...all th attributes like padding etc*/
+    background-color:#8d8d8d;
+    padding: 8px;
+}
+
  /* Tooltip */
  .tips + .tooltip > .tooltip-inner {
     background-color: #73AD21;
-    color: #FFFFFF;
+    color: rgb(255, 255, 255);
     border: 1px solid green;
     padding: 15px;
     font-size: 20px;
+    margin: auto;
 }
 
 /* Tooltip on top */
