@@ -25,8 +25,8 @@ CollectionType.create(name: 'TOSEC-main', desc:"General purpose files")
     Datfile.create([{ name: "dat #{n}" , readme: "dat #{n}", collection_type_id: "1"}])
 end
 
-User.create(admin: 'true', username: 'Administrator', email: 'root@tosec.com', password: '123456')
-User.create(admin: 'false', username: 'Publisher', email: 'pub@tosec.com', password: '123456')
-User.create(admin: 'false', username: 'Moderator', email: 'mod@tosec.com', password: '123456')
-User.create(admin: 'false', username: 'User1', email: 'user@tosec.com', password: '123456')
-User.create(admin: 'false', username: 'Teste', email: 'teste@tosec.com', password: '123456')
+User.create(username: 'Administrator', email: 'root@tosec.com',  password: '123456', admin: 'true',  mod: 'false', pub: 'false')
+User.create(username: 'Moderator',     email: 'mod@tosec.com',   password: '123456', admin: 'false', mod: 'true',  pub: 'false')
+User.create(username: 'Publisher',     email: 'pub@tosec.com',   password: '123456', admin: 'false', mod: 'false', pub: 'true' )
+User.create(username: 'User1',         email: 'user1@tosec.com', password: '123456', admin: 'false', mod: 'false', pub: 'false')
+User.create(username: 'User2',         email: 'user2@tosec.com', password: '123456', admin: 'false', mod: 'false', pub: 'false')

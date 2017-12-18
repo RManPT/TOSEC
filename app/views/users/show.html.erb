@@ -1,9 +1,25 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Admin:</strong>
-  <%= @user.admin %>
-</p>
+<% if current_user.admin? %>
+  <p>
+    <strong>Administrator:</strong>
+    <%= @user.admin %>
+  </p>
+<% end %>
+
+<% if current_user.mod?  or current_user.admin?%>
+  <p>
+    <strong>Moderator:</strong>
+    <%= @user.mod %>
+  </p>
+<% end %>
+
+<% if current_user.pub? or current_user.admin?%>
+  <p>
+    <strong>Publisher:</strong>
+    <%= @user.pub %>
+  </p>
+<% end %>
 
 <p>
   <strong>User Name:</strong>
