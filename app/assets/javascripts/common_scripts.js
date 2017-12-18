@@ -9,13 +9,6 @@ $(document).on('turbolinks:load', function () {
             if (history.length > 2 || document.referrer.length > 0){
                 $('#back-to-back').fadeIn();  
             }    
-            var a = $('#invisible1').data('action');
-            var c = $('#invisible2').data('controler');
-            if (c != "welcome" && a != "start"){
-                $('#back-to-home').fadeIn();  
-            } else {
-                $('#back-to-home').fadeOut(); 
-            }
         } else {
             $('#back-to-top').fadeOut();
         }
@@ -38,13 +31,13 @@ $(document).on('turbolinks:load', function () {
     $(function() {
         var a = $('#invisible1').data('action');
         var c = $('#invisible2').data('controler');
+        var r = $('#invisible3').data('role');
         if (c != "welcome" && a != "start"){
             $('#back-to-home').fadeIn();  
         } else {
             $('#back-to-home').fadeOut(); 
         }
-    });  
-    $('#back-div').fadeIn();    
+    });      
 });
 //END - jquery Back to top snippet 
 

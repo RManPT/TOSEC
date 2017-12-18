@@ -36,18 +36,9 @@
           <div class="panel panel-default">
             <div class="panel-body">
               <%= yield %>
-                <a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top" role="button" title="Click to return on the top page"
-                  data-toggle="tooltip" data-placement="left">
-                  <span class="glyphicon glyphicon-chevron-up"></span>
-                </a>
             </div>
           </div>
       </div>
-      </div>
-    <%= render '/layouts/footer' %>
-
-
-
       <div class="footer col-xs-1">
         <a id="back-to-home" href="/" class="btn btn-default btn-lg back-to-home" role="button" title="Click to return home" data-toggle="tooltip"
           data-placement="top">
@@ -63,6 +54,11 @@
         </a>
       </div>
     </div>
+      </div>
+
+
+
+     </div>
       <%= render '/layouts/footer' %>
   </div>
       
@@ -71,7 +67,8 @@
   <!-- needed to check if home button is needed -->
   <%= content_tag("div", nil, :id => 'invisible1', data: {action: @action}) %>
     <%= content_tag("div", nil, :id => 'invisible2', data: {controler: @controler}) %>
-
+    <%= content_tag("div", nil, :id => 'invisible3', data: {controler: @role}) %>
+    
 </body>
 
 </html>
