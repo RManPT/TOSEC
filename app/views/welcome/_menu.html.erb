@@ -2,7 +2,7 @@
 <div class="col-md-2">
     <div class="list-group">
         <% #Quando as role existirem isto deixa de ser hard code %>
-        <% @role = "administrator" %>
+        
         <% case @role 
             when "moderator"%>
             <%= link_to 'Releases', {controller: 'releases' , action:'index'}, class: "list-group-item" %>
@@ -19,6 +19,7 @@
             <%= link_to 'Systems types', systems_types_path, class: "list-group-item"  %>
         <% end %>
     </div>
+    
 </div>
     <div class="col-md-9">
 <% else %>

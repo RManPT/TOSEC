@@ -5,10 +5,10 @@
 $(document).on('turbolinks:load', function () {
     $(window).scroll(function () {
         if ($(this).scrollTop() > 50) {
-            $('#back-to-top').fadeIn();   
-            if (history.length > 2 || document.referrer.length > 0){
-                $('#back-to-back').fadeIn();  
-            }    
+            $('#back-to-top').fadeIn();
+            if (history.length > 2 || document.referrer.length > 0) {
+                $('#back-to-back').fadeIn();
+            }
         } else {
             $('#back-to-top').fadeOut();
         }
@@ -21,23 +21,37 @@ $(document).on('turbolinks:load', function () {
         }, 800);
         return false;
     });
-    $(function() {
-        if (history.length > 1 || document.referrer.length > 0){
-            $('#back-to-back').fadeIn();  
+    $(function () {
+        if (history.length > 1 || document.referrer.length > 0) {
+            $('#back-to-back').fadeIn();
         } else {
-            $('#back-to-back').fadeOut(); 
+            $('#back-to-back').fadeOut();
         }
     });
-    $(function() {
+    $(function () {
         var a = $('#invisible1').data('action');
         var c = $('#invisible2').data('controler');
         var r = $('#invisible3').data('role');
-        if (c != "welcome" && a != "start"){
-            $('#back-to-home').fadeIn();  
-        } else {
-            $('#back-to-home').fadeOut(); 
+        var teste = false;
+        switch (r) {
+            case 'administrator':
+                teste = (c == "collection_types") && (a == "index");
+                break;
+            case 'moderator':
+                teste = (c != "welcome" && a != "start")
+                break;
+            case 'publisher':
+                teste = (c != "welcome" && a != "start")
+                break;
+            default:
+                teste = false;
         }
-    });      
+        if (!teste) {
+            $('#back-to-home').fadeIn();
+        } else {
+            $('#back-to-home').fadeOut();
+        }
+    });
 });
 //END - jquery Back to top snippet 
 
@@ -48,7 +62,7 @@ $(document).on('turbolinks:load', function () {
 
 //START - jquery Enables tooltips 
 $(document).on('turbolinks:load', function () {
-    $('[data-toggle="tooltip"]').tooltip({container: "body"}); 
+    $('[data-toggle="tooltip"]').tooltip({ container: "body" });
 });
 //END - jquery Enables tooltips 
 
@@ -67,7 +81,7 @@ $(document).on('turbolinks:load', function () {
 // Window load event used just in case window height is dependant upon images
 
 //     $(document).on('turbolinks:load', function() { 
-    
+
 //     var footerHeight = 0,
 //         footerTop = 0,
 //         $footer = $("#footer");        
@@ -75,7 +89,7 @@ $(document).on('turbolinks:load', function () {
 //     function positionFooter() {   
 //              footerHeight = $footer.height();
 //              footerTop = ($(window).scrollTop()+$(window).height()-footerHeight)+"px";
-    
+
 //             if ( ($(document.body).height()+footerHeight) < $(window).height()) {
 //                 $footer.css({
 //                      position: "absolute"
@@ -134,7 +148,7 @@ $(document).on('turbolinks:load', function () {
 $(document).on('turbolinks:load', function () {
     $("td[data-link]").click(function (e) {
         window.location = $(this).data("link");
- 
+
     });
 });
 
@@ -147,12 +161,12 @@ $(document).on('turbolinks:load', function () {
 });
 
 $(document).on('turbolinks:load', function () {
-        $('.delete[data-method="delete"]').click(function (e) {
-              e.preventDefault();
-            //  e.stopPropagation();
-            // confirm("Are you sure you want to delete?"); 
-        });
+    $('.delete[data-method="delete"]').click(function (e) {
+        e.preventDefault();
+        //  e.stopPropagation();
+        // confirm("Are you sure you want to delete?"); 
     });
+});
 
 // function show_confirm(url) {
 //     if (confirm("Are you sure you want to delete?"){
