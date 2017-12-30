@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get 'welcome/goals'
   get 'welcome/structure'
   get 'welcome/faq'
- 
+  resources :routes
  
   namespace :systems do
     resources :types

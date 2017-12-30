@@ -45,3 +45,9 @@ end
     Release.create([{ descRelease: "Release #{n}" }])
 end
 
+Route.create([
+    { name: 'Systems', path: 'system', priority: '1' },
+    { name: 'Company', path: 'release', priority: '2' },
+    { name: 'DatFiles', path: 'datfile', priority: '1' },
+    { name: 'Releases', path: 'release', priority: '1' }  
+])
