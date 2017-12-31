@@ -57,3 +57,8 @@ Role.create([
     { name: 'Moderator'},
     { name: 'Publisher'}
 ])
+Grole.create([
+    { user_id: '1'},
+    { role_id: '2'},
+    { route_id: '2'}
+])

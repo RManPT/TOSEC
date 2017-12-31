@@ -11,6 +11,9 @@ Rails.application.routes.draw do
   get 'welcome/goals'
   get 'welcome/structure'
   get 'welcome/faq'
+
+  resources :groles
+
   resources :roles
  
   resources :routes
