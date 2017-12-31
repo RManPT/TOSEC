@@ -51,3 +51,9 @@ Route.create([
     { name: 'DatFiles', path: 'datfile', priority: '1' },
     { name: 'Releases', path: 'release', priority: '1' }  
 ])
+
+Role.create([
+    { name: 'Administrator'},
+    { name: 'Moderator'},
+    { name: 'Publisher'}
+])
