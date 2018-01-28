@@ -12,13 +12,13 @@ class Ability
       end
 
       if user.mod?
-        can :manage, :all
+        can :update, :all
       else
         can :read, :all
       end
 
       if user.pub?
-        can :create, :all
+        can :read, :all
       else
         can :read, :all
       end

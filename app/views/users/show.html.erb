@@ -1,4 +1,6 @@
-<p id="notice"><%= notice %></p>
+<h2>
+  User</h2>
+  <hr>
 
 <% if current_user.admin? %>
   <p>
@@ -31,5 +33,16 @@
   <%= @user.email %>
 </p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<hr>
+
+<div class="text-right">
+  <%= link_to 'Back', companies_path, class: 'btn btn-default' %>
+    <%= link_to 'Edit', edit_user_path(@user), class: 'btn btn-primary' %>
+    <% if current_user.id != @user.id %>
+      <%= link_to 'Destroy', user_path(@user), class: 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
+</div>
+
+
+<!-- <%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %> -->

@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Users</h1>
 
 <div class="table-responsive text-nowrap">
@@ -8,7 +6,7 @@
         <%= link_to 'New User', new_user_path, class: 'btn btn-primary' %>
     </div>
   <% end %>
-
+<p>&nbsp;</p>
   <table class="table table-hover">
     <tr>
       <th>Administrator</th>
@@ -28,9 +26,13 @@
         <td><%= user.email %></td>
         <td class="text-right">
             <%= link_to '<i class="glyphicon glyphicon-eye-open"></i>'.html_safe, user , class: 'btn btn-default'%>
+            <% if can? :update, User %>
             <%= link_to '<i class="glyphicon glyphicon-pencil"></i>'.html_safe, edit_user_path(user) , class: 'btn btn-default'%>
-            <% if current_user.id != user.id %>
-            <%= link_to '<i class="glyphicon glyphicon-remove"></i>'.html_safe, user, method: :delete, data: { confirm: 'Are you sure you want to delete this user?' } %>
+            <% end %>
+            <% if can? :destroy, User %>
+              <% if current_user.id != user.id %>
+              <%= link_to '<i class="glyphicon glyphicon-remove"></i>'.html_safe, user, method: :delete, data: { confirm: 'Are you sure you want to delete this user?' } %>
+              <% end %>
             <% end %>
         </td>
       </tr>

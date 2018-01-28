@@ -10,45 +10,47 @@
       </ul>
     </div>
   <% end %>
-
+  <p>&nbsp;</p>
   <div class="field">
     <%= f.label :admin %>
     <%= f.check_box :admin %>
-  </div>
-
-  <div class="field">
+    &nbsp;&nbsp;&nbsp;&nbsp;
     <%= f.label :mod %>
     <%= f.check_box :mod %>
-  </div>
-
-  <div class="field">
+    &nbsp;&nbsp;&nbsp;&nbsp;
     <%= f.label :pub %>
     <%= f.check_box :pub %>
   </div>
-
-  <div class="field">
-    <%= f.label :username %>
-    <%= f.text_field :username %>
+  <p>&nbsp;</p>
+  <div>
+    <%= f.label :username, class: 'form-label' %>
+    <%= f.text_field :username, class: 'form-control' %>
   </div>
-
-  <div class="field">
-    <%= f.label :email %>
-    <%= f.text_field :email %>
+  <p>&nbsp;</p>
+  <div>
+    <%= f.label :email, class: 'form-label' %>
+    <%= f.text_field :email, class: 'form-control' %>
   </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <%= f.text_field :password %>
+  <p>&nbsp;</p>
+  <div>
+    <%= f.label :password, class: 'form-label' %>
+    <%= f.text_field :password, class: 'form-control' %>
   </div>
+  <p>&nbsp;</p>
 
   <!-- <div class="field">
     <%= f.label :password_confirmation %>
     <%= f.text_field :password_confirmation %>
   </div> -->
 
-  <div class="actions">
+  <!-- <div class="actions">
     <%= f.submit %>
-  </div>
+  </div> -->
+
+  <p class="text-right">
+    <%= link_to 'Cancel', users_path, class: 'btn btn-default' %>    
+    <%= f.submit 'Save', :class => 'btn btn-success' %>
+ </p>
 
   <%#= params.inspect %>
 <% end %>
