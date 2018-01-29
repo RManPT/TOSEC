@@ -5,4 +5,6 @@ class User < ApplicationRecord
   has_many :grole
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
+         
 end

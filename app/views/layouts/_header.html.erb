@@ -1,5 +1,12 @@
 <div class="header"><div class="text-right">    <img alt="T" src="<%= asset_path('TOSEC-800x350.png') %>" height="100">
 </div>
 
+<% if user_signed_in? %>
+    <div class="text-right">
+        <div>Welcome <%= current_user.username %></div> 
+        <div><%= current_user.email %></div> 
+    </div>
+<% end %>   
+
 <%= render '/layouts/navbar' %>
 <hr/></div>

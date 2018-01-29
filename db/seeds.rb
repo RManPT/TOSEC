@@ -62,3 +62,8 @@ Grole.create([
     { role_id: '2'},
     { route_id: '2'}
 ])
+User.create(username: 'Administrator', email: 'root@tosec.com',  password: '123456', admin: 'true',  mod: 'false', pub: 'false')
+User.create(username: 'Moderator',     email: 'mod@tosec.com',   password: '123456', admin: 'false', mod: 'true',  pub: 'false')
+User.create(username: 'Publisher',     email: 'pub@tosec.com',   password: '123456', admin: 'false', mod: 'false', pub: 'true' )
+User.create(username: 'User1',         email: 'user1@tosec.com', password: '123456', admin: 'false', mod: 'false', pub: 'false')
+User.create(username: 'User2',         email: 'user2@tosec.com', password: '123456', admin: 'false', mod: 'false', pub: 'false')

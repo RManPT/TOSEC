@@ -65,3 +65,4 @@ gem 'devise', '~> 4.2'
 # Gem for pagination
 gem 'kaminari'
 gem 'kaminari-bootstrap'
+gem 'cancancan'
