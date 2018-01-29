@@ -45,3 +45,20 @@ end
     Release.create([{ descRelease: "Release #{n}" }])
 end
 
+Route.create([
+    { name: 'Systems', path: 'system', priority: '1' },
+    { name: 'Company', path: 'release', priority: '2' },
+    { name: 'DatFiles', path: 'datfile', priority: '1' },
+    { name: 'Releases', path: 'release', priority: '1' }  
+])
+
+Role.create([
+    { name: 'Administrator'},
+    { name: 'Moderator'},
+    { name: 'Publisher'}
+])
+Grole.create([
+    { user_id: '1'},
+    { role_id: '2'},
+    { route_id: '2'}
+])
