@@ -1,5 +1,5 @@
 class DatstatusesController < ApplicationController
-
+    before_action :prepare_form_data
   def index
       @datstatuses = Datstatus.order("name").page(params[:page]).per(20)
   end
@@ -46,6 +46,11 @@ class DatstatusesController < ApplicationController
   end
   
   private
+    def prepare_form_data
+        if(user_signed_in?)
+        @links = Grole.where(user_id: current_user.id)
+        end
+    end
   def datstatus_params
     params.require(:datstatus).permit(:name, :abbreviation, :descStatus)
   end

@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-
+  before_action :prepare_form_data
   # GET /users
   # GET /users.json
   def index
@@ -72,7 +72,11 @@ class UsersController < ApplicationController
     def set_user
       @user = User.find(params[:id])
     end
-
+    def prepare_form_data
+      if(user_signed_in?)
+      @links = Grole.where(user_id: current_user.id)
+      end
+    end
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
       #  params.require(:user).permit(:admin, :username, :email, :password)

@@ -1,4 +1,5 @@
 class RoutesController < ApplicationController
+    before_action :prepare_form_data
     def create
         @route = Route.new(route_params)
  
@@ -39,6 +40,12 @@ class RoutesController < ApplicationController
         end
       end
 private
+    def prepare_form_data
+
+        if(user_signed_in?)
+        @links = Grole.where(user_id: current_user.id)
+        end
+    end
     def route_params
         params.require(:route).permit(:name, :path, :priority)
     end

@@ -1,4 +1,5 @@
 class RolesController < ApplicationController
+    before_action :prepare_form_data
     def create
         @role = Role.new(role_params)
  
@@ -39,6 +40,11 @@ class RolesController < ApplicationController
         end
       end
 private
+    def prepare_form_data
+        if(user_signed_in?)
+            @links = Grole.where(user_id: current_user.id)
+        end
+    end
     def role_params
         params.require(:role).permit(:name)
     end

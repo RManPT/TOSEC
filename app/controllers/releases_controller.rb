@@ -1,4 +1,5 @@
 class ReleasesController < ApplicationController
+    before_action :prepare_form_data
     def create
         @release = Release.new(release_params)
         
@@ -40,6 +41,11 @@ class ReleasesController < ApplicationController
         redirect_to(releases_path, :notice => 'Record not found')
     end
     private
+    def prepare_form_data
+        if(user_signed_in?)
+            @links = Grole.where(user_id: current_user.id)
+        end
+    end
     def release_params
       params.require(:release).permit(:descRelease)
     end

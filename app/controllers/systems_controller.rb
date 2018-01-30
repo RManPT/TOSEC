@@ -50,6 +50,9 @@ class SystemsController < ApplicationController
     def prepare_form_data
       @types = SystemsType.all
       @companies = Company.all
+      if(user_signed_in?)
+        @links = Grole.where(user_id: current_user.id)
+      end
     end
     def system_params
       params.require(:system).permit(:name, :abbreviation, :company_id, :systemsType_id, :dateRelease, :image)

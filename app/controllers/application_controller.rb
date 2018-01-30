@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   
   protect_from_forgery with: :exception
   before_action :init
+  before_action :prepare_form_data
 
   #  load_and_authorize_resource
   rescue_from CanCan::AccessDenied do |exception|
@@ -17,4 +18,10 @@ class ApplicationController < ActionController::Base
       @controller = controller_name
       @action = action_name
     end
+private
+    def prepare_form_data
+      if(user_signed_in?)
+      @links = Grole.where(user_id: current_user.id)
+      end
+  end
 end 

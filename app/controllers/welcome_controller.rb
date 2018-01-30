@@ -1,5 +1,5 @@
 class WelcomeController < ApplicationController
-  
+  before_action :prepare_form_data
   def index
     if user_signed_in?
       @role = "administrator"
@@ -17,5 +17,11 @@ class WelcomeController < ApplicationController
     else 
       redirect_to '/welcome/whatisit'
     end 
+  end
+  private
+  def prepare_form_data
+      if(user_signed_in?)
+        @links = Grole.where(user_id: current_user.id)
+      end
   end
 end

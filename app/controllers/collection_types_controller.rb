@@ -1,4 +1,5 @@
 class CollectionTypesController < ApplicationController
+    before_action :prepare_form_data
     def index
         @collection_type = CollectionType.order("name").page(params[:page]).per(20)
     end
@@ -41,7 +42,12 @@ class CollectionTypesController < ApplicationController
         redirect_to collection_types_path
     end
     
-    private
+private
+    def prepare_form_data
+        if(user_signed_in?)
+        @links = Grole.where(user_id: current_user.id)
+        end
+    end
     def collection_type_params
       params.require(:collection_type).permit(:name, :desc)
     end
