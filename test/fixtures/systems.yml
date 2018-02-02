@@ -4,10 +4,8 @@ one:
   name: MyString
   abbreviation: MyString
   company: MyString
-  typeSys: MyString
 
 two:
   name: MyString
   abbreviation: MyString
   company: MyString
-  typeSys: MyString
