@@ -66,3 +66,11 @@ gem 'devise', '~> 4.2'
 gem 'kaminari'
 gem 'kaminari-bootstrap'
 gem 'cancancan'
+
+
+
+
+
+
+
+gem 'rails-erd', require: false, group: :development
