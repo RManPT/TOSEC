@@ -1,5 +1,6 @@
 class Datfile < ApplicationRecord
   has_attached_file :file
+  validates_attachment_content_type :file, :content_type => 'text/plain'
   belongs_to :collection_type, required: true
   belongs_to :user, required: true
   belongs_to :system, required: true

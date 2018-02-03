@@ -1,6 +1,7 @@
 class DatfilesController < ApplicationController
     before_action :prepare_dependencies
     before_action :prepare_form_data
+
     def index
         @datfiles = Datfile.order("name").page(params[:page]).per(20)
     end
