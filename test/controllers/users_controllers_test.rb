@@ -1,27 +1,28 @@
 require 'test_helper'
 
-class RolesControllerTest < ActionDispatch::IntegrationTest
+class UsersControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @r = roles(:one)
+    @usr = users(:one)
   end
 
   test "should get index" do
-    get roles_url
+    get users_url
     assert_response :success
   end
 
   test "should get new" do
-    get new_role_url
+    get new_user_url
     assert_response :success
   end
 
   test "should get show" do
-    get role_url(@r)
+    get user_url(@usr)
     assert_response :success
   end
 
   test "should get edit" do
-    get edit_role_url(@r)
+    get edit_user_url(@usr)
     assert_response :success
   end
+
 end

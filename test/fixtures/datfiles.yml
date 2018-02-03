@@ -1,0 +1,23 @@
+one:
+  name: MyStdfhfghdfgring
+  readme: MyText
+  collection_type_id: 1
+  user_id: 1
+  system_id: 1
+  datstatus_id: 1
+
+two:
+  name: MyStrigfdshdfgsdgng
+  readme: MyTgsfdgdgdfext
+  collection_type_id: 1
+  user_id: 1
+  system_id: 1
+  datstatus_id: 1
+
+three:
+  name: MyStringrwetfgasdtgsd
+  readme: MyrweftgText
+  collection_type_id: 1
+  user_id: 1
+  system_id: 1
+  datstatus_id: 1
