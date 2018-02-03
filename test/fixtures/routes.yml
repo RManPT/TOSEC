@@ -3,9 +3,9 @@
 one:
   name: MyString
   path: MyString
-  prioriy: 
+  priority: 1 
 
 two:
   name: MyString
   path: MyString
-  prioriy: 
+  priority: 2
