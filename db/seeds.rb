@@ -33,9 +33,6 @@ Datstatus.create([
     { name: 'UPLOADED', abbreviation: 'U', descStatus: 'Dat file awaiting for morderation process to begin' }
 ])
 
-10.times do |n|
-    Datfile.create([{ name: "dat #{n}" , readme: "dat #{n}", user_id: "1", system_id: "#{1+rand(5)}", datstatus_id: "#{1+rand(5)}", collection_type_id: "#{1+rand(3)}" }])
-end
 
 10.times do |n|
     Release.create([{ descRelease: "Release #{n}" }])
@@ -85,3 +82,7 @@ Grole.create([
     { user_id: '3', role_id: '3', route_id: '1'},
     { user_id: '3', role_id: '3', route_id: '2'}
 ])
+
+10.times do |n|
+    Datfile.create([{ name: "dat #{n}" , readme: "dat #{n}", user_id: "1", system_id: "#{1+rand(5)}", datstatus_id: "#{1+rand(5)}", collection_type_id: "#{1+rand(3)}" }])
+end
