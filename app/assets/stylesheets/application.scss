@@ -1,0 +1,152 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ */
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+ @import 'bootstrap-datetimepicker';
+
+
+body {
+    position: relative;
+    margin: 0;
+    padding-bottom: 6rem;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+  }
+
+   //back to top snippet
+ .back-to-top {
+    cursor: pointer;
+    position: fixed;
+    bottom: 350px;
+    // right: 20px;
+    display:none;
+}
+
+.back-to-back {
+    cursor: pointer;
+    position: fixed;
+    bottom: 295px;
+    // right: 75px;
+    display:none;
+}
+
+.back-to-home {
+    cursor: pointer;
+    position: fixed;
+    bottom: 240px;
+    // right: 130px;
+    display:none;
+}
+.sidebar-outer {
+    position: relative;
+}
+
+
+// * {
+//     box-sizing: border-box;
+//    }
+   
+//    *:before,
+//    *:after {
+//     box-sizing: border-box;
+//    }
+   
+//    html,
+//    body {
+//     height: 100%;
+//     position: relative;
+//    }
+   
+   
+   #footer {
+    position: fixed;
+   }
+
+td.shrink {
+    width: 1px;
+    white-space:nowrap;
+}
+td.expand {
+    width: 99%;
+}
+
+th {
+    /*...all th attributes like padding etc*/
+    background-color:#8d8d8d;
+    padding: 8px;
+}
+
+ /* Tooltip */
+ .tips + .tooltip > .tooltip-inner {
+    background-color: #73AD21;
+    color: rgb(255, 255, 255);
+    border: 1px solid green;
+    padding: 15px;
+    font-size: 20px;
+    margin: auto;
+}
+
+/* Tooltip on top */
+.tips + .tooltip.top > .tooltip-arrow {
+    border-top: 5px solid green;
+}
+
+/* Tooltip on bottom */
+.tips + .tooltip.bottom > .tooltip-arrow {
+    border-bottom: 5px solid blue;
+}
+
+/* Tooltip on left */
+.tips + .tooltip.left > .tooltip-arrow {
+    border-left: 5px solid red;
+}
+
+/* Tooltip on right */
+.tips + .tooltip.right > .tooltip-arrow {
+    border-right: 5px solid black;
+} 
+
+.login { 
+    position: relative;
+    margin-right: auto; margin-left: auto;
+
+    margin-bottom: 100px;
+    	width:300px;
+	height:300px;
+}
+
+.errors {
+    position: relative;
+    margin-right: auto; margin-left: auto;
+    margin-top:50px; margin-bottom:50px;
+    width:80%;
+    text-align: center;
+}
+
+#error_explanation {
+    color: red;
+    ul {
+      color: red;
+      margin: 50px 0px 50px 0;
+      list-style-type: none;
+    }
+  }
+  
+  .field_with_errors {
+    @extend .has-error;
+    .form-control {
+      color: $state-danger-text;
+      background-color: #ffe6e6;
+    }
+  }
+
+ 

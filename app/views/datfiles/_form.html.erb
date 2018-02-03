@@ -1,0 +1,70 @@
+<div class="form-group">
+  <%= form_with model: @datfile, local: true do |form| %>
+    <% if @datfile.errors.any? %>
+      <div id="error_explanation" class=" form-group">
+        <h2>
+          <%= pluralize(@datfile.errors.count, "error") %> prohibited this file from being saved:
+        </h2>
+        <ul>
+          <% @datfile.errors.full_messages.each do |msg| %>
+            <li>
+              <%= msg %>
+            </li>
+            <% end %>
+        </ul>
+      </div>
+      <% end %>
+        <div class="form-group">
+          <p>
+            <%= form.label :file %>
+              <br>
+              <%= form.file_field :file, class: 'form-control' %>
+          </p>
+           <p>
+            <% form.label :collection, class: 'form-label' %>
+              <br>
+              <%= form.collection_select(:collection_type_id, @collection_type, 'id', 'name',  {:include_blank => "Select a collection"}, {:class=>'form-control'}) %>
+                <!-- <%= params.inspect %>-->
+          </p>
+          <!-- <p>
+              <% form.label :company_id, class: 'form-label' %>
+                <br>
+                <%= form.collection_select(:company_id, @companies, 'id', 'title',  {:include_blank => "Select a company"}, {:class=>'form-control'}) %>
+                 
+            </p> -->
+            <p>
+                <% form.label :system, class: 'form-label' %>
+              <br>
+              <!-- para restringir as comapnhias bastará substitui @companies por algum array associado ao role -->
+              <!-- form.grouped_collection_select(:system_id, @companies, :systems, :title, :id, :name, {:include_blank => "Select a system"}, {:class=>'form-control'}) %> -->
+            <%= form.grouped_collection_select(:system_id, @companies, :systems, :title, :id, :name, {:include_blank => "Select a system"}, {:class=>'form-control'}) %>
+          </p>
+          <p>
+            <%= form.label :name %>
+              <br>
+              <%= form.text_field :name, class: 'form-control' %>
+          </p>
+          <p>
+            <%= form.label :readme %>
+              <br>
+              <%= form.text_area :readme, class: 'form-control' %>
+          </p>
+          <% if @action=="edit" %>
+            <p>
+              <% form.label :datstatus, class: 'form-label' %>
+                <br>
+                <%= form.collection_select(:datstatus_id, @datstatuses, 'id', 'name',  {:include_blank => "Choose a status"}, {:class=>'form-control'}) %>
+                  <!-- <%= params.inspect %>-->
+            </p>
+            <%else%>
+              <%= form.hidden_field :datstatus_id, :value =>"4" %>
+                <%end%>
+                  <%= form.hidden_field :user_id, :value => current_user.id %>
+
+                    <p class="text-right">
+                      <%= link_to 'Cancel', datfiles_path, class: 'btn btn-default' %>
+                        <%= form.submit 'Save', :class => 'btn btn-success'%>
+                    </p>
+        </div>
+        <% end %>
+</div>

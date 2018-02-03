@@ -1,0 +1,52 @@
+<h2>
+  DAT File</h2>
+  <hr>
+<div class="table-responsive text-nowrap form-group">
+      <p>
+    <strong>Name:</strong>
+    <%= @datfile.name %>
+  </p>
+  <p>
+    <strong>Collection:</strong>
+    <%= @datfile.collection_type.name %>
+  </p>
+
+  <p>
+    <strong>File:</strong>
+      <%= @datfile.file.name %>
+    </p>
+
+  <p>
+  <strong>System:</strong>
+    <%= @datfile.system.name %>
+  </p>
+  <p>
+      <strong>Status:</strong>
+      <%= @datfile.datstatus.name %>
+    </p>
+<p>
+    <strong>Uploaded on:</strong>
+    <%= @datfile.created_at %> by <%= @datfile.user.email %>
+  </p>
+  <% if @datfile.created_at != @datfile.updated_at %>
+  <p>
+      <strong>Edited on:</strong>
+      <%= @datfile.updated_at %> by <%= @datfile.user.email %>
+    </p>
+  <%end%>
+    <br>
+  <p>
+      <strong>Description:</strong>
+      <%= text_field_tag "dummy", @datfile.readme, :readonly => true, class: 'form-control'  %> 
+    </p>
+     <hr>
+
+  <div class="text-right">
+    <%= link_to 'Back', datfiles_path, class: 'btn btn-default' %>
+      <%= link_to 'Edit', edit_datfile_path(@datfile), class: 'btn btn-primary' %>
+        <%= link_to 'Destroy', datfile_path(@datfile), class: 'btn btn-danger',
+  method: :delete,
+  data: { confirm: 'Are you sure?' } %>
+  </div>
+</div>
+<!-- <%= render '/welcome/bottom' %> -->

@@ -1,0 +1,53 @@
+<h2>Listing DAT files Status</h2>
+<div>
+  <div class="text-right">
+    <%= link_to 'New DAT File Status', new_datstatus_path, class: 'btn btn-primary' %>
+      <p>&nbsp;</p>
+  </div>
+  <div class="text-left">
+    <%= paginate @datstatuses %>
+  </div>
+</div>
+
+<div class="table-responsive text-nowrap">
+  <table class="table table-hover">
+    <tr>
+      <th>Abbreviation</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>&nbsp;</th>
+    </tr>
+
+    <% @datstatuses.each do |datstatus| %>
+      <tr  data-toggle="tooltip" title="Click for details">
+          <td data-link="<%= datstatus_path(datstatus) %>" >
+              <%= datstatus.abbreviation %>
+        </td>
+        <td data-link="<%= datstatus_path(datstatus) %>" >
+            <%= datstatus.name %>
+          <td data-link="<%= datstatus_path(datstatus) %>" >
+            
+          <%= datstatus.descStatus %>
+        </td>
+        <td class="text-right">
+          <%= link_to '<i class="glyphicon glyphicon-eye-open"></i>'.html_safe, datstatus_path(datstatus), class: 'btn btn-default' %>
+            <%= link_to '<i class="glyphicon glyphicon-pencil"></i>'.html_safe, edit_datstatus_path(datstatus), class: 'btn btn-default' %>
+              <%= link_to '<i class="glyphicon glyphicon-remove"></i>'.html_safe, datstatus_path(datstatus),
+          method: :delete,
+          data: { confirm: 'Are you sure?' }, class: 'btn btn-default' %>
+        </td>
+      </tr>
+      <% end %>
+  </table>
+  <div>
+    <div class="text-left">
+      <%= paginate @datstatuses %>
+    </div>
+    <div class="text-right">
+      <%= link_to 'New DAT File Status', new_datstatus_path, class: 'btn btn-primary' %>
+        <p>&nbsp;</p>
+    </div>
+
+  </div>
+</div>
+<!-- <%= render '/welcome/bottom' %> -->

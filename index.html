@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>TOSEC</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="csrf-param" content="authenticity_token" />
+  <meta name="csrf-token" content="MPcnGrpRrQ60PwWjN3/sykXTmuPOI9wMJImHYxG48wdYLqPasxhTLqkoEQBNnaF/NXNBFjnieBgFYXFgAVSw4Q=="
+  />
+  <!--[if lt IE 9]>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  <link rel="stylesheet" media="all" href="/assets/application-0449aa59d400d1b59d36ff607dee5a515e2a609f8c99b1b86f26fdaba6ef6363.css"
+    data-turbolinks-track="reload" />
+  <script src="/assets/application-170c1e292a605a874a9738d91d6a878c2afc56a11280aaf6c121b44466ee610d.js" data-turbolinks-track="reload"></script>
+  <!-- verifico, com a ajuda de um helper que criei, se existe um asset com o nome do controler invocado para o carregar -->
+
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="text-right">
+      <img alt="T" src="/assets/TOSEC-800x350-29a6c65cd0fc78b9d429599a488553573ca1e0e40204bb874e659ac5a0805664.png" height="100">
+    </div>
+
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header ">
+          <a class="navbar-brand" href="/">
+            <img alt="xx" src="/assets/T-4e05b3f80dbdc9b26e9b6777f986f64caef8b8558b309fc97dfd0de530723181.png" height='55'>
+          </a>
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+            aria-expanded="true">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+          </button>
+          <ul class="nav navbar-nav">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">The Project
+                <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="#">What is it?</a>
+                </li>
+                <li>
+                  <a href="#">History</a>
+                </li>
+                <li>
+                  <a href="#">Goals</a>
+                </li>
+                <li>
+                  <a href="#">Structure</a>
+                </li>
+                <li role="separator" class="divider"></li>
+                <li>
+                  <a href="#">Members</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li class="dropdown">
+              <a href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                <span class="glyphicon glyphicon-folder-open">&nbsp;</span>
+                <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="#">Browse resources</a>
+                </li>
+                <li role="separator" class="divider"></li>
+                <li>
+                  <a href="#">Naming conventions</a>
+                </li>
+                <li>
+                  <a href="#">Web links</a>
+                </li>
+                <li role="separator" class="divider"></li>
+                <li>
+                  <a href="#">FAQ</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+
+          <ul class="nav navbar-nav">
+            <li>
+              <a alt="Downloads" href="#">
+                <span class="glyphicon glyphicon-save"></span>
+              </a>
+            </li>
+            <li class=" active">
+              <a href="#">News</a>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                <span class="glyphicon glyphicon-cog"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="/users/sign_in">Login</a>
+                </li>
+                <li>
+                  <a href="/users/sign_up">Register new user</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <form class="navbar-form navbar-right">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Search">
+            </div>
+            <button type="submit" class="btn btn-default glyphicon glyphicon-search"></button>
+          </form>
+
+        </div>
+        <!-- /.navbar-collapse -->
+
+      </div>
+      <!-- /.container-fluid -->
+    </nav>
+    <hr/>
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <p class="notice"></p>
+        <p class="alert"></p>
+        <h2>
+          Welcome to TOSEC on Rails!</h2>
+        <h3>Available features</h3>
+
+        <ul>
+          <li>
+            <a href="/users/sign_in">Login</a>
+          </li>
+          <li>
+            <a href="/users/sign_up">Register new user</a>
+          </li>
+        </ul>
+
+        <ul>
+          <li>
+            <a href="/datfiles">Dat files</a>
+          </li>
+          <li>
+            <a href="/collection_types">Collection types</a>
+          </li>
+          <li>
+            <a href="/systems">Systems</a>
+          </li>
+          <li>
+            <a href="/companies">Companies</a>
+          </li>
+        </ul>
+        <a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top" role="button" title="Click to return on the top page"
+          data-toggle="tooltip" data-placement="left">
+          <span class="glyphicon glyphicon-chevron-up"></span>
+        </a>
+      </div>
+    </div>
+    <hr/>
+    <div class="well">
+      <center>Copyright &copy; 2017 TOSEC Project Homepage. All Rights Reserved. Designed by Dream Team.</center>
+    </div>
+    <div class="text-center">
+      <h3>
+        <img src="/assets/facebook-63f1cc25d0488f3c7a93f5c28cc740889db826927c850f459ff674f9ad8a43da.png" />
+        <img src="/assets/twitter-477de943b618288179e5ec0ca9572d4e15a75fa107031ec291421bdfe43ba420.png" />
+        <img src="/assets/google-b58fe1afd2dc5d95fca3ded87430eeee3eeed429edfd3d303d5072d0f7fd1cdd.png" />
+        <img src="/assets/rss-3ea1f9369938e06ef34902178e7da49f6fde0e72b04e8c4e67dc9253735a9a00.png" />
+        <span class="label label-primary">Contact us</span>
+        </h1>
+    </div>
+  </div>
+</body>
+
+</html>

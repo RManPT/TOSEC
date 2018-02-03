@@ -1,0 +1,48 @@
+<h2>
+  User</h2>
+  <hr>
+
+<% if current_user.admin? %>
+  <p>
+    <strong>Administrator:</strong>
+    <%= @user.admin %>
+  </p>
+<% end %>
+
+<% if current_user.mod?  or current_user.admin?%>
+  <p>
+    <strong>Moderator:</strong>
+    <%= @user.mod %>
+  </p>
+<% end %>
+
+<% if current_user.pub? or current_user.admin?%>
+  <p>
+    <strong>Publisher:</strong>
+    <%= @user.pub %>
+  </p>
+<% end %>
+
+<p>
+  <strong>User Name:</strong>
+  <%= @user.username %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<hr>
+
+<div class="text-right">
+  <%= link_to 'Back', users_path, class: 'btn btn-default' %>
+    <%= link_to 'Edit', edit_user_path(@user), class: 'btn btn-primary' %>
+    <% if current_user.id != @user.id %>
+      <%= link_to 'Destroy', user_path(@user), class: 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
+</div>
+
+
+<!-- <%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %> -->

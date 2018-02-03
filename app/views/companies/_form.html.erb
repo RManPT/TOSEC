@@ -1,0 +1,39 @@
+<%= form_with model: @company, local: true do |form| %>
+
+ <% if @company.errors.any? %>
+   <div id="error_explanation">
+     <h2>
+       <%= pluralize(@company.errors.count, "error") %> prohibited
+       this company from being saved:
+     </h2>
+     <ul>
+       <% @company.errors.full_messages.each do |msg| %>
+         <li><%= msg %></li>
+       <% end %>
+     </ul>
+   </div>
+ <% end %>
+
+ <div class="form-group">
+ <p>
+   <%= form.label :title, class: 'form-label' %><br>
+   <%= form.text_field :title, class: 'form-control' %>
+ </p>
+
+ <p>
+   <%= form.label :text, class: 'form-label' %><br>
+   <%= form.text_area :text, class: 'form-control' %>
+ </p>
+
+ <p>
+  <%= form.label :image, class: 'form-label' %><br>
+  <%= form.file_field :image, class: 'form-control' %>
+</p>
+
+ <p class="text-right">
+    <%= link_to 'Cancel', companies_path, class: 'btn btn-default' %>    
+    <%= form.submit 'Save', :class => 'btn btn-success' %>
+ </p>
+
+<% end %>
+</div>

@@ -1,0 +1,28 @@
+<%= form_with model: @type, local: true do |f| %>
+
+    <% if @type.errors.any? %>
+        <div id="error_explanation">
+            <h2>
+                <%= pluralize(@type.errors.count, "error") %> prohibited this system type from being saved:
+            </h2>
+            <ul>
+                <% @type.errors.full_messages.each do |msg| %>
+                    <li>
+                        <%= msg %>
+                    </li>
+                    <% end %>
+            </ul>
+        </div>
+        <% end %>
+
+            <div class="form-group">
+                <p>
+                    <%= f.label :name, class: 'form-label' %>
+                        <%= f.text_field :name , class: 'form-control'%>
+                </p>
+                <p class="text-right">
+                    <%= link_to 'Cancel', systems_types_path, class: 'btn btn-default' %>
+                        <%= f.submit 'Save', :class => 'btn btn-success'%>
+                </p>
+                <% end %>
+            </div>

@@ -3,23 +3,72 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Project Title</title>
+  <title>TOSEC</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= csrf_meta_tags %>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!--[if lt IE 9]>
           <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
           <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+      <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+        <!-- verifico, com a ajuda de um helper que criei, se existe um asset com o nome do controler invocado para o carregar -->
+        <%=  javascript_include_tag "#{@controller.downcase}.js" if asset_available?("#{@controller.downcase}.js")%>
 </head>
 
 <body>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  <%= yield %>
+  <div class="container">
+    <% @role = "administrator" %>
+    <%= render '/layouts/header' %>
+      <div class="row">
+        <%= render 'welcome/menu' %>
+          <!--MOSTRA O MENU CASO ESTEJA AUTENTICADO-->
+          <!--
+          CASO esteja Autenticado
+          <div class="col-md-2">
+            MENU
+          </div>
+          <div class="col-md-10">
+          Se não tiver
+          <div class="col-md-12">
+         -->
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <%= yield %>
+            </div>
+          </div>
+      </div>
+      <div class="footer col-xs-1">
+        <a id="back-to-home" href="/" class="btn btn-default btn-lg back-to-home" role="button" title="Click to return home" data-toggle="tooltip"
+          data-placement="top">
+          <span class="glyphicon glyphicon-home" align="left"></span>
+        </a>
+        <a id="back-to-back" href="javascript:history.back()" class="btn btn-default btn-lg back-to-back" role="button" title="Go back"
+          data-toggle="tooltip" data-placement="top">
+          <span class="glyphicon glyphicon-chevron-left" align="left"></span>
+        </a>
+        <a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top" role="button" title="Click to return on the top page"
+          data-toggle="tooltip" data-placement="top">
+          <span class="glyphicon glyphicon-chevron-up"></span>
+        </a>
+      </div>
+    </div>
+      </div>
+
+
+
+     </div>
+      <%= render '/layouts/footer' %>
+  </div>
+      
+    
+  <!-- </div> -->
+  <!-- needed to check if home button is needed -->
+  <%= content_tag("div", nil, :id => 'invisible1', data: {action: @action}) %>
+    <%= content_tag("div", nil, :id => 'invisible2', data: {controler: @controller}) %>
+    <%= content_tag("div", nil, :id => 'invisible3', data: {role: @role}) %>
+     
 </body>
 
 </html>

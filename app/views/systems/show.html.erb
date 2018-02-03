@@ -1,0 +1,46 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3">
+            <h2>System
+            </h2>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+
+        <div class="col-md-8 col-xs-12 col-sm-6 col-lg-8">
+            <p>
+                <strong>Name:</strong>
+                <%= @system.name %>
+            </p>
+            <%= image_tag @system.image.url(:medium) %>
+            <p>
+                <strong>Abbreviation:</strong>
+                <%= @system.abbreviation %>
+            </p>
+            <p>
+                <strong>Company:</strong>
+                <%= @system.company.title %>
+            </p>
+            <% if @system.systemsType_id? %>
+                <p>
+                    <strong>Type:</strong>
+                    <%= @system.systemsType.name %>
+                </p>
+                <% end %>
+                    <p>
+                        <strong>Release:</strong>
+                        <%= @system.dateRelease %>
+                    </p>
+        </div>
+    </div>
+    <hr>
+    <div class="text-right">
+        <%= link_to 'Back', systems_path, class: 'btn btn-default' %>
+            <%= link_to 'Edit', edit_system_path(@system), class: 'btn btn-primary' %>
+                <%= link_to 'Destroy', system_path(@system), class: 'btn btn-danger',
+          method: :delete,
+          data: { confirm: 'Are you sure?' } %>
+    </div>
+</div>
+<!-- <%= render '/welcome/bottom' %> -->

@@ -1,0 +1,13 @@
+<% if user_signed_in? %>
+<div class="col-md-2">
+    <div class="list-group">
+        <% @links.each do |gr| %>
+            <%= link_to  Route.find(gr.route_id ).name, "/"+Route.find(gr.route_id ).path, class: "list-group-item" %>
+        <% end %>
+    </div>
+    
+</div>
+    <div class="col-md-9">
+<% else %>
+    <div class="col-md-11">
+<% end %>

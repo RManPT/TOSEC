@@ -1,0 +1,50 @@
+<h2>
+    Listing Releases</h2>
+<div>
+
+    <div class="text-right">
+        <%= link_to 'New release', new_release_path, class: 'btn btn-primary' %>
+            <p>&nbsp;</p>
+    </div>
+    <div class="text-left">
+            <%= paginate @releases %>
+        </div>
+</div>
+
+<div class="table-responsive text-nowrap">
+    <table class="table table-hover">
+        <tr>
+            <th>Date</th>
+            <th>Description</th>
+            <th></th>
+        </tr>
+
+        <% @releases.each do |release| %>
+            <tr data-toggle="tooltip" title="Click for details">
+                    <td data-link="<%= release_path(release) %>" title="Click for details">
+                            <%= release.created_at.strftime('%Y-%m-%d') %>
+                </td>
+                <td data-link="<%= release_path(release) %>" title="Click for details">
+                        <%= release.descRelease %>
+                </td>
+                <td class="text-right">
+                    <%= link_to '<i class="glyphicon glyphicon-eye-open"></i>'.html_safe, release_path(release), class: 'btn btn-default' %>
+                        <%= link_to '<i class="glyphicon glyphicon-pencil"></i>'.html_safe, edit_release_path(release), class: 'btn btn-default' %>
+                            <%= link_to '<i class="glyphicon glyphicon-remove"></i>'.html_safe, release_path(release),
+        method: :delete,
+        data: { confirm: 'Are you sure?' }, class: 'btn btn-default' %>
+                </td>
+            </tr>
+            <% end %>
+    </table>
+    <div>
+            <div class="text-left">
+                <%= paginate @releases %>
+            </div>
+            <div class="text-right">
+                <%= link_to 'New system', new_release_path, class: 'btn btn-primary' %>
+                    <p>&nbsp;</p>
+            </div>
+        </div>
+</div>
+<!-- <%= render '/welcome/bottom' %> -->

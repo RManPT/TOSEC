@@ -1,0 +1,29 @@
+
+<h1>Listing Routes</h1>
+ 
+
+<%= link_to 'New route', new_route_path %>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Path</th>
+    <th>Priority</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+ 
+  <% @routes.each do |r| %>
+    <tr>
+      <td><%= r.name %></td>
+      <td><%= r.path %></td>
+      <td><%= r.priority %></td>
+      <td><%= link_to 'Show', route_path(r) %></td>
+      <td><%= link_to 'Edit', edit_route_path(r) %></td>
+      <td><%= link_to 'Destroy', route_path(r),
+        method: :delete,
+        data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>

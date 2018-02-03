@@ -1,0 +1,24 @@
+<h2>
+    Company</h2>
+    <hr>
+    <%= image_tag @company.image.url(:medium) %>
+    <p>
+        <div class="table-responsive text-nowrap">
+    <strong>Title:</strong>
+    <%= @company.title %>
+  </p>
+   
+  <p>
+    <strong>Text:</strong>
+    <%= @company.text %>
+  </p>
+  <hr>
+  <div class="text-right">
+      <%= link_to 'Back', companies_path, class: 'btn btn-default' %>
+        <%= link_to 'Edit', edit_company_path(@company), class: 'btn btn-primary' %>
+          <%= link_to 'Destroy', company_path(@company), class: 'btn btn-danger',
+    method: :delete,
+    data: { confirm: 'Are you sure?' } %>
+    </div>
+  </div>
+  <!-- <%= render '/welcome/bottom' %> -->

@@ -1,0 +1,27 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3">
+            <h2>
+                System Type
+            </h2>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-md-8 col-xs-12 col-sm-6 col-lg-8">
+                    <p>
+                        <strong>Name:</strong>
+                        <%= @type.name %>
+                    </p>
+        </div>
+    </div>
+    <hr>
+    <div class="text-right">
+        <%= link_to 'Back', systems_types_path, class: 'btn btn-default' %>
+            <%= link_to 'Edit', edit_systems_type_path(@type), class: 'btn btn-primary' %>
+                <%= link_to 'Destroy', systems_type_path(@type), class: 'btn btn-danger',
+          method: :delete,
+          data: { confirm: 'Are you sure?' } %>
+    </div>
+</div>
+<%= render '/welcome/bottom' %>

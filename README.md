@@ -1,5 +1,8 @@
 # TOSEC on rails README
 
+[![Build Status](https://travis-ci.org/RManPT/TOSEC.svg?branch=master)](https://travis-ci.org/RManPT/TOSEC)
+
+
 How to enter develpment mode:
 
 * Rails version: jadesystems/rails-5-1"
@@ -32,14 +35,31 @@ How to enter develpment mode:
 	run "rails s"
 	Use browser on "localhost:3000"
 	
-	
+* Instruções projecto
+
+	Inserir os scripts JS  globais em "app/assets/javascripts/common_scripts.js" 
+	Se os scripts forem específicos de um controlador criar, se não existir, um ficheiro com o nome do controller .js  ex: "systems.js" 
+	(pus a app a ir buscar automaticamente, se os encontrar, os assets que necessita usando o nome do controller)
+
+	Cada script deve ser identificado com um cabeçalho START, seguido de HOWTO com exemplo ou instruções de utilização e um rodapé de END
+	(seguir o modelo dos que já lá estão)
+
+	Vamos manter as views limpas de JS e reutilizar código.
 	
 ---------------------------------------------------------	
 	
 	
 * Database creation
 
+	"rake db:migrate"		//popular alterações à schema
+
+
 * Database initialization
+
+	"rake db:seed"		//injectar valores na db
+
+	se se quiser limpar a bd e automaticamente adicionar seeds:
+	"rake db:setup"
 
 * How to run the test suite
 

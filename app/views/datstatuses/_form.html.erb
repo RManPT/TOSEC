@@ -1,0 +1,40 @@
+<div class="form-group">
+  <%= form_with model: @datstatus, local: true do |form| %>
+    <% if @datstatus.errors.any? %>
+      <div id="error_explanation" class=" form-group">
+        <h2>
+          <%= pluralize(@datstatus.errors.count, "error") %> prohibited this file from being saved:
+        </h2>
+        <ul>
+          <% @datstatus.errors.full_messages.each do |msg| %>
+            <li>
+              <%= msg %>
+            </li>
+            <% end %>
+        </ul>
+      </div>
+    <% end %>
+      <div class="form-group">
+        
+        <p>
+          <%= form.label :name %>
+          <br>
+          <%= form.text_field :name, class: 'form-control' %>
+        </p>
+        <p>
+          <%= form.label :abbreviation %>
+          <br>
+          <%= form.text_field :abbreviation, class: 'form-control' %>
+        </p>
+        <p>
+          <%= form.label :descStatus %>
+          <br>
+          <%= form.text_area :descStatus, class: 'form-control' %>
+        </p>
+          <p class="text-right">
+          <%= link_to 'Cancel', datstatuses_path, class: 'btn btn-default' %>
+          <%= form.submit 'Save', :class => 'btn btn-success'%>
+        </p>
+      </div>
+  <% end %>
+</div>

@@ -1,0 +1,62 @@
+<h1>Listing systems</h1>
+
+<div>
+
+    <div class="text-right">
+        <%= link_to 'New system', new_system_path, class: 'btn btn-primary' %>
+            <p>&nbsp;</p>
+    </div>
+    <div class="text-left">
+        <%= paginate @systems %>
+    </div>
+</div>
+
+<div class="table-responsive text-nowrap">
+    <table class="table table-hover">
+        <tr>
+            <th>Date</th>
+            <th>Name</th>
+            <th class="text-center">Company</th>
+            <th>&nbsp;</th>
+        </tr>
+        <% @systems.each do |system| %>
+            <tr  data-toggle="tooltip" title="Click for details">
+                <td data-link="<%= system_path(system) %>">
+                    <%=  system.dateRelease.strftime("%F") %>
+                </td>
+                <td width="100%" data-link="<%= system_path(system) %>">
+                    <%= system.name %>
+                </td>
+                <td class="text-center" data-link="<%= system_path(system) %>" >
+                        <%= system.company.title %>
+                </td>
+                <td>
+                    <%= link_to '<i class="glyphicon glyphicon-eye-open"></i>'.html_safe, system_path(system), class: 'btn btn-default stop-prop' %>
+                        <%= link_to '<i class="glyphicon glyphicon-pencil"></i>'.html_safe, edit_system_path(system), class: 'btn btn-default stop-prop' %>
+                            <%= link_to '<i class="glyphicon glyphicon-remove"></i>'.html_safe, system_path(system), class: 'btn btn-default', method: :delete, data: { confirm: 'Are you sure?' } %>
+                </td>
+                <td>
+            </tr>
+            <% end %>
+    </table>
+</div>
+    <!-- <script>
+        $(document).ready(function () {
+            $("#myInput").on("keyup", function () {
+                var value = $(this).val().toLowerCase();
+                $("#info #myInfo").filter(function () {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
+    </script> -->
+
+    <div>
+        <div class="text-left">
+            <%= paginate @systems %>
+        </div>
+        <div class="text-right">
+            <%= link_to 'New system', new_system_path, class: 'btn btn-primary' %>
+                <p>&nbsp;</p>
+        </div>
+    </div>
