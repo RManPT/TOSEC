@@ -5,11 +5,13 @@
 # below each fixture, per the syntax in the comments below
 #
 one:
-  id: 1
-  email: a@a.pt
+  email: aaaaaa@aaaaaaa.pt
+  username: xpto
+  encrypted_password: zezezez
 # column: value
 #
 two: 
-  id: 2
-  email: b@a.pt
+  email: baaaa@aaaaaa.pt
+  username: ze
+  encrypted_password: zezezez
 # column: value

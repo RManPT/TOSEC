@@ -39,4 +39,11 @@ class ReleasesControllerTest < ActionDispatch::IntegrationTest
     @rele.reload
     assert_equal "updated", @rele.descRelease
   end
+  test "should create release" do
+    assert_difference('Release.count') do
+      post releases_url, params: { release: { descRelease: 'Rails is awesome!'} }
+    end
+  
+    assert_redirected_to release_path(Release.last)
+  end
 end

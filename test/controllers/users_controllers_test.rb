@@ -42,4 +42,11 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert_equal "upd@pt.pt", @usr.email
 
   end
+  test "should create user" do
+    assert_difference('User.count') do
+      post users_url, params: {user: { username: "updated", email: "upsssssd@pt.pt", password:"dsfkfjsdlasdlf"} }
+    end
+  
+    assert_redirected_to user_path(User.last)
+  end
 end

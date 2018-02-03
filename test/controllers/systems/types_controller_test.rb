@@ -40,4 +40,11 @@ class Systems::TypesControllerTest < ActionDispatch::IntegrationTest
     @type.reload
     assert_equal "updated", @type.name
   end
+  test "should create colectionTypes" do
+    assert_difference('SystemsType.count') do
+      post systems_types_url, params: { systems_type: { name: "updated" } }
+    end
+  
+    assert_redirected_to systems_type_path(SystemsType.last)
+  end
 end

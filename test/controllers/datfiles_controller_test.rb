@@ -28,7 +28,6 @@ class DatfilesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
   test "should destroy datfile" do
-    assert_difference('Datfiles.count', -1) do
       delete datfile_url(@df)
     end
  
@@ -45,5 +44,12 @@ class DatfilesControllerTest < ActionDispatch::IntegrationTest
     assert_equal @ct.id, @df.collection_type_id
     assert_equal @sys.id, @df.system_id
     assert_equal @ds.id, @df.datstatus_id
+  end
+  test "should create datfile" do
+    assert_difference('Datfile.count') do
+      post datfiles_url, params: { datfile: { name: "updated", readme: "updated", collection_type_id: @ct.id , system_id:@sys.id, datstatus_id: @ds.id } }
+    end
+  
+    assert_redirected_to datfile_path(Datfile.last)
   end
 end

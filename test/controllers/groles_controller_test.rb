@@ -44,4 +44,11 @@ class GrolesControllerTest < ActionDispatch::IntegrationTest
     assert_equal  @ro.id, @gr.role_id
     assert_equal  @us.id, @gr.user_id
   end
+  test "should create grole" do
+    assert_difference('Grole.count') do
+      post groles_url, params: { grole: { route_id: @rt.id , role_id: @ro.id, user_id: @us.id} }
+    end
+  
+    assert_redirected_to grole_path(Grole.last)
+  end
 end

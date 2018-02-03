@@ -39,4 +39,11 @@ class RolesControllerTest < ActionDispatch::IntegrationTest
     @r.reload
     assert_equal "updated", @r.name
   end
+  test "should create role" do
+    assert_difference('Role.count') do
+      post roles_url, params: { role: { name: 'Rails is awesome!'} }
+    end
+  
+    assert_redirected_to role_path(Role.last)
+  end
 end

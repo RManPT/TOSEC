@@ -41,4 +41,12 @@ class DatstatusesControllerTest < ActionDispatch::IntegrationTest
     assert_equal "sss", @ds.abbreviation
     assert_equal "updated", @ds.descStatus
   end
+
+  test "should create datstatus" do
+    assert_difference('Datstatus.count') do
+      post datstatuses_url, params: { datstatus: { name: "updated", abbreviation: "sss", descStatus: "updated"} }
+    end
+  
+    assert_redirected_to datstatus_path(Datstatus.last)
+  end
 end

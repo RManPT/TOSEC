@@ -40,4 +40,11 @@ class CollectionTypesControllerTest < ActionDispatch::IntegrationTest
     assert_equal "updated", @collection.name
     assert_equal "updated", @collection.desc
   end
+  test "should create colectionTypes" do
+    assert_difference('CollectionType.count') do
+      post collection_types_url, params: { collection_type: { name: "updated", desc: "updated"  } }
+    end
+  
+    assert_redirected_to collection_type_path(CollectionType.last)
+  end
 end

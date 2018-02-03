@@ -41,4 +41,12 @@ class RoutesControllerTest < ActionDispatch::IntegrationTest
     assert_equal "updated", @rou.path
     assert_equal "1", @rou.priority
   end
+  test "should create route" do
+    assert_difference('Route.count') do
+      post routes_url, params: { route: { name: 'Rails is awesome!', path: 'upd', priority: "1" } }
+    end
+  
+    assert_redirected_to route_path(Route.last)
+  end
 end
+

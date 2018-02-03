@@ -40,4 +40,11 @@ class CompaniesControllerTest < ActionDispatch::IntegrationTest
     assert_equal "updated", @cmp.title
     assert_equal "updated", @cmp.text
   end
+  test "should create company" do
+    assert_difference('Company.count') do
+      post companies_url, params: { company: { title: "updated", text: "updated"  } }
+    end
+  
+    assert_redirected_to company_path(Company.last)
+  end
 end
