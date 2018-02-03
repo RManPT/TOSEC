@@ -24,4 +24,11 @@ class DatstatusesControllerTest < ActionDispatch::IntegrationTest
     get edit_datstatus_url(@ds)
     assert_response :success
   end
+  test "should destroy datstatus" do
+    assert_difference('Datstatus.count', -1) do
+      delete datstatus_url(@ds)
+    end
+ 
+    assert_redirected_to datstatuses_path
+  end
 end

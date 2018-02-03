@@ -24,4 +24,11 @@ class RolesControllerTest < ActionDispatch::IntegrationTest
     get edit_role_url(@r)
     assert_response :success
   end
+  test "should destroy role" do
+    assert_difference('Role.count', -1) do
+      delete role_url(@r)
+    end
+ 
+    assert_redirected_to roles_path
+  end
 end

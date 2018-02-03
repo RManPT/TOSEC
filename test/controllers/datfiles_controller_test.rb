@@ -24,4 +24,11 @@ class DatfilesControllerTest < ActionDispatch::IntegrationTest
     get edit_datfile_url(@df)
     assert_response :success
   end
+  test "should destroy datfile" do
+    assert_difference('Datfiles.count', -1) do
+      delete datfile_url(@df)
+    end
+ 
+    assert_redirected_to datfiles_path
+  end
 end

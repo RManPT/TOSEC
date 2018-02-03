@@ -24,4 +24,11 @@ class GrolesControllerTest < ActionDispatch::IntegrationTest
     get edit_grole_url(@gr)
     assert_response :success
   end
+  test "should destroy grole" do
+    assert_difference('Grole.count', -1) do
+      delete grole_url(@gr)
+    end
+ 
+    assert_redirected_to groles_path
+  end
 end

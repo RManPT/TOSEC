@@ -24,4 +24,11 @@ class SystemsControllerTest < ActionDispatch::IntegrationTest
     get edit_system_url(@sys)
     assert_response :success
   end
+  test "should destroy system" do
+    assert_difference('System.count', -1) do
+      delete system_url(@sys)
+    end
+ 
+    assert_redirected_to systems_path
+  end
 end

@@ -24,4 +24,11 @@ class CompaniesControllerTest < ActionDispatch::IntegrationTest
     get edit_company_url(@cmp)
     assert_response :success
   end
+  test "should destroy company" do
+    assert_difference('Company.count', -1) do
+      delete company_url(@cmp)
+    end
+ 
+    assert_redirected_to companies_path
+  end
 end

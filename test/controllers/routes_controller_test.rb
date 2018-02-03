@@ -24,4 +24,11 @@ class RoutesControllerTest < ActionDispatch::IntegrationTest
     get edit_route_url(@rou)
     assert_response :success
   end
+  test "should destroy route" do
+    assert_difference('Route.count', -1) do
+      delete route_url(@rou)
+    end
+ 
+    assert_redirected_to routes_path
+  end
 end
