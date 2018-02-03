@@ -1,4 +1,5 @@
 class CompaniesController < ApplicationController
+    before_action :prepare_form_data
     def index
         @companies = Company.order("title").page(params[:page]).per(20)
     end 
@@ -45,5 +46,10 @@ class CompaniesController < ApplicationController
     private
     def company_params
         params.require(:company).permit(:title, :text, :image)
+    end
+    def prepare_form_data
+        if(user_signed_in?)
+            @links = Grole.where(user_id: current_user.id)
+        end
     end
 end

@@ -1,0 +1,17 @@
+<p>
+    <strong>Name:</strong>
+    <%= @route.name %>
+</p>
+
+<p>
+    <strong>Path:</strong>
+    <%= @route.path %>
+</p>
+
+<p>
+    <strong>Priority:</strong>
+    <%= @route.priority %>
+</p>
+
+<%= link_to 'Edit', edit_route_path(@route) %> |
+<%= link_to 'Back', routes_path %>

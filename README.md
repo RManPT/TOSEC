@@ -1,5 +1,8 @@
 # TOSEC on rails README
 
+[![Build Status](https://travis-ci.org/RManPT/TOSEC.svg?branch=master)](https://travis-ci.org/RManPT/TOSEC)
+
+
 How to enter develpment mode:
 
 * Rails version: jadesystems/rails-5-1"
