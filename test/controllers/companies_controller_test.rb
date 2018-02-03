@@ -31,4 +31,13 @@ class CompaniesControllerTest < ActionDispatch::IntegrationTest
  
     assert_redirected_to companies_path
   end
+  test "should update company" do
+    patch company_url(@cmp), params: { company: { title: "updated", text: "updated"  } }
+ 
+    assert_redirected_to company_url(@cmp)
+    # Reload association to fetch updated data and assert that title is updated.
+    @cmp.reload
+    assert_equal "updated", @cmp.title
+    assert_equal "updated", @cmp.text
+  end
 end

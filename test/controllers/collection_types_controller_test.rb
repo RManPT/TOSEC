@@ -31,4 +31,13 @@ class CollectionTypesControllerTest < ActionDispatch::IntegrationTest
  
     assert_redirected_to collection_types_path
   end
+  test "should update collection_type" do
+    patch collection_type_url(@collection), params: { collection_type: { name: "updated", desc: "updated"  } }
+ 
+    assert_redirected_to collection_type_url(@collection)
+    # Reload association to fetch updated data and assert that title is updated.
+    @collection.reload
+    assert_equal "updated", @collection.name
+    assert_equal "updated", @collection.desc
+  end
 end

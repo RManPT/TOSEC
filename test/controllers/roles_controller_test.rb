@@ -31,4 +31,12 @@ class RolesControllerTest < ActionDispatch::IntegrationTest
  
     assert_redirected_to roles_path
   end
+  test "should update role" do
+    patch role_url(@r), params: { role: { name: "updated"} }
+ 
+    assert_redirected_to role_url(@r)
+    # Reload association to fetch updated data and assert that title is updated.
+    @r.reload
+    assert_equal "updated", @r.name
+  end
 end

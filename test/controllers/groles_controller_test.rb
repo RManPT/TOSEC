@@ -3,6 +3,9 @@ require 'test_helper'
 class GrolesControllerTest < ActionDispatch::IntegrationTest
   setup do
     @gr = groles(:one)
+    @us = users(:one)
+    @ro = roles(:one)
+    @rt = routes(:one)
   end
 
   test "should get index" do
@@ -30,5 +33,15 @@ class GrolesControllerTest < ActionDispatch::IntegrationTest
     end
  
     assert_redirected_to groles_path
+  end
+  test "should update grole" do
+    patch grole_url(@gr), params: { grole: { route_id: @rt.id , role_id: @ro.id, user_id: @us.id} }
+ 
+    assert_redirected_to grole_url(@gr)
+    # Reload association to fetch updated data and assert that title is updated.
+    @gr.reload
+    assert_equal  @rt.id, @gr.route_id
+    assert_equal  @ro.id, @gr.role_id
+    assert_equal  @us.id, @gr.user_id
   end
 end

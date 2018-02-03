@@ -31,4 +31,14 @@ class RoutesControllerTest < ActionDispatch::IntegrationTest
  
     assert_redirected_to routes_path
   end
+  test "should update route" do
+    patch route_url(@rou), params: { route: { name: "updated", path: "updated",priority: "1"} }
+ 
+    assert_redirected_to route_url(@rou)
+    # Reload association to fetch updated data and assert that title is updated.
+    @rou.reload
+    assert_equal "updated", @rou.name
+    assert_equal "updated", @rou.path
+    assert_equal "1", @rou.priority
+  end
 end

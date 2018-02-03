@@ -31,4 +31,12 @@ class ReleasesControllerTest < ActionDispatch::IntegrationTest
  
     assert_redirected_to releases_path
   end
+  test "should update release" do
+    patch release_url(@rele), params: { release: { descRelease: "updated"} }
+ 
+    assert_redirected_to release_url(@rele)
+    # Reload association to fetch updated data and assert that title is updated.
+    @rele.reload
+    assert_equal "updated", @rele.descRelease
+  end
 end

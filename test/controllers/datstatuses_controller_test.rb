@@ -31,4 +31,14 @@ class DatstatusesControllerTest < ActionDispatch::IntegrationTest
  
     assert_redirected_to datstatuses_path
   end
+  test "should update datstatus" do
+    patch datstatus_url(@ds), params: { datstatus: { name: "updated", abbreviation: "sss", descStatus: "updated"} }
+ 
+    assert_redirected_to datstatus_url(@ds)
+    # Reload association to fetch updated data and assert that title is updated.
+    @ds.reload
+    assert_equal "updated", @ds.name
+    assert_equal "sss", @ds.abbreviation
+    assert_equal "updated", @ds.descStatus
+  end
 end
