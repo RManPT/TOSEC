@@ -74,7 +74,7 @@ class UsersController < ApplicationController
     end
     def prepare_form_data
       if(user_signed_in?)
-      @links = Grole.where(user_id: current_user.id)
+        @links = Grole.where(user_id: current_user.id).joins("inner join routes r on groles.route_id = r.id").order("r.priority asc, name")
       end
     end
     # Never trust parameters from the scary internet, only allow the white list through.
