@@ -52,6 +52,15 @@ class SystemsController < ApplicationController
       @companies = Company.all
       if(user_signed_in?)
         @links = Grole.where(user_id: current_user.id).joins("inner join routes r on groles.route_id = r.id").order("r.priority asc, name")
+        if current_user.admin?
+            @linksR = Grole.where(user_id: 0, role_id:1).joins("inner join routes r on groles.route_id = r.id").order("r.priority asc, name")
+        end
+        if current_user.mod?
+            @linksR = Grole.where(user_id: 0, role_id:2).joins("inner join routes r on groles.route_id = r.id").order("r.priority asc, name")
+        end
+        if current_user.pub?
+            @linksR = Grole.where(user_id: 0, role_id:3).joins("inner join routes r on groles.route_id = r.id").order("r.priority asc, name")
+        end
       end
     end
     def system_params

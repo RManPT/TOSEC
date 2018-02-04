@@ -57,12 +57,14 @@ Role.create([
     { name: 'Moderator'},
     { name: 'Publisher'}
 ])
-
+User.create(id:0, username: 'nothing',       email: 'nothing@tosec.com', password: '123456', admin: 'false', mod: 'false', pub: 'false')
 User.create(username: 'Administrator', email: 'root@tosec.com',  password: '123456', admin: 'true',  mod: 'false', pub: 'false')
 User.create(username: 'Moderator',     email: 'mod@tosec.com',   password: '123456', admin: 'false', mod: 'true',  pub: 'false')
 User.create(username: 'Publisher',     email: 'pub@tosec.com',   password: '123456', admin: 'false', mod: 'false', pub: 'true' )
 User.create(username: 'User1',         email: 'user1@tosec.com', password: '123456', admin: 'false', mod: 'false', pub: 'false')
 User.create(username: 'User2',         email: 'user2@tosec.com', password: '123456', admin: 'false', mod: 'false', pub: 'false')
+
+User.create(username: 'nothing',       email: 'nothing@tosec.com', password: '123456', admin: 'false', mod: 'false', pub: 'false')
 
 Grole.create([
     { user_id: '1', role_id: '1', route_id: '1'},
@@ -70,16 +72,16 @@ Grole.create([
     { user_id: '1', role_id: '1', route_id: '3'},
     { user_id: '1', role_id: '1', route_id: '4'},
     { user_id: '1', role_id: '1', route_id: '5'},
-    { user_id: '1', role_id: '1', route_id: '6'},
-    { user_id: '1', role_id: '1', route_id: '7'},
-    { user_id: '1', role_id: '1', route_id: '8'},
+    { user_id: '0', role_id: '1', route_id: '6'},
+    { user_id: '0', role_id: '1', route_id: '7'},
+    { user_id: '0', role_id: '1', route_id: '8'},
     { user_id: '1', role_id: '1', route_id: '9'},
     { user_id: '1', role_id: '1', route_id: '10'},
     { user_id: '1', role_id: '1', route_id: '11'},
-    { user_id: '2', role_id: '2', route_id: '1'},
+    { user_id: '0', role_id: '2', route_id: '1'},
     { user_id: '2', role_id: '2', route_id: '2'},
     { user_id: '2', role_id: '2', route_id: '3'},
-    { user_id: '3', role_id: '3', route_id: '1'},
+    { user_id: '0', role_id: '3', route_id: '1'},
     { user_id: '3', role_id: '3', route_id: '2'}
 ])
 
