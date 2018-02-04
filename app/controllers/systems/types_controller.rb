@@ -47,4 +47,5 @@ private
 def systems_type_params
   params.require(:systems_type).permit(:name)
 end
+
 end
