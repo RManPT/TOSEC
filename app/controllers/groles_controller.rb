@@ -1,4 +1,5 @@
 class GrolesController < ApplicationController
+    before_action :authenticate_user!
     before_action :prepare_form_data
     def create
         @grole = Grole.new(grole_params)

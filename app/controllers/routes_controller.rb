@@ -1,4 +1,5 @@
 class RoutesController < ApplicationController
+    before_action :authenticate_user!
     before_action :prepare_form_data
     def create
         @route = Route.new(route_params)

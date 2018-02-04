@@ -2,7 +2,6 @@ class WelcomeController < ApplicationController
   before_action :prepare_form_data
   def index
     if user_signed_in?
-      @role = "administrator"
       #Quando as role existirem isto deixa de ser hard code
       if current_user.admin? # a_variable is the variable we want to compare
         redirect_to collection_types_path

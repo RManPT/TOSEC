@@ -1,4 +1,5 @@
 class CollectionTypesController < ApplicationController
+    before_action :authenticate_user!
     before_action :prepare_form_data
     def index
         @collection_type = CollectionType.order("name").page(params[:page]).per(20)

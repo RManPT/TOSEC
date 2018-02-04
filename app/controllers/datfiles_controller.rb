@@ -1,4 +1,5 @@
 class DatfilesController < ApplicationController
+    before_action :authenticate_user!
     before_action :prepare_dependencies
     before_action :prepare_form_data
 

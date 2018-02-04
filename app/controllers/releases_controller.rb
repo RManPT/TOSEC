@@ -1,4 +1,5 @@
 class ReleasesController < ApplicationController
+    before_action :authenticate_user!
     before_action :prepare_form_data
     def create
         @release = Release.new(release_params)

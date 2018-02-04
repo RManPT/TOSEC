@@ -1,4 +1,5 @@
 class CompaniesController < ApplicationController
+    before_action :authenticate_user!
     before_action :prepare_form_data
     def index
         @companies = Company.order("title").page(params[:page]).per(20)
