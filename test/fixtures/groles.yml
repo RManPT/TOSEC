@@ -1,11 +1,21 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  user_id: 1
-  role_id: 2
-  route_id: 3
+grole_one:
+  user: barcelos
+  role: mod_role
+  route: route1
 
-two:
-  user_id: 2
-  role_id: 1
-  route_id: 1
+grole_two:
+  user: barcelos
+  role: mod_role
+  route: route2
+
+grole_3:
+  user: barcelos
+  role: mod_role
+  route: route3
+
+grole_4:
+  user: admin
+  role: admin_role
+  route: route5

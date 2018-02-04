@@ -2,7 +2,7 @@ require 'test_helper'
 
 class CompaniesControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @cmp = companies(:one)
+    @cmp = companies(:sega)
   end
 
   test "should get index" do
