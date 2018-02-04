@@ -39,17 +39,17 @@ Datstatus.create([
 end
 
 Route.create([
-    { name: 'Systems', path: 'systems', priority: '1' },
-    { name: 'SystemType', path: 'systems/types', priority: '1' },
-    { name: 'Companies', path: 'companies', priority: '2' },
-    { name: 'DatFiles', path: 'datfiles', priority: '1' },
-    { name: 'Dat file status', path: 'datstatuses', priority: '1' },
+    { name: 'Systems', path: 'systems', priority: '3' },
+    { name: 'SystemType', path: 'systems/types', priority: '6' },
+    { name: 'Companies', path: 'companies', priority: '4' },
+    { name: 'DatFiles', path: 'datfiles', priority: '2' },
+    { name: 'Dat file status', path: 'datstatuses', priority: '7' },
     { name: 'Releases', path: 'releases', priority: '1' },
-    { name: 'Collection Types', path: 'collection_types', priority: '1' },
-    { name: 'Group Role', path: 'groles', priority: '1' },
-    { name: 'Roles', path: 'roles', priority: '1' },
-    { name: 'Routes', path: 'routes', priority: '1' },
-    { name: 'Users', path: 'users', priority: '1' }
+    { name: 'Collection Types', path: 'collection_types', priority: '5' },
+    { name: 'Group Role', path: 'groles', priority: '99' },
+    { name: 'Roles', path: 'roles', priority: '98' },
+    { name: 'Routes', path: 'routes', priority: '97' },
+    { name: 'Users', path: 'users', priority: '96' }
 ])
 
 Role.create([
@@ -83,6 +83,7 @@ Grole.create([
     { user_id: '2', role_id: '2', route_id: '3'},
     { user_id: '0', role_id: '3', route_id: '1'},
     { user_id: '3', role_id: '3', route_id: '2'}
+    { user_id: '3', role_id: '3', route_id: '4'}
 ])
 
 10.times do |n|
