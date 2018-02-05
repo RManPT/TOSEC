@@ -18,7 +18,7 @@
           <%=@datfile.file.to_s.split("/")[-1]%>
           <% else%> <%="none"%> <%end%>
     </p>
-
+    <%= link_to "Download", @datfile.file.url(:original, false) %>
   <p>
   <strong>System:</strong>
     <%= @datfile.system.name %>

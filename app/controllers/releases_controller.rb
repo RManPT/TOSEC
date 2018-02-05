@@ -1,10 +1,15 @@
 class ReleasesController < ApplicationController
     before_action :authenticate_user!
     before_action :prepare_form_data
+    before_action :prepare_dependencies
     def create
         @release = Release.new(release_params)
         
         if @release.save
+            @list.each do |list|
+                @release.datfiles << list
+            end
+            Datfile.where(:datstatus_id => '3').update_all("datstatus_id = '4'")
             redirect_to @release
         else
             render 'new'
@@ -59,4 +64,8 @@ class ReleasesController < ApplicationController
     def release_params
       params.require(:release).permit(:descRelease)
     end
+    def prepare_dependencies
+        @list = Datfile.where( :datstatus_id => '3' )
+    end
+
 end
