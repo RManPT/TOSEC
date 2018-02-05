@@ -2,9 +2,9 @@ require 'test_helper'
 
 class SystemsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @sys = systems(:one)
-    @cmp = companies(:one)
-    @st = systems_types(:one)
+    @sys = systems(:commodore_amiga)
+    @cmp = companies(:commodore)
+    @st = systems_types(:systype1)
   end
 
   test "should get index" do
@@ -18,6 +18,7 @@ class SystemsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get show" do
+    #byebug
     get system_url(@sys)
     assert_response :success
   end

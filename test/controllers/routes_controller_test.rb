@@ -2,7 +2,7 @@ require 'test_helper'
 
 class RoutesControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @rou = routes(:one)
+    @rou = routes(:route2)
   end
 
   test "should get index" do

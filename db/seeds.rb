@@ -26,11 +26,12 @@ CollectionType.create([
 ])
 
 Datstatus.create([
-    { name: 'INACTIVE', abbreviation: 'I', descStatus: 'Dat file is deprecated' },
-    { name: 'ACTIVE', abbreviation: 'A', descStatus: 'Dat file will be added to next release' },
+    { name: 'UPLOADED', abbreviation: 'U', descStatus: 'Dat file awaiting for moderation process to begin' },
     { name: 'PENDING', abbreviation: 'P', descStatus: 'Dat file awaiting for moderation process to complete' },
+    { name: 'ACTIVE', abbreviation: 'A', descStatus: 'Dat file will be added to next release' },
+    { name: 'RELEASED', abbreviation: 'R', descStatus: 'Dat file is published on one or more releases' },
     { name: 'OBSOLETE', abbreviation: 'O', descStatus: 'Dat file was substituted by a new one' },
-    { name: 'UPLOADED', abbreviation: 'U', descStatus: 'Dat file awaiting for morderation process to begin' }
+    { name: 'INACTIVE', abbreviation: 'I', descStatus: 'Dat file is deprecated' }
 ])
 
 
@@ -39,17 +40,17 @@ Datstatus.create([
 end
 
 Route.create([
-    { name: 'Systems', path: 'systems', priority: '1' },
-    { name: 'SystemType', path: 'systems/types', priority: '1' },
-    { name: 'Companies', path: 'companies', priority: '2' },
-    { name: 'DatFiles', path: 'datfiles', priority: '1' },
-    { name: 'Dat file status', path: 'datstatuses', priority: '1' },
+    { name: 'Systems', path: 'systems', priority: '3' },
+    { name: 'SystemType', path: 'systems/types', priority: '6' },
+    { name: 'Companies', path: 'companies', priority: '4' },
+    { name: 'DatFiles', path: 'datfiles', priority: '2' },
+    { name: 'Dat file status', path: 'datstatuses', priority: '7' },
     { name: 'Releases', path: 'releases', priority: '1' },
-    { name: 'Collection Types', path: 'collection_types', priority: '1' },
-    { name: 'Group Role', path: 'groles', priority: '1' },
-    { name: 'Roles', path: 'roles', priority: '1' },
-    { name: 'Routes', path: 'routes', priority: '1' },
-    { name: 'Users', path: 'users', priority: '1' }
+    { name: 'Collection Types', path: 'collection_types', priority: '5' },
+    { name: 'Group Role', path: 'groles', priority: '99' },
+    { name: 'Roles', path: 'roles', priority: '98' },
+    { name: 'Routes', path: 'routes', priority: '97' },
+    { name: 'Users', path: 'users', priority: '96' }
 ])
 
 Role.create([
@@ -57,12 +58,13 @@ Role.create([
     { name: 'Moderator'},
     { name: 'Publisher'}
 ])
-
+User.create(id:0, username: 'nothing',       email: 'nothing@tosec.com', password: '123456', admin: 'false', mod: 'false', pub: 'false')
 User.create(username: 'Administrator', email: 'root@tosec.com',  password: '123456', admin: 'true',  mod: 'false', pub: 'false')
 User.create(username: 'Moderator',     email: 'mod@tosec.com',   password: '123456', admin: 'false', mod: 'true',  pub: 'false')
 User.create(username: 'Publisher',     email: 'pub@tosec.com',   password: '123456', admin: 'false', mod: 'false', pub: 'true' )
 User.create(username: 'User1',         email: 'user1@tosec.com', password: '123456', admin: 'false', mod: 'false', pub: 'false')
 User.create(username: 'User2',         email: 'user2@tosec.com', password: '123456', admin: 'false', mod: 'false', pub: 'false')
+User.create(username: 'nothing',       email: 'nothing@tosec.com', password: '123456', admin: 'false', mod: 'false', pub: 'false')
 
 Grole.create([
     { user_id: '1', role_id: '1', route_id: '1'},
@@ -70,19 +72,21 @@ Grole.create([
     { user_id: '1', role_id: '1', route_id: '3'},
     { user_id: '1', role_id: '1', route_id: '4'},
     { user_id: '1', role_id: '1', route_id: '5'},
-    { user_id: '1', role_id: '1', route_id: '6'},
-    { user_id: '1', role_id: '1', route_id: '7'},
-    { user_id: '1', role_id: '1', route_id: '8'},
+    { user_id: '0', role_id: '1', route_id: '6'},
+    { user_id: '0', role_id: '1', route_id: '7'},
+    { user_id: '0', role_id: '1', route_id: '8'},
     { user_id: '1', role_id: '1', route_id: '9'},
     { user_id: '1', role_id: '1', route_id: '10'},
     { user_id: '1', role_id: '1', route_id: '11'},
-    { user_id: '2', role_id: '2', route_id: '1'},
+    { user_id: '0', role_id: '2', route_id: '1'},
     { user_id: '2', role_id: '2', route_id: '2'},
     { user_id: '2', role_id: '2', route_id: '3'},
-    { user_id: '3', role_id: '3', route_id: '1'},
-    { user_id: '3', role_id: '3', route_id: '2'}
+    { user_id: '2', role_id: '2', route_id: '4'},    
+    { user_id: '0', role_id: '3', route_id: '1'},
+    { user_id: '3', role_id: '3', route_id: '2'},
+    { user_id: '3', role_id: '3', route_id: '4'}
 ])
 
-10.times do |n|
-    Datfile.create([{ name: "dat #{n}" , readme: "dat #{n}", user_id: "1", system_id: "#{1+rand(5)}", datstatus_id: "#{1+rand(5)}", collection_type_id: "#{1+rand(3)}" }])
+20.times do |n|
+    Datfile.create([{ name: "dat #{n}" , readme: "dat #{n}", user_id: "1", system_id: "#{1+rand(5)}", datstatus_id: "#{1+rand(6)}", collection_type_id: "#{1+rand(3)}" }])
 end

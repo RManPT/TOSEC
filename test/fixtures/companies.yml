@@ -1,9 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  title: MyString
-  text: MyText
+commodore:
+  title: Commodore
+  text: Commodore company bla bla bla
 
-two:
-  title: MyString
-  text: MyText
+sega:
+  title: SEGA
+  text: Sega is a Japanese company that bla bla bla bla

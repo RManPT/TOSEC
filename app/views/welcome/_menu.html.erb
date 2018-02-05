@@ -1,7 +1,9 @@
 <% if user_signed_in? %>
 <div class="col-md-2">
     <div class="list-group">
-        
+        <% @linksR.each do |gr| %>
+            <%= link_to gr.route.name, "/"+gr.route.path, class: "list-group-item" %>
+        <% end %>
         <% @links.each do |gr| %>
             <%= link_to gr.route.name, "/"+gr.route.path, class: "list-group-item" %>
         <% end %>

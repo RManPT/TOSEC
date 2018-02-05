@@ -1,7 +1,10 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
+admin_role:
+  name: Administrator
 
-two:
-  name: MyString
+mod_role:
+  name: Moderator
+
+publisher_role:
+  name: Publisher

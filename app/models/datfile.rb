@@ -1,6 +1,12 @@
 class Datfile < ApplicationRecord
   has_attached_file :file
-  validates_attachment_content_type :file, :content_type => 'text/plain'
+  
+  # do_not_validate_attachment_file_type :file
+  
+  validates_attachment_content_type :file, :content_type => ['text/html','text/xml','application/xml'], file_name: { matches: /\.dat\z/ }
+  # validates_attachment :file, :presence => true, file_name: { matches: /\.dat\z/ }
+  # validates_attachment_content_type :file, content_type: /\.dat\z/
+
   belongs_to :collection_type, required: true
   belongs_to :user, required: true
   belongs_to :system, required: true
@@ -13,4 +19,6 @@ class Datfile < ApplicationRecord
   validates :system_id, presence: true  
   validates :datstatus_id, presence: true  
   validates :user_id, presence: true  
+  #validates_attachment_file_name :file, :matches => [/c\Z/i]
+  do_not_validate_attachment_file_type :file
 end
