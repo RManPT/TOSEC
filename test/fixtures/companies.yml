@@ -1,9 +1,0 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-commodore:
-  title: Commodore
-  text: Commodore company bla bla bla
-
-sega:
-  title: SEGA
-  text: Sega is a Japanese company that bla bla bla bla
