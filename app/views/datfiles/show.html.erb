@@ -13,9 +13,9 @@
 
   <p>
     <strong>File:</strong>
-      <%= @datfile.file.name %>
+      <%= @datfile.file %>
     </p>
-
+    <%= link_to "Download", @datfile.file.url(:original, false) %>
   <p>
   <strong>System:</strong>
     <%= @datfile.system.name %>

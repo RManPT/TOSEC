@@ -12,4 +12,6 @@ class Datfile < ApplicationRecord
   validates :system_id, presence: true  
   validates :datstatus_id, presence: true  
   validates :user_id, presence: true  
+  #validates_attachment_file_name :file, :matches => [/c\Z/i]
+  do_not_validate_attachment_file_type :file
 end

@@ -11,7 +11,10 @@
     <% end %>
   </ul>
 </div>
-<% end %>   
+<% end %> 
+
+
+
 <div class="form-group">
     <p>
     <%= form.label :descRelease, class: 'form-label' %><br>
@@ -24,3 +27,25 @@
   </p>
 <% end %>
 </div>
+
+<div class="table-responsive text-nowrap">
+    
+      <table class="table table-hover">
+          <tr>
+              <th>Files to Release</th>
+              <th>Status</th>
+              <th>&nbsp;</th>
+          </tr>
+      <% @list.each do |list| %>
+      <tr>
+      <td width="100%">
+        <%= list.name %>
+      </td>
+      <td width="100%">
+          ACTIVE
+        </td>  
+    </tr>  
+    
+    <% end %> 
+     
+  </div>
