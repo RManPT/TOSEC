@@ -13,7 +13,10 @@
 
   <p>
     <strong>File:</strong>
-      <%= @datfile.file.to_s.split('/')[-1] %>
+
+    <% if @datfile.file.to_s!="/files/original/missing.png"%> 
+          <%=@datfile.file.to_s.split("/")[-1]%>
+          <% else%> <%="none"%> <%end%>
     </p>
 
   <p>

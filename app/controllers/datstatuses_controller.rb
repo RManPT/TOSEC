@@ -2,7 +2,7 @@ class DatstatusesController < ApplicationController
     before_action :authenticate_user!
     before_action :prepare_form_data
   def index
-      @datstatuses = Datstatus.order("name").page(params[:page]).per(20)
+      @datstatuses = Datstatus.order("id").page(params[:page]).per(20)
   end
 
   def show

@@ -26,11 +26,12 @@ CollectionType.create([
 ])
 
 Datstatus.create([
-    { name: 'INACTIVE', abbreviation: 'I', descStatus: 'Dat file is deprecated' },
-    { name: 'ACTIVE', abbreviation: 'A', descStatus: 'Dat file will be added to next release' },
+    { name: 'UPLOADED', abbreviation: 'U', descStatus: 'Dat file awaiting for moderation process to begin' },
     { name: 'PENDING', abbreviation: 'P', descStatus: 'Dat file awaiting for moderation process to complete' },
+    { name: 'ACTIVE', abbreviation: 'A', descStatus: 'Dat file will be added to next release' },
+    { name: 'RELEASED', abbreviation: 'R', descStatus: 'Dat file is published on one or more releases' },
     { name: 'OBSOLETE', abbreviation: 'O', descStatus: 'Dat file was substituted by a new one' },
-    { name: 'UPLOADED', abbreviation: 'U', descStatus: 'Dat file awaiting for morderation process to begin' }
+    { name: 'INACTIVE', abbreviation: 'I', descStatus: 'Dat file is deprecated' }
 ])
 
 
@@ -86,6 +87,6 @@ Grole.create([
     { user_id: '3', role_id: '3', route_id: '4'}
 ])
 
-10.times do |n|
-    Datfile.create([{ name: "dat #{n}" , readme: "dat #{n}", user_id: "1", system_id: "#{1+rand(5)}", datstatus_id: "#{1+rand(5)}", collection_type_id: "#{1+rand(3)}" }])
+20.times do |n|
+    Datfile.create([{ name: "dat #{n}" , readme: "dat #{n}", user_id: "1", system_id: "#{1+rand(5)}", datstatus_id: "#{1+rand(6)}", collection_type_id: "#{1+rand(3)}" }])
 end
