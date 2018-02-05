@@ -3,7 +3,7 @@ require 'test_helper'
 class Systems::TypesControllerTest < ActionDispatch::IntegrationTest
 
   setup do
-    @type = systems_types(:one)
+    @type = systems_types(:systype1)
   end
 
   test "should get index" do

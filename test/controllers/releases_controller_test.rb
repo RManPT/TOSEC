@@ -2,7 +2,7 @@ require 'test_helper'
 
 class ReleasesControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @rele = releases(:one)
+    @rele = releases(:release_one)
   end
 
   test "should get index" do

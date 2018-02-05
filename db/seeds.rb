@@ -63,7 +63,6 @@ User.create(username: 'Moderator',     email: 'mod@tosec.com',   password: '1234
 User.create(username: 'Publisher',     email: 'pub@tosec.com',   password: '123456', admin: 'false', mod: 'false', pub: 'true' )
 User.create(username: 'User1',         email: 'user1@tosec.com', password: '123456', admin: 'false', mod: 'false', pub: 'false')
 User.create(username: 'User2',         email: 'user2@tosec.com', password: '123456', admin: 'false', mod: 'false', pub: 'false')
-
 User.create(username: 'nothing',       email: 'nothing@tosec.com', password: '123456', admin: 'false', mod: 'false', pub: 'false')
 
 Grole.create([
@@ -81,8 +80,9 @@ Grole.create([
     { user_id: '0', role_id: '2', route_id: '1'},
     { user_id: '2', role_id: '2', route_id: '2'},
     { user_id: '2', role_id: '2', route_id: '3'},
+    { user_id: '2', role_id: '2', route_id: '4'},    
     { user_id: '0', role_id: '3', route_id: '1'},
-    { user_id: '3', role_id: '3', route_id: '2'}
+    { user_id: '3', role_id: '3', route_id: '2'},
     { user_id: '3', role_id: '3', route_id: '4'}
 ])
 

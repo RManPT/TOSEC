@@ -25,7 +25,7 @@ class DatstatusesController < ApplicationController
       @datstatus = Datstatus.new(datstatus_params)
       
       if @datstatus.save
-          redirect_to @status
+          redirect_to @datstatus
       else
           render 'new'
       end

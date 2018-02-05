@@ -1,11 +1,56 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
-  path: MyString
-  priority: 1 
+route1:
+  name: Systems
+  path: systems
+  priority: 1
 
-two:
-  name: MyString
-  path: MyString
+route2:
+  name: SystemType
+  path: systems/types
+  priority: 1
+
+route3:
+  name: Companies
+  path: companies
   priority: 2
+
+route4:
+  name: DatFiles
+  path: datfiles
+  priority: 1
+
+route5:
+  name: Dat file status
+  path: datstatuses
+  priority: 1
+
+route6:
+  name: Releases
+  path: releases
+  priority: 1
+
+route7:
+  name: Collection Types
+  path: collection_types
+  priority: 1
+
+route8:
+  name: Group Role
+  path: groles
+  priority: 1
+
+route9:
+  name: Roles
+  path: roles
+  priority: 1
+
+route10:
+  name: Routes
+  path: routes
+  priority: 1
+
+route11:
+  name: Users
+  path: users
+  priority: 1

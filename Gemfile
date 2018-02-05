@@ -6,7 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 # Use Paperclip for file/image upload
-gem 'paperclip', '~> 5.2.1'
+gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
 # Use sqlite3 as the database for Active Record
@@ -66,3 +66,6 @@ gem 'devise', '~> 4.2'
 gem 'kaminari'
 gem 'kaminari-bootstrap'
 gem 'cancancan'
+gem 'rails-erd', group: :development
+
+gem 'simplecov', :require => false, :group => :test”

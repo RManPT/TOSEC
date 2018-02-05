@@ -2,7 +2,7 @@ require 'test_helper'
 
 class CollectionTypesControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @collection = collection_types(:one)
+    @collection = collection_types(:tosec)
   end
 
   test "should get index" do
