@@ -1,7 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
+systype1:
+  name: ABCDEF
 
-two:
-  name: MyString
+systype2:
+  name: Bla Bla

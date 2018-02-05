@@ -1,9 +1,15 @@
 class ReleasesController < ApplicationController
+    before_action :authenticate_user!
     before_action :prepare_form_data
+    before_action :prepare_dependencies
     def create
         @release = Release.new(release_params)
         
         if @release.save
+            @list.each do |list|
+                @release.datfiles << list
+            end
+            Datfile.where(:datstatus_id => '3').update_all("datstatus_id = '4'")
             redirect_to @release
         else
             render 'new'
@@ -44,9 +50,22 @@ class ReleasesController < ApplicationController
     def prepare_form_data
         if(user_signed_in?)
             @links = Grole.where(user_id: current_user.id).joins("inner join routes r on groles.route_id = r.id").order("r.priority asc, name")
+            if current_user.admin?
+                @linksR = Grole.where(user_id: 0, role_id:1).joins("inner join routes r on groles.route_id = r.id").order("r.priority asc, name")
+            end
+            if current_user.mod?
+                @linksR = Grole.where(user_id: 0, role_id:2).joins("inner join routes r on groles.route_id = r.id").order("r.priority asc, name")
+            end
+            if current_user.pub?
+                @linksR = Grole.where(user_id: 0, role_id:3).joins("inner join routes r on groles.route_id = r.id").order("r.priority asc, name")
+            end
         end
     end
     def release_params
       params.require(:release).permit(:descRelease)
     end
+    def prepare_dependencies
+        @list = Datfile.where( :datstatus_id => '3' )
+    end
+
 end

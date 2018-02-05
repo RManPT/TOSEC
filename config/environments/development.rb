@@ -57,5 +57,8 @@ Rails.application.configure do
 config.assets.compile = false
 
 #Paperclip.options[:command_path] = "/usr/bin/convert"
+Paperclip.options[:command_path] = "/usr/local/bin/"
+
+
 
 end

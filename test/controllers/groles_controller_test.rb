@@ -2,10 +2,10 @@ require 'test_helper'
 
 class GrolesControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @gr = groles(:one)
-    @us = users(:one)
-    @ro = roles(:one)
-    @rt = routes(:one)
+    @gr = groles(:grole_one)
+    @us = users(:barcelos)
+    @ro = roles(:admin_role)
+    @rt = routes(:route1)
   end
 
   test "should get index" do

@@ -1,8 +1,10 @@
 require 'test_helper'
 
 class DatstatusesControllerTest < ActionDispatch::IntegrationTest
+  include Devise::Test::IntegrationHelpers
+  
   setup do
-    @ds = datstatuses(:one)
+    @ds = datstatuses(:status_active)
   end
 
   test "should get index" do
@@ -32,6 +34,7 @@ class DatstatusesControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to datstatuses_path
   end
   test "should update datstatus" do
+    sign_in users(:admin)
     patch datstatus_url(@ds), params: { datstatus: { name: "updated", abbreviation: "sss", descStatus: "updated"} }
  
     assert_redirected_to datstatus_url(@ds)
@@ -43,10 +46,11 @@ class DatstatusesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should create datstatus" do
+    sign_in users(:admin)
     assert_difference('Datstatus.count') do
       post datstatuses_url, params: { datstatus: { name: "updated", abbreviation: "sss", descStatus: "updated"} }
     end
   
-    assert_redirected_to datstatus_path(Datstatus.last)
+    assert_redirected_to datstatus_url(Datstatus.last)
   end
 end

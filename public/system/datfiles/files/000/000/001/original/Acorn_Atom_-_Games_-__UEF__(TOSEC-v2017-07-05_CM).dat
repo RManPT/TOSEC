@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE datafile PUBLIC "-//Logiqx//DTD ROM Management Datafile//EN" "http://www.logiqx.com/Dats/datafile.dtd">
+
+<datafile>
+	<header>
+		<name>Acorn Atom - Games - [UEF]</name>
+		<description>Acorn Atom - Games - [UEF] (TOSEC-v2017-07-05)</description>
+		<category>TOSEC</category>
+		<version>2017-07-05</version>
+		<author>mictlantecuhtle</author>
+		<email>contact@tosecdev.org</email>
+		<homepage>TOSEC</homepage>
+		<url>http://www.tosecdev.org/</url>
+	</header>
+	<game name="Atomic Chuckie Egg (2012)(van Oss, Kees)(FW)[colour for Atomulator]">
+		<description>Atomic Chuckie Egg (2012)(van Oss, Kees)(FW)[colour for Atomulator]</description>
+		<rom name="Atomic Chuckie Egg (2012)(van Oss, Kees)(FW)[colour for Atomulator].uef" size="9062" crc="ab4b3a62" md5="6327ef6ad059435450a3f44f3fc758ae" sha1="4240d4401c61fac78c9c8b7ce8a12b56266654d8"/>
+	</game>
+	<game name="Atomic Chuckie Egg (2012)(van Oss, Kees)(FW)[monochrome for Atomulator]">
+		<description>Atomic Chuckie Egg (2012)(van Oss, Kees)(FW)[monochrome for Atomulator]</description>
+		<rom name="Atomic Chuckie Egg (2012)(van Oss, Kees)(FW)[monochrome for Atomulator].uef" size="9070" crc="0ccd10cd" md5="cd6460a030e88134d30e64a82b380cbf" sha1="2c33026fc6a64ea30197e44896ce4f763183d14b"/>
+	</game>
+	<game name="Atomic Joe Blade (2014)(van Oss, Kees)(FW)[Atomulator]">
+		<description>Atomic Joe Blade (2014)(van Oss, Kees)(FW)[Atomulator]</description>
+		<rom name="Atomic Joe Blade (2014)(van Oss, Kees)(FW)[Atomulator].uef" size="15022" crc="76b7572e" md5="b0f8013ad1f2f2df8317311dca97d3f0" sha1="0079738ca604e6cfbba4016a9e3d6937b6e8f358"/>
+	</game>
+	<game name="Atomic Joe Blade (2014)(van Oss, Kees)(FW)[Wouter Ras]">
+		<description>Atomic Joe Blade (2014)(van Oss, Kees)(FW)[Wouter Ras]</description>
+		<rom name="Atomic Joe Blade (2014)(van Oss, Kees)(FW)[Wouter Ras].tap" size="35376" crc="67d5ff0c" md5="f138f2059c03ea4061040439bee31e51" sha1="3fa6c820434aeaba42c4490722c67eda94b349fb"/>
+	</game>
+	<game name="Galaforce (2012)(van Oss, Kees)(FW)[colour for Atomulator]">
+		<description>Galaforce (2012)(van Oss, Kees)(FW)[colour for Atomulator]</description>
+		<rom name="Galaforce (2012)(van Oss, Kees)(FW)[colour for Atomulator].uef" size="9933" crc="49582b6a" md5="e545de5b0f83613cb189f6df9e9e6ae0" sha1="7eae37d834cc79f5d066fe0f8b465f629bf6b279"/>
+	</game>
+	<game name="Galaforce (2012)(van Oss, Kees)(FW)[monochrome for Atomulator]">
+		<description>Galaforce (2012)(van Oss, Kees)(FW)[monochrome for Atomulator]</description>
+		<rom name="Galaforce (2012)(van Oss, Kees)(FW)[monochrome for Atomulator].uef" size="9913" crc="71ce39de" md5="fca1c004bd59931ebcdffa004fc97282" sha1="83519ddabf85255a3fb222e8946300ae1ebe11c8"/>
+	</game>
+	<game name="Hard Hat Harry (2011)(van Oss, Kees)(FW)[Atomulator]">
+		<description>Hard Hat Harry (2011)(van Oss, Kees)(FW)[Atomulator]</description>
+		<rom name="Hard Hat Harry (2011)(van Oss, Kees)(FW)[Atomulator].uef" size="8911" crc="901ca53a" md5="05e5b77a45ee9d53bc57e807ee7244d6" sha1="b195c7ee16da9b91c83f4cd7705e0a250a5a61a4"/>
+	</game>
+	<game name="Hyper Viper (2012-02)(van Oss, Kees)(FW)[colour for Atomulator]">
+		<description>Hyper Viper (2012-02)(van Oss, Kees)(FW)[colour for Atomulator]</description>
+		<rom name="Hyper Viper (2012-02)(van Oss, Kees)(FW)[colour for Atomulator].uef" size="4053" crc="f2cdc664" md5="a79c350d59e7d907cc90f545f324ac7b" sha1="06834429d0c133ebca1e47aab143bab4aec0dd7f"/>
+	</game>
+	<game name="Hyper Viper (2012-02)(van Oss, Kees)(FW)[monochrome for Atomulator]">
+		<description>Hyper Viper (2012-02)(van Oss, Kees)(FW)[monochrome for Atomulator]</description>
+		<rom name="Hyper Viper (2012-02)(van Oss, Kees)(FW)[monochrome for Atomulator].uef" size="4055" crc="c77e31b1" md5="03a5a2cfe2fe36985aacf9ea8c074996" sha1="0cbf321aa49357371a242127a90d2fe56e712e65"/>
+	</game>
+	<game name="Jet Set Miner (2011)(van Oss, Kees)(FW)[colour for Atomulator]">
+		<description>Jet Set Miner (2011)(van Oss, Kees)(FW)[colour for Atomulator]</description>
+		<rom name="Jet Set Miner (2011)(van Oss, Kees)(FW)[colour for Atomulator].uef" size="4021" crc="d1765c3d" md5="b09b742c936c26981e53e4e77dee9e6e" sha1="1ce54ed41b878ba7abf0059785497eb7645430f2"/>
+	</game>
+	<game name="Jet Set Miner (2011)(van Oss, Kees)(FW)[monochrome for Atomulator]">
+		<description>Jet Set Miner (2011)(van Oss, Kees)(FW)[monochrome for Atomulator]</description>
+		<rom name="Jet Set Miner (2011)(van Oss, Kees)(FW)[monochrome for Atomulator].uef" size="3960" crc="08bf1104" md5="4ddd0611066c2493cac98176635b44f8" sha1="7db984f82f230531ee2485cb602caa13fc9279cb"/>
+	</game>
+	<game name="Jungle Journey (2012)(van Oss, Kees)(FW)[colour for Atomulator]">
+		<description>Jungle Journey (2012)(van Oss, Kees)(FW)[colour for Atomulator]</description>
+		<rom name="Jungle Journey (2012)(van Oss, Kees)(FW)[colour for Atomulator].uef" size="13807" crc="d5ed427b" md5="30e0e5e56ad0c172a5d287fe67c9870a" sha1="7d78b13538820e6a39b08da9ea9b0ac6b0dfddfc"/>
+	</game>
+	<game name="Repton (2013)(van Oss, Kees)(FW)[colour for Atomulator]">
+		<description>Repton (2013)(van Oss, Kees)(FW)[colour for Atomulator]</description>
+		<rom name="Repton (2013)(van Oss, Kees)(FW)[colour for Atomulator].uef" size="14895" crc="1a69941a" md5="cb3a69b46863b720042b40e8c7193b55" sha1="ce3fc486457f1b51b1a4bde83e25936201bb63dd"/>
+	</game>
+</datafile>
