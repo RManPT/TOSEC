@@ -1,45 +1,40 @@
 <h2>Release</h1>
   <hr>
   <div class="table-responsive text-nowrap">
-  <p>
-    <strong>Description:</strong>
-    <br>
-    <%= @release.created_at.strftime('%Y-%m-%d')%>_<%=@release.descRelease %>
-  </p>
-  <p>
-      <strong>Readme:</strong>
+    <p>
+      <strong>Description:</strong>
       <br>
-      Message to members
+      <%= @release.created_at.strftime('%Y-%m-%d')%>_
+        <%=@release.descRelease %>
     </p>
     <p>
-        <strong>DAT Files:</strong>
-        <br>
-        List of associated DAT Files ordered by collection
-         <div class="table-responsive text-nowrap">
-            
-              <table class="table table-hover">
-                  <tr>
-                      <th>Name</th>
-                      <th>Status</th>
-                      <th>&nbsp;</th>
-                  </tr>
-              <% @release.datfiles.each do |list| %>
-              <tr>
+      <strong>Readme:</strong>
+      <br> Message to members
+    </p>
+  
+      <strong>DAT Files:</strong>
+      <br> List of associated DAT Files ordered by collection
+      <div class="table-responsive text-nowrap">
+        <table class="table table-hover">
+          <tr>
+            <th>Name</th>
+            <th>Status</th>
+          </tr>
+          <% @release.datfiles.each do |list| %>
+            <tr>
               <td width="100%">
                 <%= list.name %>
               </td>
               <td width="100%">
-                  <%=list.datstatus_id%>
-                </td>  
-            </tr>  
-            
-            <% end %> 
-             
-          </div> -->
-
-      </p>
+                <%=list.datstatus_id%>
+              </td>
+            </tr>
+            <% end %>
+          </table>
+      </div>
+  
     <hr>
-  <div class="text-right">
+    <div class="text-right">
       <%= link_to 'Back', releases_path, class: 'btn btn-default' %>
         <%= link_to 'Edit', edit_release_path(@release), class: 'btn btn-primary' %>
           <%= link_to 'Destroy', release_path(@release), class: 'btn btn-danger',
@@ -47,4 +42,3 @@
     data: { confirm: 'Are you sure?' } %>
     </div>
   </div>
-  <!-- <%= render '/welcome/bottom' %> -->

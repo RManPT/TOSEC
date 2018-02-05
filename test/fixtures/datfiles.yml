@@ -1,0 +1,15 @@
+dat1:
+  name: Commodore Amiga - Applications - [ADF] (TOSEC-v2017-10-15_CM)
+  readme: bla bla bla bla bla bla bla bla 
+  collection_type: tosec
+  user: barcelos
+  system: commodore_amiga
+  datstatus: status_active
+
+dat2:
+  name: Sega Game Gear - Games (TOSEC-v2017-09-03_CM)
+  readme: bla bla bla bla bla bla bla bla bla
+  collection_type: tosec
+  user: barcelos
+  system: sega_game_gear
+  datstatus: status_active

@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+grole_one:
+  user: barcelos
+  role: mod_role
+  route: route1
+
+grole_two:
+  user: barcelos
+  role: mod_role
+  route: route2
+
+grole_3:
+  user: barcelos
+  role: mod_role
+  route: route3
+
+grole_4:
+  user: admin
+  role: admin_role
+  route: route5

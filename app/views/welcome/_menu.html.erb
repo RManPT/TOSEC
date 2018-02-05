@@ -1,24 +1,14 @@
 <% if user_signed_in? %>
 <div class="col-md-2">
     <div class="list-group">
-        <% #Quando as role existirem isto deixa de ser hard code %>
-        <% @role = "administrator" %>
-        <% case @role 
-            when "moderator"%>
-            <%= link_to 'Releases', {controller: 'releases' , action:'index'}, class: "list-group-item" %>
-            <%= link_to 'Dat files', {controller: 'datfiles', action:'index'}, class: "list-group-item" %>
-            <% when "publisher"%>
-            <%= link_to 'Dat files', {controller: 'datfiles', action:'index'}, class: "list-group-item" %>
-        <% when "administrator"%>
-            <%= link_to 'Collection Types', collection_types_path, class: "list-group-item" %>  
-            <%= link_to 'Releases',releases_path, class: "list-group-item" %>
-            <%= link_to 'Companies',companies_path , class: "list-group-item" %>
-            <%= link_to 'Dat files', datfiles_path, class: "list-group-item" %>
-            <%= link_to 'Dat file status',datstatuses_path, class: "list-group-item"%>
-            <%= link_to 'Systems', systems_path, class: "list-group-item" %>
-            <%= link_to 'Systems types', systems_types_path, class: "list-group-item"  %>
+        <% @linksR.each do |gr| %>
+            <%= link_to gr.route.name, "/"+gr.route.path, class: "list-group-item" %>
+        <% end %>
+        <% @links.each do |gr| %>
+            <%= link_to gr.route.name, "/"+gr.route.path, class: "list-group-item" %>
         <% end %>
     </div>
+    
 </div>
     <div class="col-md-9">
 <% else %>

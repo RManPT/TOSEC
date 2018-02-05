@@ -1,0 +1,37 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3">
+            <h2>System
+            </h2>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+
+        <div class="col-md-8 col-xs-12 col-sm-6 col-lg-8">
+            <p>
+                <strong>Email:</strong>
+                <%= @grole.user.email %>
+            </p>
+            <p>
+                <strong>Route:</strong>
+                <%= @grole.route.name %>
+            </p>
+            <% if @grole.role_id? %>
+                <p>
+                    <strong>Type:</strong>
+                    <%= @grole.role.name %>
+                </p>
+                <% end %>
+        </div>
+    </div>
+    <hr>
+    <div class="text-right">
+        <%= link_to 'Back', groles_path, class: 'btn btn-default' %>
+            <%= link_to 'Edit', edit_grole_path(@grole), class: 'btn btn-primary' %>
+                <%= link_to 'Destroy', grole_path(@grole), class: 'btn btn-danger',
+          method: :delete,
+          data: { confirm: 'Are you sure?' } %>
+    </div>
+</div>
+<!-- <%= render '/welcome/bottom' %> -->

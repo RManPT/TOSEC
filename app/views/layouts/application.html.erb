@@ -19,7 +19,7 @@
 
 <body>
   <div class="container">
-
+    <% @role = "administrator" %>
     <%= render '/layouts/header' %>
       <div class="row">
         <%= render 'welcome/menu' %>
@@ -66,9 +66,9 @@
   <!-- </div> -->
   <!-- needed to check if home button is needed -->
   <%= content_tag("div", nil, :id => 'invisible1', data: {action: @action}) %>
-    <%= content_tag("div", nil, :id => 'invisible2', data: {controler: @controler}) %>
-    <%= content_tag("div", nil, :id => 'invisible3', data: {controler: @role}) %>
-    
+    <%= content_tag("div", nil, :id => 'invisible2', data: {controler: @controller}) %>
+    <%= content_tag("div", nil, :id => 'invisible3', data: {role: @role}) %>
+     
 </body>
 
 </html>

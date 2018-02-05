@@ -16,6 +16,17 @@
       <% end %>
         <div class="form-group">
           <p>
+            <%= form.label :file %>
+            
+              <br>
+              <% if @action=="edit" %>
+              <% if @datfile.file.to_s!="/files/original/missing.png"%> 
+                    <%=@datfile.file.to_s.split("/")[-1]%>
+                    <% else%> <%="none"%> <%end%>
+                    <%end%>
+              <%= form.file_field :file, class: 'form-control' %>
+          </p>
+           <p>
             <% form.label :collection, class: 'form-label' %>
               <br>
               <%= form.collection_select(:collection_type_id, @collection_type, 'id', 'name',  {:include_blank => "Select a collection"}, {:class=>'form-control'}) %>
@@ -38,11 +49,6 @@
             <%= form.label :name %>
               <br>
               <%= form.text_field :name, class: 'form-control' %>
-          </p>
-          <p>
-            <%= form.label :file %>
-              <br>
-              <%= form.file_field :file, class: 'form-control' %>
           </p>
           <p>
             <%= form.label :readme %>

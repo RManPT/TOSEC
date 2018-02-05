@@ -1,5 +1,10 @@
 # TOSEC on rails README
 
+[![Build Status](https://travis-ci.org/RManPT/TOSEC.svg?branch=master)](https://travis-ci.org/RManPT/TOSEC)
+[![Dependency Status](https://beta.gemnasium.com/badges/github.com/RManPT/TOSEC.svg)](https://beta.gemnasium.com/projects/github.com/RManPT/TOSEC) 
+[![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/test_coverage)](https://codeclimate.com/github/codeclimate/codeclimate/test_coverage)
+
 How to enter develpment mode:
 
 * Rails version: jadesystems/rails-5-1"

@@ -10,24 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171218165235) do
-
-  create_table "admins", force: :cascade do |t|
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer "sign_in_count", default: 0, null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string "current_sign_in_ip"
-    t.string "last_sign_in_ip"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["email"], name: "index_admins_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
-  end
+ActiveRecord::Schema.define(version: 20171231025012) do
 
   create_table "collection_types", force: :cascade do |t|
     t.string "name"
@@ -80,8 +63,33 @@ ActiveRecord::Schema.define(version: 20171218165235) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "groles", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "role_id"
+    t.integer "route_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["role_id"], name: "index_groles_on_role_id"
+    t.index ["route_id"], name: "index_groles_on_route_id"
+    t.index ["user_id"], name: "index_groles_on_user_id"
+  end
+
   create_table "releases", force: :cascade do |t|
     t.text "descRelease"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "roles", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "routes", force: :cascade do |t|
+    t.string "name"
+    t.string "path"
+    t.string "priority"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -121,6 +129,10 @@ ActiveRecord::Schema.define(version: 20171218165235) do
     t.string "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "admin"
+    t.string "username"
+    t.boolean "pub"
+    t.boolean "mod"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

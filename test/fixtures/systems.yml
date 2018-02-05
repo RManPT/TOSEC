@@ -1,13 +1,16 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
-  abbreviation: MyString
-  company: MyString
-  typeSys: MyString
+commodore_amiga:
+  name: Commodore Amiga
+  abbreviation: Amiga
+  dateRelease: 2010-12-12
+  company: commodore
+  systemsType: systype1
 
-two:
-  name: MyString
-  abbreviation: MyString
-  company: MyString
-  typeSys: MyString
+sega_game_gear:
+  name: Sega Game Gear
+  abbreviation: SGG
+  dateRelease: 2010-12-12
+  company: sega
+  systemsType: systype1
+  
