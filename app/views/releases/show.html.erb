@@ -26,7 +26,8 @@
                 <%= list.name %>
               </td>
               <td width="100%">
-                <%=list.datstatus_id%>
+                <!-- <%=list.datstatus_id%> -->
+                <%=Datstatus.where(id: list.datstatus_id).take.name%>
               </td>
             </tr>
             <% end %>
